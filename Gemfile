@@ -47,6 +47,8 @@ gem 'font-awesome-rails'
 gem 'gravtastic'
 gem 'trix'
 gem "shrine"
+gem 'roda'
+gem 'aws-sdk-s3'
 gem 'jquery-fileupload-rails'
 gem 'local_time'
 gem 'haml-rails'
