@@ -1,0 +1,5 @@
+.forum-area
+  %h3.text-center Sprout Free Forum
+  -# = render 'topbar', locals: @fourm_threads
+  %ul.list-group
+    = render @forum_threads, class: 'forum-group'

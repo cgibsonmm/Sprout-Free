@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+
+  = image_tag @forum_post_photo.image_url
+  %b Image data:
+  = @forum_post_photo.image
+%p
+  -# %b User:
+  -# = @forum_post_photo.user
+- if current_user == @forum_post_photo.user
+  = link_to 'Edit', edit_forum_post_photo_path(@forum_post_photo)
+  \|
+  = link_to 'Back', forum_post_photos_path

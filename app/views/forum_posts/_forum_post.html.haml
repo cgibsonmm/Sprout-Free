@@ -1,0 +1,11 @@
+- unless @forum_thread.forum_posts.first == forum_post
+  %p.text-muted
+    Post by:
+    = forum_post.user.username
+    = local_time_ago forum_post.created_at
+.post-content
+  = sanitize forum_post.body
+
+- unless @forum_thread.forum_posts.first == forum_post
+  = link_to 'X', forum_post_path(forum_post), method: :delete, data: {confirm: "Are you sure?"}
+%hr

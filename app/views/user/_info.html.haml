@@ -1,0 +1,10 @@
+- if current_user
+  #user-info-area
+    .user-gravatar
+      = image_tag current_user.gravatar_url(default: 'blank')
+    .user-info
+      .username
+        = current_user.username
+      .post-count
+        Post count:
+        = current_user.forum_posts.count

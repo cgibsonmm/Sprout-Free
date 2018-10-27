@@ -1,0 +1,21 @@
+-# %ul.nav.nav-pills
+-#   %li.nav-item
+-#   %li.nav-item.dropdown
+-#     %a.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} Dropdown
+-#     .dropdown-menu
+-#       %a.dropdown-item{:href => "#"} Action
+-#       %a.dropdown-item{:href => "#"} Another action
+-#       %a.dropdown-item{:href => "#"} Something else here
+-#       .dropdown-divider
+-#       %a.dropdown-item{:href => "#"} Separated link
+-#   %li.nav-item
+-#     %a.nav-link{:href => "#"} Link
+-#   %li.nav-item
+-#     %a.nav-link.disabled{:href => "#"} Disabled
+  -# = search_form_for @q, html: {class: "form-inline ml-auto mr-3"} do |f|
+  -#   = f.search_field :subject_or_forum_posts_body_cont, placeholder: "Search...", class: 'form-control'
+%ul.nav.nav-pills
+  %li.ml-auto
+    %a{class: "ml-auto mr-3", 'data-toggle': "modal", 'data-target': "#ForumSearchModal"}
+      = fa_icon("search", text: "Search")
+    = render 'parts/forum_parts/search_modal'

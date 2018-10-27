@@ -1,0 +1,15 @@
+%h1
+  = @forum_thread.subject
+%p.text-muted
+  Created
+  = local_time @forum_thread.created_at
+  by
+  = @forum_thread.user.username
+
+
+%hr
+= render @forum_thread.forum_posts
+
+
+.new-post-form
+  = render partial: "forum_posts/form"

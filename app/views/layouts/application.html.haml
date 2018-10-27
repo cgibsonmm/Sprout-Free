@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title SproutFree
+    -# = favicon_link_tag asset_path('icon.ico')
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container
+      = render 'parts/header'
+      = render 'parts/navbar'
+      = render 'parts/flash'
+      .dynamic-content
+        .current-controller-area.mt-3
+          - if forums_controller?
+            = render 'parts/forum_parts/topbar'
+          = yield
+        -# TODO: Admin or base user
+        .side-bar.mt-3
+          = render 'user/info'
+      -# = render 'parts/footer'

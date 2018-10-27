@@ -1,0 +1,5 @@
+= @forum_subject.subject_name
+
+= link_to 'New Thread', new_forum_subject_forum_thread_path(@forum_subject.id)
+%ul.list-group
+  = render @forum_subject.forum_threads

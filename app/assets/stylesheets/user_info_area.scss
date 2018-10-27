@@ -1,0 +1,28 @@
+#user-info-area {
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+  padding: 4px;
+
+  .user-gravatar img {
+    max-height: 80px;
+    border-radius: 15px;
+    padding: 3px;
+  }
+
+  .user-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .username{
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 800px){
+  #user-info-area{
+    display: none;
+  }
+}
