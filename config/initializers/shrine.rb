@@ -12,7 +12,7 @@ Shrine.storages = {
   store: Shrine::Storage::S3.new(prefix: "store",upload_options: { acl: "public-read" } ,**s3_options),
 }
 
-Shrine.plugin :activerecord
+# Shrine.plugin :activerecord
 Shrine.plugin :presign_endpoint, presign_options: -> (request) {
   filename = request.params["filename"]
   type     = request.params["type"]
