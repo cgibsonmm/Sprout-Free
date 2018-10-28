@@ -9,7 +9,7 @@
 #
 
 class ForumSubject < ApplicationRecord
-  has_many :forum_threads
+  has_many :forum_threads, dependent: :delete_all
 
   validates :subject_name, presence: true, length: { minimum: 3 }
 end

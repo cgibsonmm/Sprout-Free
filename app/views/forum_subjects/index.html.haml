@@ -11,6 +11,7 @@
         %ul.list-group.subject-list
           %li.list-group-item
             = link_to subject.subject_name, forum_subject_path(subject)
+            = link_to 'X', forum_subject_path(subject), method: :delete, data: {confirm: 'Are you sure?'}
     .right-area.list-column
       %ul.threads-top-bar
         %li

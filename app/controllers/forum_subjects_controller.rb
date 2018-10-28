@@ -1,10 +1,10 @@
 class ForumSubjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_forum_subject, only: [:show]
+  before_action :set_forum_subject, only: [:show, :destroy]
 
   def index
     @forum_subjects = ForumSubject.all
-    @forum_threads = ForumThread.all.includes(:user)
+    @forum_threads = ForumThread.order('Created_at DESC').includes(:user)
   end
 
   def new
@@ -23,6 +23,13 @@ class ForumSubjectsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    if @forum_subject.destroy
+      flash[:notice] = "Subject Deleted"
+      redirect_to forum_subjects_path
+    end
   end
 
   private
