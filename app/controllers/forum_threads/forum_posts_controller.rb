@@ -38,6 +38,6 @@ class ForumThreads::ForumPostsController < ApplicationController
   end
 
   def forum_post_params
-    params.require(:forum_post).permit(:body)
+    params.require(:forum_post).permit(:body, files: [])
   end
 end

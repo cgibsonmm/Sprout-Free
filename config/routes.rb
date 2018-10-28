@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  mount Shrine.presign_endpoint(:cache) => "/presign"
-
   resources :test_photos
-  resources :forum_post_photos
+
+  resources :forum_post_photos do
+    get "photo_url", on: :member
+  end
   namespace :admin do
       resources :users
       resources :forum_posts

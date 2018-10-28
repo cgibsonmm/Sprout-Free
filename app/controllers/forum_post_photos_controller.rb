@@ -1,5 +1,5 @@
 class ForumPostPhotosController < ApplicationController
-  before_action :set_forum_post_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_forum_post_photo, only: [:show, :edit, :update, :destroy, :photo_url]
   before_action :authenticate_user!, except: [:show]
   # before_action :post_owner?, except: [:index, :show]
 
@@ -21,6 +21,10 @@ class ForumPostPhotosController < ApplicationController
 
   # GET /forum_post_photos/1/edit
   def edit
+  end
+
+  def photo_url
+    redirect_to @forum_post_photo.image.url
   end
 
   # POST /forum_post_photos
@@ -75,6 +79,6 @@ class ForumPostPhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forum_post_photo_params
-      params.require(:forum_post_photo).permit(:image, :user_id)
+      params.require(:forum_post_photo).permit(:image, :user_id, photos: [])
     end
 end

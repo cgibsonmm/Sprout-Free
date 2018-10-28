@@ -9,5 +9,8 @@
   .field
     = f.label :image
     = f.file_field :image, id: :forum_post_photo_image
+
+    = f.label :photos
+    = f.file_field :photos, multiple: true
   .actions
     = f.submit 'Save'

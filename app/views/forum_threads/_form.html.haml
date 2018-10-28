@@ -3,6 +3,7 @@
     = f.text_field :subject, label: false, placeholder: 'Title', class: 'form-control string required'
     = f.fields_for :forum_posts do |p|
       .field.mt-3
+        = p.file_field :files, direct_upload: true , multiple: true
         = p.text_field :body, id: :forum_post_body
         %trix-editor{input: "forum_post_body", id:"trix"}
         .form-actions.mt-2

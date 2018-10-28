@@ -1,56 +1,44 @@
-$(document).on("turbolinks:load", function() {
-  $("[type=file]").fileupload({
-    add: function(e, data) {
-      console.log("add", data)
-      data.progressBar = $('<div class="progress" style="width: 300px"><div class="progress-bar"></div></div>').insertAfter("#trix-toolbar-1");
-      var options = {
-        extension: data.files[0].name.match(/(\.\w+)?$/)[0], // set the file extension
-        _: Date.now() // prevent caching
-      };
-
-      $.getJSON("presign", options, function(result) {
-        console.log("presign", result);
-        data.formData = result['fields'];
-        data.url = result['url'];
-        data.paramName = "file";
-        data.submit();
-      });
-    },
-    progress: function(e, data) {
-      console.log('progress', data);
-
-      var progress = parseInt(data.loaded / data.total * 100, 10);
-      var percentage = progress.toString() + '%';
-      data.progressBar.find(".progress-bar").css("width", percentage).html(percentage);
-    },
-    done: function(e, data) {
-      console.log('done', data)
-
-      data.progressBar.remove();
-
-      var image = {
-        id: data.formData.key.match(/cache\/(.+)/)[1], // we have to remove the prefix part
-        storage: 'cache',
-        metadata: {
-          size: data.files[0].size,
-          filename: data.files[0].name.match(/[^\/\\]+$/)[0], // IE return full path
-          mime_type: data.files[0].type
-        }
-      };
-
-      var form = $(this).closest("form");
-      var form_data = new FormData(form[0]);
-      form_data.append($(this).attr("name"), JSON.stringify(image));
-
-      $.ajax(form.attr("action"), {
-        contentType: false,
-        processData: false,
-        data: form_data,
-        method: form.attr("method"),
-        dataType: "script"
-      }).done(function(data) {
-        console.log("done from rails", data);
-      });
-    }
-  });
-});
+// import { DirectUpload } from "activestorage"
+//
+// export class AttachmentUpload {
+//   constructor(attachment, element) {
+//     this.attachment = attachment
+//     this.element = element
+//     this.directUpload = new DirectUpload(attachment.file, this.directUploadUrl, this)
+//   }
+//
+//   start() {
+//     this.directUpload.create(this.directUploadDidComplete.bind(this))
+//   }
+//
+//   directUploadWillStoreFileWithXHR(xhr) {
+//     xhr.upload.addEventListener("progress", event => {
+//       const progress = event.loaded / event.total * 100
+//       this.attachment.setUploadProgress(progress)
+//     })
+//   }
+//
+//   directUploadDidComplete(error, attributes) {
+//     if (error) {
+//       throw new Error(`Direct upload failed: ${error}`)
+//     }
+//
+//     this.attachment.setAttributes({
+//       sgid: attributes.attachable_sgid,
+//       url: this.createBlobUrl(attributes.signed_id, attributes.filename)
+//     })
+//   }
+//
+//   createBlobUrl(signedId, filename) {
+//     return this.blobUrlTemplate
+//       .replace(":signed_id", signedId)
+//       .replace(":filename", encodeURIComponent(filename))
+//   }
+//
+//   get directUploadUrl() {
+//     return this.element.dataset.directUploadUrl
+//   }
+//
+//   get blobUrlTemplate() {
+//     return this.element.dataset.blobUrlTemplate
+//   }
