@@ -79,6 +79,6 @@ class ForumPostPhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forum_post_photo_params
-      params.require(:forum_post_photo).permit(:image, :user_id, photos: [])
+      params.require(:forum_post_photo).permit(:image, :user_id)
     end
 end
