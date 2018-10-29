@@ -46,6 +46,6 @@ class ForumThreadsController < ApplicationController
   end
 
   def forum_thread_params
-    params.require(:forum_thread).permit(:subject, :forum_subject_id, forum_posts_attributes: [:body, files: []],)
+    params.require(:forum_thread).permit(:subject, :forum_subject_id, forum_posts_attributes: [:body])
   end
 end

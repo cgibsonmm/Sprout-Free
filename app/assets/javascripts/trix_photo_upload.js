@@ -11,7 +11,6 @@ $(document).ready(function() {
     var endpoint = "/images";
     form.append("Content-Type", file.type);
     form.append("image[image]", file);
-
     xhr = new XMLHttpRequest;
     xhr.open("POST", endpoint, true);
     xhr.setRequestHeader("X-CSRF-Token", csrfToken);
