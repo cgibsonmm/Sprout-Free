@@ -125,6 +125,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    down (4.6.0)
+      addressable (~> 2.5)
     erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -278,6 +280,8 @@ GEM
       tilt (>= 1.1, < 3)
     selectize-rails (0.12.5)
     sexp_processor (4.11.0)
+    shrine (2.12.0)
+      down (~> 4.1)
     simple_form (4.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -299,8 +303,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    trix (0.10.1)
-      rails
+    trix-rails (2.0.0)
+      rails (> 4.1, < 6.0)
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -330,7 +334,7 @@ DEPENDENCIES
   acts_as_list
   administrate
   annotate
-  aws-sdk-s3
+  aws-sdk-s3 (~> 1.2)
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
@@ -355,12 +359,13 @@ DEPENDENCIES
   rails (~> 5.2.1)
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
+  shrine
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   the_big_username_blacklist
-  trix
+  trix-rails
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :images, only: [:create]
+
 
   resources :forum_subjects, shallow: true do
     resources :forum_threads do

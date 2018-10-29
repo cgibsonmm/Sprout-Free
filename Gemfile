@@ -49,8 +49,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.3'
 gem 'font-awesome-rails'
 gem 'gravtastic'
-gem 'trix'
-gem 'aws-sdk-s3'
+gem 'trix-rails', require: 'trix'
+gem 'shrine'
+gem "aws-sdk-s3", "~> 1.2"
 gem 'jquery-fileupload-rails'
 gem 'local_time'
 gem 'haml-rails'
