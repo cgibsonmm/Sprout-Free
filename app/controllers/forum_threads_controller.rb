@@ -15,7 +15,6 @@ class ForumThreadsController < ApplicationController
   def new
     @forum_subject = ForumSubject.find(params[:forum_subject_id])
     @forum_thread = @forum_subject.forum_threads.build
-    # @forum_thread = ForumThread.new
     @forum_thread.forum_posts.new
   end
 

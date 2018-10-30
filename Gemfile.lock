@@ -330,7 +330,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activestorage
   acts_as_list
   administrate
   annotate

@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  resources :test_photos
-
-  resources :forum_post_photos do
-    get "photo_url", on: :member
-  end
   namespace :admin do
       resources :users
       resources :forum_posts
@@ -16,7 +11,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :images, only: [:create]
-
 
   resources :forum_subjects, shallow: true do
     resources :forum_threads do

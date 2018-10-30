@@ -6,7 +6,6 @@ class ForumThreads::ForumPostsController < ApplicationController
   def create
     @forum_post = @forum_thread.forum_posts.new(forum_post_params)
     @forum_post.user = current_user
-    @forum_post.files.attach(params[:forum_post][:files])
 
     if @forum_post.save
       flash[:success] = "Post Saved"
@@ -39,6 +38,6 @@ class ForumThreads::ForumPostsController < ApplicationController
   end
 
   def forum_post_params
-    params.require(:forum_post).permit(:body, files: [])
+    params.require(:forum_post).permit(:body)
   end
 end

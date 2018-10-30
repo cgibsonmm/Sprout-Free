@@ -55,7 +55,6 @@ gem "aws-sdk-s3", "~> 1.2"
 gem 'jquery-fileupload-rails'
 gem 'local_time'
 gem 'haml-rails'
-gem 'activestorage'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'

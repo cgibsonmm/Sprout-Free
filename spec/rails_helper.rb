@@ -21,13 +21,6 @@ module AuthHelpers
   end
 end
 
-module JavascriptHelper
-  # Basecamp trix uses hidden input to populate its editor
-  def fill_in_trix_editor(id, value)
-    find(:xpath, "//*[@id='#{id}']", visible: false).set(value)
-  end
-end
-
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -62,7 +55,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.include AuthHelpers, type: :feature
-  config.include JavascriptHelper, type: :feature
+  # config.include JavascriptHelper, type: :feature
 
 
   # RSpec Rails can automatically mix in different behaviours to your tests

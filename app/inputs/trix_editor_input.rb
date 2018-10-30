@@ -12,25 +12,25 @@
 # https://github.com/plataformatec/simple_form/wiki/Adding-custom-input-components
 #
 
-class TrixEditorInput < SimpleForm::Inputs::Base
-  def input(wrapper_options)
-    template.concat @builder.text_field(attribute_name, input_html_options)
-    template.content_tag(:"trix-editor", nil, input: id)
-  end
-
-  def input_html_options
-    super.merge({
-      type: :hidden,
-      id: id,
-      name: name
-    })
-  end
-
-  def id
-    "#{@builder.object.class.to_s.downcase}_#{attribute_name}"
-  end
-
-  def name
-    "#{@builder.object.class.to_s.downcase}[#{attribute_name}]"
-  end
-end
+# class TrixEditorInput < SimpleForm::Inputs::Base
+#   def input(wrapper_options)
+#     template.concat @builder.text_field(attribute_name, input_html_options)
+#     template.content_tag(:"trix-editor", nil, input: id)
+#   end
+#
+#   def input_html_options
+#     super.merge({
+#       type: :hidden,
+#       id: id,
+#       name: name
+#     })
+#   end
+#
+#   def id
+#     "#{@builder.object.class.to_s.downcase}_#{attribute_name}"
+#   end
+#
+#   def name
+#     "#{@builder.object.class.to_s.downcase}[#{attribute_name}]"
+#   end
+# end
