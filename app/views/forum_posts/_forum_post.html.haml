@@ -5,6 +5,12 @@
     = local_time_ago forum_post.created_at
 .post-content
   = sanitize forum_post.body
+
+
+
+
+
+
   - forum_post.files.each do |file|
     = image_tag file
 - unless @forum_thread.forum_posts.first == forum_post

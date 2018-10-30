@@ -23,9 +23,10 @@ $(document).ready(function() {
     xhr.onload = function() {
       if (this.status >= 200 && this.status < 300) {
         var data = JSON.parse(this.responseText);
+        console.log(data)
         return attachment.setAttributes({
           url: data.url,
-          href: data.url
+          href: data.url,
         });
       }
     };
