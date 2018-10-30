@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2018_10_29_173700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "forum_subject_id"
-    t.text "photo_file"
   end
 
   create_table "images", force: :cascade do |t|

@@ -3,7 +3,6 @@
 # Table name: forum_threads
 #
 #  id               :integer          not null, primary key
-#  photo_file       :text
 #  subject          :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
