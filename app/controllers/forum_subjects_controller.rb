@@ -3,7 +3,7 @@ class ForumSubjectsController < ApplicationController
   before_action :set_forum_subject, only: [:show, :destroy]
 
   def index
-    @forum_subjects = ForumSubject.all
+    @forum_subjects = ForumSubject.order(:position)
     @forum_threads = ForumThread.order('Created_at DESC').includes(:user)
   end
 
@@ -23,6 +23,14 @@ class ForumSubjectsController < ApplicationController
   end
 
   def show
+  end
+
+  def sort
+    params[:forum_subject].each_with_index do |id, index|
+      ForumSubject.where(id: id).update_all(position: index + 1)
+    end
+
+    head :ok
   end
 
   def destroy

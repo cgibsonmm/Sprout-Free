@@ -140,6 +140,10 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gon (6.2.1)
+      actionpack (>= 3.0)
+      multi_json
+      request_store (>= 1.0)
     gravtastic (3.2.6)
     haml (5.0.4)
       temple (>= 0.8.0)
@@ -244,6 +248,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     regexp_parser (1.2.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -345,6 +351,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   font-awesome-rails
+  gon
   gravtastic
   haml-rails
   jbuilder (~> 2.5)

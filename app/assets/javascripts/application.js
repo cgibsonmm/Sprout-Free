@@ -17,9 +17,8 @@
 
 //= require rails-ujs
 //= require turbolinks
-//= require jquery-fileupload/vendor/jquery.ui.widget
-//= require jquery-fileupload/jquery.iframe-transport
-//= require jquery-fileupload/jquery.fileupload
+//= require jquery-ui/widget
+//= require jquery-ui/widgets/sortable
 //= require local-time
 //= require trix
 //= require_tree .

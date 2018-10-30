@@ -8,6 +8,7 @@ gem 'devise'
 gem 'the_big_username_blacklist'
 gem "administrate"
 gem 'acts_as_list'
+gem 'gon'
 gem 'jquery-ui-rails'
 
 gem 'simple_form'

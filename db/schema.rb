@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_173700) do
+ActiveRecord::Schema.define(version: 2018_10_30_163207) do
 
   create_table "forum_posts", force: :cascade do |t|
     t.integer "forum_thread_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_173700) do
     t.string "subject_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
   end
 
   create_table "forum_threads", force: :cascade do |t|

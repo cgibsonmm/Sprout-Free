@@ -7,9 +7,9 @@
         - if user_signed_in?
           %li.ml-auto.admin-link
             = link_to "New subject", new_forum_subject_path
-      - @forum_subjects.each do |subject|
-        %ul.list-group.subject-list
-          %li.list-group-item
+      %ul#subjects.list-group.subject-list{"data-url": sort_forum_subjects_path}
+        - @forum_subjects.each do |subject|
+          %li.list-group-item{id: dom_id(subject)}
             = link_to subject.subject_name, forum_subject_path(subject)
             = link_to 'X', forum_subject_path(subject), method: :delete, data: {confirm: 'Are you sure?'}
     .right-area.list-column
