@@ -11,6 +11,6 @@
 
 FactoryBot.define do
   factory :forum_subject do
-    subject_name { "This is a subject" }
+    subject_name { 'This is a subject' }
   end
 end

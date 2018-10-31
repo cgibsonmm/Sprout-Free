@@ -3,15 +3,16 @@
     .left-area.list-column
       %ul.threads-top-bar
         %li.ml-2
-          %h4 Top Subjects
-        - if user_signed_in?
+          %h4 Topics
+        - if user_signed_in? && current_user.has_role?(:admin)
           %li.ml-auto.admin-link
             = link_to "New subject", new_forum_subject_path
       %ul#subjects.list-group.subject-list{"data-url": sort_forum_subjects_path}
         - @forum_subjects.each do |subject|
           %li.list-group-item{id: dom_id(subject)}
             = link_to subject.subject_name, forum_subject_path(subject)
-            = link_to 'X', forum_subject_path(subject), method: :delete, data: {confirm: 'Are you sure?'}
+            - if user_signed_in? && current_user.has_role?(:admin)
+              = link_to 'X', forum_subject_path(subject), method: :delete, data: {confirm: 'Are you sure?'}
     .right-area.list-column
       %ul.threads-top-bar
         %li
@@ -25,4 +26,4 @@
           %li.list-group-item
             = link_to "#" do
               = image_tag thread.user.gravatar_url, class: 'forum-avatar'
-            = link_to thread.subject, forum_thread_path(thread)
+            = link_to thread.subject,  forum_thread_path(thread)

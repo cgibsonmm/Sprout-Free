@@ -1,5 +1,5 @@
 class ForumThreads::ForumPostsController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_forum_thread, only: [:create]
   # before_action :set_forum_post, only: [:destroy]
 

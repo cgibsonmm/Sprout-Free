@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 protected
 
 def admin?
-  if user_signed_in? && current_user
+  if user_signed_in? && current_user.has_role?(:admin)
     gon.admin = true
   else
     gon.admin = false

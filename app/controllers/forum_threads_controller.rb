@@ -1,11 +1,12 @@
 class ForumThreadsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_forum_thread, except: [:index, :new, :create]
   # before_action :set_forum_subject
 
   def index
-    @q = ForumThread.search(params[:q])
-    @forum_threads = @q.result(distinct: true).includes(:user)
+    # @q = ForumThread.search(params[:q])
+    # @forum_threads = @q.result(distinct: true).includes(:user)
   end
 
   def show

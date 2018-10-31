@@ -1,5 +1,5 @@
 class ForumSubjectsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
   before_action :set_forum_subject, only: [:show, :destroy]
 
   def index

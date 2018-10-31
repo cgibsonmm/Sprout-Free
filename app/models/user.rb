@@ -29,21 +29,31 @@
 #
 
 class User < ApplicationRecord
+  rolify
   include ActiveModel::Validations
   include Gravtastic
   gravtastic
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Validations
   validates_with UsernameValidator
   username_format = /\A[a-zA-Z]+[a-zA-z0-9]+\z/
   validates :username, format: {with: username_format}
   validates :username, presence: true, length: { in: (4..13) }
   validates :username, uniqueness: true
 
+  # Assosations
   has_many :forum_threads, dependent: :destroy
   has_many :forum_posts, dependent: :destroy
   has_many :forum_post_photos, dependent: :destroy
+
+
+  after_create :assign_default_role
+  def assign_default_role
+    self.add_role(:newuser) if self.roles.blank?
+  end
 end

@@ -13,7 +13,7 @@
       %li.nav-item.mr-3.disabled
         = link_to 'Placeholder', "#", class: 'nav-link'
     %ul.navbar-nav.my-2.my-lg-0
-      - if user_signed_in?
+      - if user_signed_in?    
         %li.nav-item.user-name
           = link_to fa_icon('user',text: current_user.username), edit_user_registration_path, class: 'nav-link mr-2'
         %li.nav-item

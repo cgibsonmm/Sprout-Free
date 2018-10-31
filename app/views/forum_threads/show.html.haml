@@ -14,5 +14,6 @@
 = render @forum_thread.forum_posts
 
 
-.new-post-form
-  = render partial: "forum_posts/form"
+- if user_signed_in?
+  .new-post-form
+    = render partial: "forum_posts/form"

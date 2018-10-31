@@ -9,7 +9,9 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      unless user_signed_in? && current_user.has_role?(:admin)
+        redirect_to '/'
+      end
     end
 
     # Override this value to specify the number of elements to display at a time
