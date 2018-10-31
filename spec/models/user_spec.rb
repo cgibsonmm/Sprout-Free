@@ -68,4 +68,21 @@ RSpec.describe User, type: :model do
    record.valid?
    expect(record.errors[:username]).to eq(['is blacklisted!'])
  end
+
+ describe 'after creation' do
+   it 'sends a conformation mailer' do
+     user = FactoryBot.build(:user, confirmed_at: '')
+
+     expect {user.save}.to change(
+       Devise.mailer.deliveries, :count
+     ).by(1)
+   end
+
+   it 'sends the email to the right email' do
+     user = create(:user)
+
+     confirmation_email = Devise.mailer.deliveries.last
+     expect(user.email).to eq confirmation_email.to[0]
+   end
+ end
 end
