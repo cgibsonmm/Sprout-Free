@@ -12,7 +12,6 @@
 
 class ForumPost < ApplicationRecord
   belongs_to :user
-  has_many_attached :files
   belongs_to :forum_thread, optional: true
 
   validates :body, presence: true, length: { minimum: 10 }

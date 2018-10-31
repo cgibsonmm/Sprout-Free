@@ -3,7 +3,6 @@
 # Table name: forum_threads
 #
 #  id               :integer          not null, primary key
-#  photo_file       :text
 #  subject          :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -14,7 +13,7 @@
 FactoryBot.define do
   factory :forum_thread do
     user_id { 1 }
-    forum_subject_id {1}
-    subject { "First Forum Thread" }
+    forum_subject_id { 1 }
+    subject { 'First Forum Thread' }
   end
 end

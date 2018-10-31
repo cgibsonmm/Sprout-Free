@@ -3,7 +3,9 @@ Rails.application.routes.draw do
       resources :users
       resources :forum_posts
       resources :forum_threads
-
+      resources :forum_subjects
+      resources :images
+      
       root to: "users#index"
     end
 
@@ -13,6 +15,9 @@ Rails.application.routes.draw do
   resources :images, only: [:create]
 
   resources :forum_subjects, shallow: true do
+    collection do
+      patch :sort
+    end
     resources :forum_threads do
       resources :forum_posts, module: :forum_threads
     end

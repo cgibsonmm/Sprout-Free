@@ -20,11 +20,7 @@ RSpec.feature 'User sign up' do
     fill_in 'user_password_confirmation', with: 'password123'
     click_button 'Sign up'
 
-    expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_content('Sign out')
-    expect(page).to have_css('.user-name', text: 'testuser2')
-    expect(page).not_to have_content('Sign in')
-    expect(page).not_to have_content('Sign up')
+    expect(page).to have_content("Please follow the link to activate your account.")
   end
 
   context 'Validations' do

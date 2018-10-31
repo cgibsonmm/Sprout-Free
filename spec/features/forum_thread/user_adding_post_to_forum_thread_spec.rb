@@ -39,12 +39,7 @@ RSpec.feature 'Adding Post to a forum thread' do
   context "when no user is signed in" do
     scenario 'visiter can not post to thread' do
       visit '/forum_threads/1'
-      fill_in('Leave a new post here...', with: 'Hey this is really good!')
-      click_button 'Submit Post'
-
-      expect(page).to have_content('You need to sign in or sign up before continuing')
-      visit '/forum_threads/1'
-      expect(page).not_to have_content('Hey this is really good!')
+      expect(page).not_to have_content('Leave a new post here...')
     end
   end
 end

@@ -3,11 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
-gem 'jquery-rails'
+
 gem 'devise'
 gem 'the_big_username_blacklist'
 gem "administrate"
+gem 'cancancan'
+gem 'rolify'
+
+gem 'jquery-rails'
 gem 'acts_as_list'
+gem 'gon'
 gem 'jquery-ui-rails'
 
 gem 'simple_form'
@@ -57,6 +62,7 @@ gem 'local_time'
 gem 'haml-rails'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.8'
   gem 'capybara'
   gem 'factory_bot_rails'
@@ -67,6 +73,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener"
   gem "better_errors"
   gem "binding_of_caller"
   gem 'bullet'

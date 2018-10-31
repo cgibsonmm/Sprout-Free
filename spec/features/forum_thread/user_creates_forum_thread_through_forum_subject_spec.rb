@@ -19,7 +19,7 @@ RSpec.feature 'User can create a new thread through forum subject' do
       click_link 'New Thread'
 
       fill_in('Title', with: 'This is a new thread')
-      fill_in_trix_editor('forum_post_body', 'This is a test body')
+      find('trix-editor').click.set('This is a test body')
       click_button 'Post New Thread'
 
       expect(page).to have_content('Successfully created a new thread')
