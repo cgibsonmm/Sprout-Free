@@ -3,7 +3,9 @@ Rails.application.routes.draw do
       resources :users
       resources :forum_posts
       resources :forum_threads
-
+      resources :forum_subjects
+      resources :images
+      
       root to: "users#index"
     end
 
