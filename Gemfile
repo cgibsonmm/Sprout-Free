@@ -10,7 +10,6 @@ gem "administrate"
 gem 'cancancan'
 gem 'rolify'
 
-
 gem 'jquery-rails'
 gem 'acts_as_list'
 gem 'gon'
@@ -74,6 +73,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener"
   gem "better_errors"
   gem "binding_of_caller"
   gem 'bullet'
