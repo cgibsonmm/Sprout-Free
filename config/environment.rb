@@ -5,7 +5,7 @@ require_relative 'application'
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => 'SproutFree',
+  :user_name => 'apikey',
   :password => Rails.application.credentials.dig(:send_grid, :api_key),
   :domain => 'sprout-free-canada.herokuapp.com',
   :address => 'smtp.sendgrid.net',
