@@ -1,15 +1,56 @@
+#logo-2{
+  max-height: 125px;
+}
+
 #site-navbar{
   padding: 10px 3px;
   border-radius: 3px;
   // box-shadow: 0 0 3px rgb(157, 157, 157);
-  .navbar-brand{
-    letter-spacing: -1px;
-    font-weight: bold;
-    font-size: 1.5rem;
+
+  .btn{
+
+  }
+  .navbar-brand {;
+    .logo{
+      display: flex;
+      .tag-line{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .first{
+          font-size: 1.1rem;
+          font-weight: bold;
+          line-height: 13px;
+        }
+
+        .second{
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
-// @media (max-width: 800px){
-//   #site-navbar{
-//     display: none;
-//   }
-// }
+.bottom-bar{
+  width:100%;
+  .not-logo-links{
+    #site-links{
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-shadow: 1px 1px 2px rgb(247, 225, 223);
+      .nav-link li{
+        padding-top: 0;
+        padding-bottom: 0;
+        border-right: 2px solid gray;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px){
+
+  .bottom-bar{
+    position: inherit;
+    display: inline;
+  }
+}

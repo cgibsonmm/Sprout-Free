@@ -10,7 +10,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .container
+    .red-flag
+      .red
+      .white
+      .red
+    .container-fluid
       = render 'parts/header'
       = render 'parts/navbar'
       = render 'parts/flash'
@@ -20,6 +24,6 @@
             = render 'parts/forum_parts/topbar'
           = yield
         -# TODO: Admin or base user
-        .side-bar.mt-3
-          = render 'user/info'
+        -# .side-bar.mt-3
+        -#   = render 'user/info'
       -# = render 'parts/footer'
