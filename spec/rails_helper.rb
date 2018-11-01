@@ -5,21 +5,8 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'support/auth'
 # Add additional requires below this line. Rails is not loaded until this point!
-
-module AuthHelpers
-  def create_user_and_sign_in
-    @user = create(:user)
-  end
-
-  def sign_in_with(user)
-    visit '/'
-    click_link 'Sign in'
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
-  end
-end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
