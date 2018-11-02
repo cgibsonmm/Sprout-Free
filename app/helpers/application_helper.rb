@@ -7,4 +7,8 @@ module ApplicationHelper
   def admin?
     current_user.admin == true
   end
+
+  def user_admin?
+    user_signed_in? && current_user.has_role?(:admin)
+  end
 end
