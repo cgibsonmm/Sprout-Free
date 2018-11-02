@@ -9,6 +9,8 @@ class TicklersController < ApplicationController
       flash[:success] = 'You are signed up for email updates!'
       @tickler.send_notifications
       redirect_to '/'
+    else
+      render 'new'
     end
   end
 

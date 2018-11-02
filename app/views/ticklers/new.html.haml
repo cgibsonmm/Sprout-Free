@@ -1,3 +1,21 @@
-= simple_form_for @tickler do |f|
-  = f.input :email
-  = f.submit 'Notify Me!'
+.container.jumbotron.new-tickler-area.fade-in
+  %h1.red.text-center Sprout Free Canada
+  .icon.text-center
+    = fa_icon('cannabis', size: '2x')
+  %h3.text-center Comming Soon!
+
+  %hr.my-4
+  %p.text-center Sign up for Email updates about features of the new site
+  = simple_form_for @tickler do |f|
+    = f.input :email, label: false, placeholder: 'Email'
+    = f.submit 'Notify Me!', class: 'btn'
+    %p
+      %em *By signing up for email updates you are agreeing to a maximum of two weekly emails
+
+  .follow-us
+    .item
+      = link_to '#' do
+        = fa_icon('instagram', type: :fab, size: '3x')
+    .item
+      = link_to '#' do
+        = fa_icon('facebook', type: :fab, size: '3x')

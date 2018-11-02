@@ -15,7 +15,7 @@
 class Tickler < ApplicationRecord
 
   validates :email, presence: true
-  validates :email, uniqueness: { case_sensitive: false }
+  validates :email, uniqueness: { case_sensitive: false, message: 'all ready reciving updates' }
 
   def send_notifications
     our_emails = %w[cgibsonmmdev@gmail.com ]
