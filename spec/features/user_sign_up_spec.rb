@@ -12,7 +12,7 @@ RSpec.feature 'User sign up' do
   end
 
   scenario 'website visitor can sign up for an account' do
-    click_link 'Sign up'
+    click_link 'Grow With Us'
 
     fill_in 'Username', with: 'testuser2'
     fill_in 'Email', with: 'testemail@gmail.com'

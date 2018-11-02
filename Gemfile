@@ -61,6 +61,11 @@ gem 'jquery-fileupload-rails'
 gem 'local_time'
 gem 'haml-rails'
 
+group :test do
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
+end
+
 group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.8'

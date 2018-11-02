@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :admin?
 
+  # def prior_to_launch
+  #   redirect_to root_path unless user_signed_in? && current_user.hase_role?(:admin)
+  # end
+
 protected
 
 def admin?
