@@ -12,7 +12,7 @@ class ForumSubjectsController < ApplicationController
   end
 
   def create
-    @forum_subject = ForumSubject.new(forum_subject_params)
+    @forum_subject = ForumSubject.new(create_params)
     if @forum_subject.save
       flash[:success] = "Created new forum subject"
       redirect_to forum_subjects_url
@@ -46,7 +46,7 @@ class ForumSubjectsController < ApplicationController
     @forum_subject = ForumSubject.find(params[:id])
   end
 
-  def forum_subject_params
+  def create_params
     params.require(:forum_subject).permit(:subject_name)
   end
 end

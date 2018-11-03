@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe ForumCategorysController, type: :controller do
+RSpec.describe ForumCategoriesController, type: :controller do
 
 end

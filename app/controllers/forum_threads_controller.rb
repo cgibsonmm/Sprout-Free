@@ -21,7 +21,7 @@ class ForumThreadsController < ApplicationController
 
   def create
     @forum_subject = ForumSubject.find(params[:forum_subject_id])
-    @forum_thread = @forum_subject.forum_threads.build(forum_thread_params)
+    @forum_thread = @forum_subject.forum_threads.build(create_params)
     @forum_thread.user = current_user
     # @forum_thread = current_user.forum_threads.new(forum_thread_params)
     @forum_thread.forum_posts.first.user_id = current_user.id
@@ -45,7 +45,7 @@ class ForumThreadsController < ApplicationController
     @forum_thread = ForumThread.find(params[:id])
   end
 
-  def forum_thread_params
+  def create_params
     params.require(:forum_thread).permit(:subject, :forum_subject_id, forum_posts_attributes: [:body])
   end
 end

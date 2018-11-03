@@ -5,5 +5,11 @@ FactoryBot.define do
     password { 'password123' }
     id { 1 }
     confirmed_at { Time.now }
+
+
+
+    factory :admin_user, class: User do
+      after(:create) { |user| user.add_role(:admin) }
+    end
   end
 end

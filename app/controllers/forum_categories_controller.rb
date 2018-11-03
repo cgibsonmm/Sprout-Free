@@ -1,4 +1,6 @@
 class ForumCategoriesController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!, except: [:show]
   before_action :set_forum_category, except: [:new, :create]
 
   def new
@@ -6,7 +8,7 @@ class ForumCategoriesController < ApplicationController
   end
 
   def create
-    @forum_category = ForumCategory.new(category_params)
+    @forum_category = current_user.forum_categories.build(create_params)
     @forum_category.save
     flash[:success] = 'Successfully created a new category'
     redirect_to @forum_category
@@ -21,7 +23,7 @@ class ForumCategoriesController < ApplicationController
     @forum_category = ForumCategory.find(params[:id])
   end
 
-  def category_params
-    params.require(:forum_category).permit(:title)
+  def create_params
+    params.require(:forum_category).permit(:title, :user_id)
   end
 end

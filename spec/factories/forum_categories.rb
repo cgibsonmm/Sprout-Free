@@ -13,7 +13,9 @@
 #  index_forum_categories_on_user_id  (user_id)
 #
 
-class ForumCategory < ApplicationRecord
-  resourcify
-  belongs_to :user
+FactoryBot.define do
+  factory :forum_category do
+    title { "MyString" }
+    user { nil }
+  end
 end
