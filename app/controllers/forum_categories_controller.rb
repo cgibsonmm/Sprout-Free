@@ -1,7 +1,10 @@
 class ForumCategoriesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:show]
-  before_action :set_forum_category, except: [:new, :create]
+  before_action :set_forum_category, except: [:new, :create, :index]
+
+  def index
+  end
 
   def new
     @forum_category = ForumCategory.new
@@ -17,6 +20,16 @@ class ForumCategoriesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @forum_category.update(update_params)
+      flash[:success] = "Successfully updated category"
+      redirect_to @forum_category
+    end
+  end
+
   private
 
   def set_forum_category
@@ -25,5 +38,9 @@ class ForumCategoriesController < ApplicationController
 
   def create_params
     params.require(:forum_category).permit(:title, :user_id)
+  end
+
+  def update_params
+    params.require(:forum_category).permit(:title)
   end
 end

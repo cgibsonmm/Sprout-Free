@@ -10,14 +10,13 @@ RSpec.feature 'Admin creates a new forum category' do
       @admin = FactoryBot.create(:admin_user)
       sign_in_with(@admin)
       @admin.add_role(:admin)
-      puts @admin.is_admin?
     end
 
     scenario 'can create a new category' do
       visit '/forums'
       click_link('New Category')
       fill_in 'Title', with: @title
-      click_on 'Create Category'
+      click_on 'Create Forum category'
 
       expect(page).to have_content('Successfully')
       expect(page).to have_content(@title)

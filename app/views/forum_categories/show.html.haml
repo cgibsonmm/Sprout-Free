@@ -1,1 +1,5 @@
+show
+
 = @forum_category.title
+- if current_user.is_admin?
+  = link_to 'Edit', edit_forum_category_path(@forum_category)

@@ -4,8 +4,10 @@ example_id                                                                      
 ./spec/controllers/forum_subjects_controller_spec.rb[1:2:1]                                 | pending | 0 seconds       |
 ./spec/controllers/forum_subjects_controller_spec.rb[1:3:1]                                 | pending | 0.00001 seconds |
 ./spec/controllers/forums_controller_spec.rb[1:1:1]                                         | passed  | 0.006 seconds   |
-./spec/features/admin/create_a_forum_category_spec.rb[1:1:1]                                | passed  | 0.12956 seconds |
-./spec/features/admin/create_a_forum_category_spec.rb[1:2:1]                                | passed  | 0.06233 seconds |
+./spec/features/admin/create_a_forum_category_spec.rb[1:1:1]                                | passed  | 0.09574 seconds |
+./spec/features/admin/create_a_forum_category_spec.rb[1:2:1]                                | passed  | 0.05961 seconds |
+./spec/features/admin/edit_forum_category_spec.rb[1:1:1]                                    | passed  | 0.12187 seconds |
+./spec/features/admin/edit_forum_category_spec.rb[1:2:1]                                    | passed  | 0.38686 seconds |
 ./spec/features/forum_subjects/admin_creates_forum_subject.rb[1:1:1]                        | passed  | 0.06763 seconds |
 ./spec/features/forum_subjects/admin_creates_forum_subject.rb[1:1:2]                        | passed  | 0.23045 seconds |
 ./spec/features/forum_subjects/admin_creates_forum_subject.rb[1:2:1]                        | passed  | 0.02636 seconds |
