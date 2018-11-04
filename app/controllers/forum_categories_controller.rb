@@ -30,6 +30,13 @@ class ForumCategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    if @forum_category.destroy
+      flash[:success] = "Successfully deleted category"
+      redirect_to forum_categories_path
+    end
+  end
+
   private
 
   def set_forum_category
