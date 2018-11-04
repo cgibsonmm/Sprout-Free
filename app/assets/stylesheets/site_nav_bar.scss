@@ -1,15 +1,121 @@
-#site-navbar{
-  padding: 10px 3px;
-  border-radius: 3px;
+#logo-2 {
+  max-height: 125px;
+}
+.sticky-top{
+  border-bottom: 2px solid rgb(20, 201, 37);
+  background-color: rgb(255, 255, 255);
+  overflow: visible;
+  max-height: 155px;
+}
+
+#login-links-botom{
+  display:none;
+}
+
+#logo-bar {
   // box-shadow: 0 0 3px rgb(157, 157, 157);
-  .navbar-brand{
-    letter-spacing: -1px;
-    font-weight: bold;
-    font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0) !important;
+  padding-top: 3px;
+  padding-bottom: 0;
+
+  .top-bar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .navbar-brand {
+    padding-top: 0;
+    padding-top: 0;
+
+    .logo {
+      position: relative;
+      display: flex;
+
+      img{
+        position: relative;
+        top: 10px;
+      }
+
+      .tag-line {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .first {
+          font-family: 'Arimo', sans-serif;
+          font-size: 1.5rem;
+          font-weight: bold;
+          line-height: 13px;
+        }
+
+        .second {
+          font-family: 'Arimo', sans-serif;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
-// @media (max-width: 800px){
-//   #site-navbar{
-//     display: none;
-//   }
-// }
+
+#links-bar {
+  background-color: rgba(255, 255, 255, 0) !important;
+  position: relative;
+  top: -20px;
+  margin-top: 0;
+  padding-bottom: 5px;
+  padding-top: 0;
+  .not-logo-links {
+    #site-links {
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-shadow: 1px 1px 2px rgb(247, 225, 223);
+
+      .nav-item {
+        padding: 5px 20px;
+        border-right: 2px solid rgb(222, 62, 62);
+        box-shadow: 0 90 2px 1px rgb(119, 119, 119);
+
+        .nav-link {
+          text-align: center;
+          font-size: 1.1rem;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      .nav-item:last-child {
+        border: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1620px){
+  #links-bar{
+    position: inherit;
+  }
+  .sticky-top{
+    max-height: none;
+  }
+}
+@media (max-width: 1000px) {
+  #logo-2 {
+    top:0 !important;
+  }
+  .login-links-top{
+    display: none;
+  }
+  .login-links-botom{
+    display: inline;
+  }
+}
+
+@media (max-width: 530px){
+  #logo-2{
+    display: none;
+  }
+  .first{
+    padding-top: 15px;
+  }
+}

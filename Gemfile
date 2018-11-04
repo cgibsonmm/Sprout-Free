@@ -52,7 +52,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # CSS Framework
 gem 'bootstrap', '~> 4.1.3'
-gem 'font-awesome-rails'
+gem 'font_awesome5_rails'
 gem 'gravtastic'
 gem 'trix-rails', require: 'trix'
 gem 'shrine'
@@ -80,6 +80,8 @@ group :test do
 end
 
 group :development do
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
   gem "letter_opener"
   gem "better_errors"
   gem "binding_of_caller"

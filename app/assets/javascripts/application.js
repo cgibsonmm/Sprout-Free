@@ -19,6 +19,7 @@
 //= require turbolinks
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
+//= require font_awesome5
 //= require local-time
 //= require trix
 //= require_tree .

@@ -1,10 +1,10 @@
-- if current_user
+- if user_signed_in?
   #user-info-area
     .user-gravatar
-      = image_tag current_user.gravatar_url(default: 'blank')
-    .user-info
+      = image_tag current_user.gravatar_url
+    .user-info.mt-2
       .username
         = current_user.username
-      .post-count
-        Post count:
-        = current_user.forum_posts.count
+      .user-stats
+        Post Count:
+        = current_user.forum_posts.all.count

@@ -1,25 +1,50 @@
-%nav#site-navbar.navbar.navbar-light.bg-light.navbar-expand-lg.sticky-top
-  = link_to 'Sprout Free Canada', root_path, class: 'navbar-brand'
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-    %span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    %ul.navbar-nav.mr-auto.ml-auto
-      %li.nav-item.mr-2
-        = link_to 'Forum', forum_topics_path, class: 'nav-link'
-      %li.nav-item.mr-3.disabled
-        = link_to 'Placeholder', "#", class: 'nav-link'
-      %li.nav-item.mr-3.disabled
-        = link_to 'Placeholder', "#", class: 'nav-link'
-      %li.nav-item.mr-3.disabled
-        = link_to 'Placeholder', "#", class: 'nav-link'
-    %ul.navbar-nav.my-2.my-lg-0
-      - if user_signed_in?    
+
+.sticky-top
+  %nav#logo-bar.bg-light.navbar.navbar-light.navbar-expand-lg.mx-3
+    = link_to root_path, class: 'navbar-brand' do
+      .logo
+        = image_tag 'Logo-white-bg.png', id: 'logo-2'
+        .tag-line.ml-2
+          .first Canada's Legalized
+          .second Growing Community
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    %ul.navbar-nav.ml-auto.login-links-top
+      - if user_signed_in?
         %li.nav-item.user-name
           = link_to fa_icon('user',text: current_user.username), edit_user_registration_path, class: 'nav-link mr-2'
         %li.nav-item
           = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link mr-2'
       - else
         %li.nav-item
-          = link_to 'Sign in', new_user_session_path, class: 'btn btn-success nav-link mr-2'
+          = link_to 'Log In', new_user_session_path, class: 'btn btn-secondary nav-link mr-2'
         %li.nav-item
-          = link_to 'Sign up', new_user_registration_path, class: 'btn btn-secondary nav-link mr-2'
+          = link_to 'Grow With Us', new_user_registration_path, class: 'btn btn-success nav-link mr-2'
+  %nav#links-bar.bg-light.navbar.navbar-light.navbar-expand-lg.mx-3
+    #navbarSupportedContent.collapse.navbar-collapse.not-logo-links
+      %ul#site-links.navbar-nav.mx-auto.justified
+        %li.nav-item
+          = link_to 'Community Forum', forum_subjects_path, class: 'nav-link'
+        %li.nav-item
+          = link_to 'Cannabis News', "#", class: 'nav-link'
+        %li.nav-item
+          = link_to 'Starting Your Garden', "#", class: 'nav-link'
+        %li.nav-item
+          = link_to 'Classifieds & Listings', "#", class: 'nav-link'
+        %li.nav-item
+          = link_to 'Wear It Proud!', "#", class: 'nav-link'
+        %li.nav-item
+          = link_to 'Advertise With Us', "#", class: 'nav-link'
+        %li.nav-item
+          = link_to 'Contact Us', "#", class: 'nav-link'
+      %ul.navbar-nav.ml-auto#login-links-botom
+        - if user_signed_in?
+          %li.nav-item.user-name
+            = link_to fa_icon('user',text: current_user.username), edit_user_registration_path, class: 'nav-link mr-2'
+          %li.nav-item
+            = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link mr-2'
+        - else
+          %li.nav-item
+            = link_to 'Log In', new_user_session_path, class: 'btn btn-secondary nav-link mr-2'
+          %li.nav-item
+            = link_to 'Grow With Us', new_user_registration_path, class: 'btn btn-success nav-link mr-2'
