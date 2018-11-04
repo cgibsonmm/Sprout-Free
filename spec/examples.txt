@@ -1,6 +1,7 @@
 example_id                                                                                | status  | run_time        |
 ----------------------------------------------------------------------------------------- | ------- | --------------- |
 ./spec/controllers/forum_categorys_controller_spec.rb[1:1]                                | failed  | 0.00494 seconds |
+<<<<<<< HEAD
 ./spec/controllers/forum_topics_controller_spec.rb[1:1:1]                                 | pending | 0.00001 seconds |
 ./spec/controllers/forum_topics_controller_spec.rb[1:2:1]                                 | pending | 0 seconds       |
 ./spec/controllers/forum_topics_controller_spec.rb[1:3:1]                                 | pending | 0 seconds       |
@@ -14,12 +15,28 @@ example_id                                                                      
 ./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:1:2]              | passed  | 0.09496 seconds |
 ./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:1:3]              | passed  | 0.09573 seconds |
 ./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:2:1]              | passed  | 0.03598 seconds |
+=======
+./spec/controllers/forum_topics_controller_spec.rb[1:1:1]                                 | pending | 0 seconds       |
+./spec/controllers/forum_topics_controller_spec.rb[1:2:1]                                 | pending | 0.00001 seconds |
+./spec/controllers/forum_topics_controller_spec.rb[1:3:1]                                 | pending | 0 seconds       |
+./spec/controllers/forums_controller_spec.rb[1:1:1]                                       | passed  | 0.03223 seconds |
+./spec/features/admin/create_a_forum_category_spec.rb[1:1:1]                              | passed  | 0.11576 seconds |
+./spec/features/admin/create_a_forum_category_spec.rb[1:2:1]                              | passed  | 0.07612 seconds |
+./spec/features/admin/delete_forum_category_spec.rb[1:1:1]                                | passed  | 0.10208 seconds |
+./spec/features/admin/edit_forum_category_spec.rb[1:1:1]                                  | passed  | 0.12378 seconds |
+./spec/features/admin/edit_forum_category_spec.rb[1:2:1]                                  | passed  | 0.09812 seconds |
+./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:1:1]              | passed  | 0.09497 seconds |
+./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:1:2]              | passed  | 0.10128 seconds |
+./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:1:3]              | passed  | 0.0894 seconds  |
+./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:2:1]              | passed  | 0.03642 seconds |
+>>>>>>> reworking_routing_through_forum_area
 ./spec/features/forum_thread/user_can_create_a_new_forum_thread_spec.rb[1:1:1]            | failed  | 0.08519 seconds |
 ./spec/features/forum_thread/user_can_create_a_new_forum_thread_spec.rb[1:1:2]            | failed  | 0.06253 seconds |
 ./spec/features/forum_thread/user_can_create_a_new_forum_thread_spec.rb[1:1:3]            | failed  | 0.07726 seconds |
 ./spec/features/forum_thread/user_can_create_a_new_forum_thread_spec.rb[1:1:4]            | failed  | 0.0662 seconds  |
 ./spec/features/forum_thread/user_can_create_a_new_forum_thread_spec.rb[1:1:5]            | failed  | 0.06428 seconds |
 ./spec/features/forum_thread/user_can_create_a_new_forum_thread_spec.rb[1:2:1]            | passed  | 0.05272 seconds |
+<<<<<<< HEAD
 ./spec/features/forum_thread/user_creates_forum_thread_through_forum_topic_spec.rb[1:1:1] | passed  | 0.16588 seconds |
 ./spec/features/forum_thread/user_deletes_a_post_from_thread_spec.rb[1:1:1]               | passed  | 0.11958 seconds |
 ./spec/features/forum_thread/viewing_forum_post_show_spec.rb[1:1:1]                       | passed  | 0.12714 seconds |
@@ -38,17 +55,48 @@ example_id                                                                      
 ./spec/helpers/images_controller_helper_spec.rb[1:1]                                      | pending | 0.00001 seconds |
 ./spec/models/forum_category_spec.rb[1:1]                                                 | passed  | 0.00241 seconds |
 ./spec/models/forum_category_spec.rb[1:2]                                                 | passed  | 0.00403 seconds |
+=======
+./spec/features/forum_thread/user_creates_forum_thread_through_forum_topic_spec.rb[1:1:1] | passed  | 0.16563 seconds |
+./spec/features/forum_thread/user_deletes_a_post_from_thread_spec.rb[1:1:1]               | passed  | 0.5299 seconds  |
+./spec/features/forum_thread/viewing_forum_post_show_spec.rb[1:1:1]                       | passed  | 0.09071 seconds |
+./spec/features/forum_thread/viewing_forum_post_show_spec.rb[1:2:1]                       | passed  | 0.04427 seconds |
+./spec/features/forum_thread/viewing_forum_thead_index_spec.rb[1:1:1]                     | failed  | 0.31039 seconds |
+./spec/features/forum_thread/viewing_forum_thead_index_spec.rb[1:2:1]                     | failed  | 0.02172 seconds |
+./spec/features/forum_thread/viewing_subject_threads_spec.rb[1:1:1]                       | passed  | 0.12533 seconds |
+./spec/features/forum_topics/admin_deletes_a_topic_spec.rb[1:1:1]                         | passed  | 0.09113 seconds |
+./spec/features/forum_topics/admin_deletes_a_topic_spec.rb[1:2:1]                         | passed  | 0.06762 seconds |
+./spec/features/new_routing/admin_views_index_of_categorys_spec.rb[1:1:1]                 | passed  | 0.07078 seconds |
+./spec/features/new_routing/admin_views_index_of_categorys_spec.rb[1:2:1]                 | passed  | 0.07369 seconds |
+./spec/features/user_sign_up_spec.rb[1:1]                                                 | passed  | 0.37087 seconds |
+./spec/features/user_sign_up_spec.rb[1:2:1]                                               | passed  | 0.05206 seconds |
+./spec/features/user_sign_up_spec.rb[1:2:2]                                               | passed  | 0.05253 seconds |
+./spec/features/viewing_home_index_spec.rb[1:1:1]                                         | passed  | 0.01195 seconds |
+./spec/helpers/forum_categorys_helper_spec.rb[1:1]                                        | pending | 0.00001 seconds |
+./spec/helpers/forums_helper_spec.rb[1:1]                                                 | pending | 0.00001 seconds |
+./spec/helpers/images_controller_helper_spec.rb[1:1]                                      | pending | 0.00001 seconds |
+./spec/models/forum_category_spec.rb[1:1]                                                 | passed  | 0.00277 seconds |
+./spec/models/forum_category_spec.rb[1:2]                                                 | passed  | 0.00252 seconds |
+>>>>>>> reworking_routing_through_forum_area
 ./spec/models/forum_post_spec.rb[1:1]                                                     | pending | 0.00001 seconds |
 ./spec/models/forum_thread_spec.rb[1:1]                                                   | pending | 0 seconds       |
 ./spec/models/forum_topic_spec.rb[1:1]                                                    | pending | 0.00005 seconds |
 ./spec/models/image_spec.rb[1:1]                                                          | pending | 0 seconds       |
 ./spec/models/role_spec.rb[1:1]                                                           | pending | 0.00001 seconds |
+<<<<<<< HEAD
 ./spec/models/user_spec.rb[1:1]                                                           | passed  | 0.00591 seconds |
 ./spec/models/user_spec.rb[1:2]                                                           | passed  | 0.02235 seconds |
 ./spec/models/user_spec.rb[1:3]                                                           | passed  | 0.00374 seconds |
 ./spec/models/user_spec.rb[1:4:1]                                                         | passed  | 0.01973 seconds |
 ./spec/models/user_spec.rb[1:4:2]                                                         | passed  | 0.28456 seconds |
 ./spec/views/forum_topic/create.html.haml_spec.rb[1:1]                                    | pending | 0.00001 seconds |
+=======
+./spec/models/user_spec.rb[1:1]                                                           | passed  | 0.0073 seconds  |
+./spec/models/user_spec.rb[1:2]                                                           | passed  | 0.02223 seconds |
+./spec/models/user_spec.rb[1:3]                                                           | passed  | 0.00277 seconds |
+./spec/models/user_spec.rb[1:4:1]                                                         | passed  | 0.02439 seconds |
+./spec/models/user_spec.rb[1:4:2]                                                         | passed  | 0.0195 seconds  |
+./spec/views/forum_topic/create.html.haml_spec.rb[1:1]                                    | pending | 0.00002 seconds |
+>>>>>>> reworking_routing_through_forum_area
 ./spec/views/forum_topic/index.html.haml_spec.rb[1:1]                                     | pending | 0.00001 seconds |
 ./spec/views/forum_topic/new.html.haml_spec.rb[1:1]                                       | pending | 0.00002 seconds |
 ./spec/views/forums/index.html.haml_spec.rb[1:1]                                          | pending | 0 seconds       |
