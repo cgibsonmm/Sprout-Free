@@ -8,18 +8,15 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'support/auth'
-require 'shoulda/matchers'
+require 'support/javascript'
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
-
-
-
+require 'shoulda/matchers'
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     # Choose a test framework:
     with.test_framework :rspec
-
-    # Or, choose all of the above:
     with.library :rails
   end
 end
@@ -57,7 +54,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.include AuthHelpers, type: :feature
-  # config.include JavascriptHelper, type: :feature
+  config.include JavascriptHelper, type: :feature
 
 
   # RSpec Rails can automatically mix in different behaviours to your tests

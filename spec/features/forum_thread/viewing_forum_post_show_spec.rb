@@ -15,9 +15,9 @@ RSpec.feature 'Viewing forum posts(fourm_threads/show)' do
     end
 
     scenario 'User can view a single forum post' do
-      click_link @forum_thread1.topic
+      click_link @forum_thread1.subject
 
-      expect(page).to have_content(@forum_thread1.topic)
+      expect(page).to have_content(@forum_thread1.subject)
       expect(page).to have_content(@forum_thread1.user.username)
       expect(page).to have_content(@forum_post.body)
     end
@@ -26,9 +26,9 @@ RSpec.feature 'Viewing forum posts(fourm_threads/show)' do
   context "when user is not signed in" do
     scenario 'visiter can view single forum post' do
       visit '/forum_topics/1/forum_threads'
-      click_link @forum_thread1.topic
+      click_link @forum_thread1.subject
 
-      expect(page).to have_content(@forum_thread1.topic)
+      expect(page).to have_content(@forum_thread1.subject)
       expect(page).to have_content(@forum_thread1.user.username)
       expect(page).to have_content(@forum_post.body)
     end

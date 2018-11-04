@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'User can create a new thread through forum topic' do
   before do
     @admin = create(:admin_user, username: 'anewu123', email: 'new@email.com')
-    @user = create(:user, id: 2)
+    @user = create(:user, id: 3)
     @forum_topic1 = create(:forum_topic)
   end
 
@@ -20,7 +20,7 @@ RSpec.feature 'User can create a new thread through forum topic' do
       click_link 'New Thread'
 
       fill_in('Title', with: 'This is a new thread')
-      find('#trix-body_trix_input_forum_post').click.set('This is a test body')
+      fill_in_trix_editor('trix-body_trix_input_forum_post', 'This is a test body')
       click_button 'Post New Thread'
 
       expect(page).to have_content('Successfully created a new thread')

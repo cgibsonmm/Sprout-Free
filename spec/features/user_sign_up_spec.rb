@@ -25,7 +25,7 @@ RSpec.feature 'User sign up' do
 
   context 'Validations' do
     before do
-      create(:user)
+      @user = create(:user)
       click_link 'Sign up'
     end
 
@@ -41,7 +41,7 @@ RSpec.feature 'User sign up' do
     end
 
     scenario 'username must be unique' do
-      fill_in 'Username', with: 'testuser'
+      fill_in 'Username', with: @user.username
       fill_in 'Email', with: user_params[:email]
       fill_in 'user_password', with: user_params[:password]
       fill_in 'user_password_confirmation', with: user_params[:password]
