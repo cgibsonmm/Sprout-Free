@@ -1,4 +1,4 @@
-module ForumSubjectHelper
+module ForumTopicHelper
   def form_errors?(subject, thread)
     if subject.errors.any?
       form_error_helper(subject.errors)

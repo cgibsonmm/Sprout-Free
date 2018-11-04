@@ -5,19 +5,19 @@ RSpec.feature 'Admin can delete a subject' do
     @user = create(:user, username: 'useruser', email: 'hello@emsil.com')
     @admin = create(:user, id: 2) # TODO: Admin
     @admin.add_role :admin
-    @subject = create(:forum_subject)
+    @subject = create(:forum_topic)
   end
 
   context 'when signed in as admin' do
     before do
       sign_in_with @admin
-      visit '/forum_subjects'
+      visit '/forum_topics'
     end
 
     scenario 'can delete a subject' do
       click_link 'X'
       expect(page).to have_content('Subject Deleted')
-      expect(page).not_to have_content(@subject.subject_name)
+      expect(page).not_to have_content(@subject.title)
     end
   end
 

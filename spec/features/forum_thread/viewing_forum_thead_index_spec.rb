@@ -4,7 +4,7 @@
 #   before do
 #     @user1 = create(:user)
 #     @user2 = create(:user, email:'testemail2@email.com', username: 'testuser2', id: 2)
-#     @forum_subject = create(:forum_subject)
+#     @forum_topic = create(:forum_topic)
 #     @forum_thread1 = create(:forum_thread)
 #     @forum_thread2 = create(:forum_thread, subject: 'Second Forum Thread', user_id: 2)
 #   end

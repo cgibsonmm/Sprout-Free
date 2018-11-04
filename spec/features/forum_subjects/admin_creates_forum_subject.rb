@@ -8,7 +8,7 @@ RSpec.feature 'Admin creates forum subject' do
   context 'when signed in as admin' do
     before do
       sign_in_with @user
-      visit '/forum_subjects/new'
+      visit '/forum_topics/new'
     end
 
     scenario 'can create a new forum subject' do
@@ -30,7 +30,7 @@ RSpec.feature 'Admin creates forum subject' do
 
   context 'when not signed in as Admin' do
     scenario 'can not create a new forum subject' do
-      visit '/forum_subjects/new'
+      visit '/forum_topics/new'
 
       expect(page).to have_content('You need to sign in')
     end

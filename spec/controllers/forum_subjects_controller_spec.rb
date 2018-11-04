@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ForumSubjectsController, type: :controller do
+RSpec.describe ForumTopicsController, type: :controller do
 
   describe "GET #index" do
     xit "returns http success" do

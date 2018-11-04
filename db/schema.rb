@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_03_140620) do
+ActiveRecord::Schema.define(version: 2018_11_04_130230) do
 
   create_table "forum_categories", force: :cascade do |t|
     t.string "title"
@@ -28,19 +28,19 @@ ActiveRecord::Schema.define(version: 2018_11_03_140620) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "forum_subjects", force: :cascade do |t|
-    t.string "subject_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "position"
-  end
-
   create_table "forum_threads", force: :cascade do |t|
     t.integer "user_id"
     t.string "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "forum_subject_id"
+  end
+
+  create_table "forum_topics", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "position"
   end
 
   create_table "images", force: :cascade do |t|

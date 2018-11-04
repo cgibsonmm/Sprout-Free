@@ -6,13 +6,13 @@
           %h4 Topics
         - if user_signed_in? && current_user.has_role?(:admin)
           %li.ml-auto.admin-link
-            = link_to "New subject", new_forum_subject_path
-      %ul#subjects.list-group.subject-list{"data-url": sort_forum_subjects_path}
-        - @forum_subjects.each do |subject|
+            = link_to "New subject", new_forum_topic_path
+      %ul#subjects.list-group.subject-list{"data-url": sort_forum_topics_path}
+        - @forum_topics.each do |subject|
           %li.list-group-item{id: dom_id(subject)}
-            = link_to subject.subject_name, forum_subject_path(subject)
+            = link_to subject.title, forum_topic_path(subject)
             - if user_signed_in? && current_user.has_role?(:admin)
-              = link_to 'X', forum_subject_path(subject), method: :delete, data: {confirm: 'Are you sure?'}
+              = link_to 'X', forum_topic_path(subject), method: :delete, data: {confirm: 'Are you sure?'}
     .right-area.list-column
       %ul.threads-top-bar
         %li

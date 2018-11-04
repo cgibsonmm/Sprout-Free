@@ -9,7 +9,7 @@ class ForumThreadDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
-    forum_subject: Field::BelongsTo,
+    forum_topic: Field::BelongsTo,
     forum_posts: Field::HasMany,
     id: Field::Number,
     subject: Field::String,
@@ -24,7 +24,7 @@ class ForumThreadDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
-    :forum_subject,
+    :forum_topic,
     :forum_posts,
     :id,
   ].freeze
@@ -33,7 +33,7 @@ class ForumThreadDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
-    :forum_subject,
+    :forum_topic,
     :forum_posts,
     :id,
     :subject,
@@ -46,7 +46,7 @@ class ForumThreadDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
-    :forum_subject,
+    :forum_topic,
     :forum_posts,
     :subject,
   ].freeze

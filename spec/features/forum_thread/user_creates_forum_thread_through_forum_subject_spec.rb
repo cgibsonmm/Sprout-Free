@@ -4,7 +4,7 @@ RSpec.feature 'User can create a new thread through forum subject' do
   before do
     @admin = create(:admin_user, username: 'anewu123', email: 'new@email.com')
     @user = create(:user, id: 2)
-    @forum_subject1 = create(:forum_subject)
+    @forum_topic1 = create(:forum_topic)
   end
 
   context "when user signed in" do
@@ -15,8 +15,8 @@ RSpec.feature 'User can create a new thread through forum subject' do
 
     scenario 'can create a new forum post under a forum subject' do
       click_link 'Forum'
-      click_link @forum_subject1.subject_name
-      expect(page).to have_content(@forum_subject1.subject_name)
+      click_link @forum_topic1.title
+      expect(page).to have_content(@forum_topic1.title)
       click_link 'New Thread'
 
       fill_in('Title', with: 'This is a new thread')

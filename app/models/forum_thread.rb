@@ -12,7 +12,7 @@
 
 class ForumThread < ApplicationRecord
   belongs_to :user
-  belongs_to :forum_subject
+  belongs_to :forum_topic
   has_many :forum_posts, dependent: :destroy
 
   accepts_nested_attributes_for :forum_posts

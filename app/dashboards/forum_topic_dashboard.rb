@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ForumSubjectDashboard < Administrate::BaseDashboard
+class ForumTopicDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,7 +10,7 @@ class ForumSubjectDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     forum_threads: Field::HasMany,
     id: Field::Number,
-    subject_name: Field::String,
+    title: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -23,7 +23,7 @@ class ForumSubjectDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :forum_threads,
     :id,
-    :subject_name,
+    :title,
     :created_at,
   ].freeze
 
@@ -32,7 +32,7 @@ class ForumSubjectDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :forum_threads,
     :id,
-    :subject_name,
+    :title,
     :created_at,
     :updated_at,
   ].freeze
@@ -42,13 +42,13 @@ class ForumSubjectDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :forum_threads,
-    :subject_name,
+    :title,
   ].freeze
 
   # Overwrite this method to customize how forum subjects are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(forum_subject)
-  #   "ForumSubject ##{forum_subject.id}"
+  # def display_resource(forum_topic)
+  #   "ForumTopic ##{forum_topic.id}"
   # end
 end

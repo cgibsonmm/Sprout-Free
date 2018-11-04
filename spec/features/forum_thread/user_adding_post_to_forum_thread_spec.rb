@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Adding Post to a forum thread' do
   before do
     @user = create(:user)
-    @forum_subject = create(:forum_subject)
+    @forum_topic = create(:forum_topic)
     @forum_thread1 = create(:forum_thread)
     @forum_post1 = create(:forum_post)
   end

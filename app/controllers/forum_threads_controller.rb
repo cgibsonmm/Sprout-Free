@@ -2,7 +2,7 @@ class ForumThreadsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_forum_thread, except: [:index, :new, :create]
-  # before_action :set_forum_subject
+  # before_action :set_forum_topic
 
   def index
     # @q = ForumThread.search(params[:q])
@@ -14,14 +14,14 @@ class ForumThreadsController < ApplicationController
   end
 
   def new
-    @forum_subject = ForumSubject.find(params[:forum_subject_id])
-    @forum_thread = @forum_subject.forum_threads.build
+    @forum_topic = ForumTopic.find(params[:forum_topic_id])
+    @forum_thread = @forum_topic.forum_threads.build
     @forum_thread.forum_posts.new
   end
 
   def create
-    @forum_subject = ForumSubject.find(params[:forum_subject_id])
-    @forum_thread = @forum_subject.forum_threads.build(create_params)
+    @forum_topic = ForumTopic.find(params[:forum_topic_id])
+    @forum_thread = @forum_topic.forum_threads.build(create_params)
     @forum_thread.user = current_user
     # @forum_thread = current_user.forum_threads.new(forum_thread_params)
     @forum_thread.forum_posts.first.user_id = current_user.id
@@ -37,8 +37,8 @@ class ForumThreadsController < ApplicationController
 
   private
 
-  # def set_forum_subject
-  #   @forum_subject = ForumSubject.find(params[:forum_subject_id])
+  # def set_forum_topic
+  #   @forum_topic = ForumTopic.find(params[:forum_topic_id])
   # end
 
   def set_forum_thread
@@ -46,6 +46,6 @@ class ForumThreadsController < ApplicationController
   end
 
   def create_params
-    params.require(:forum_thread).permit(:subject, :forum_subject_id, forum_posts_attributes: [:body])
+    params.require(:forum_thread).permit(:subject, :forum_topic_id, forum_posts_attributes: [:body])
   end
 end

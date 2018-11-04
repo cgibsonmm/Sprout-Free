@@ -1,6 +1,6 @@
 module ApplicationHelper
   def forums_controller?
-    controllers = %w[forum_threads forum_subjects forum_posts]
+    controllers = %w[forum_threads forum_topics forum_posts]
     controllers.include?(controller_name)
   end
 

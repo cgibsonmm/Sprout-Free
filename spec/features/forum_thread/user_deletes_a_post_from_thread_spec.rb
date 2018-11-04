@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'deleting a post from forum thread' do
   before do
     @user1 = create(:user)
-    @forum_subject = create(:forum_subject)
+    @forum_topic = create(:forum_topic)
     @forum_thread1 = create(:forum_thread)
     @forum_post1 = create(:forum_post)
     @user2 = create(:user, username: 'test_user_2', email: 'testemail2@email.com', id: '2')

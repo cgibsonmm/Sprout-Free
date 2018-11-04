@@ -1,4 +1,4 @@
-= form_with(model: [@forum_subject, @forum_thread]) do |f|
+= form_with(model: [@forum_topic, @forum_thread]) do |f|
   .form-group
     = f.text_field :subject, label: false, placeholder: 'Title', class: 'form-control string required'
     = f.fields_for :forum_posts do |p|

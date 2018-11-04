@@ -3,7 +3,7 @@
 # RSpec.feature 'User creates new forum thread' do
 #   before do
 #     @user = create(:user)
-#     @subject = create(:forum_subject)
+#     @subject = create(:forum_topic)
 #   end
 #
 #   context 'Signed in user' do
@@ -11,7 +11,7 @@
 #       sign_in_with(@user)
 #       click_link 'Forum'
 #       expect(page).to have_content 'Top Subjects'
-#       click_link @subject.subject_name
+#       click_link @subject.title
 #     end
 #
 #     scenario 'can create a new forum thread' do
@@ -74,14 +74,14 @@
 #       visit '/'
 #       expect(page).to have_content('Sign in')
 #       click_link 'Forum'
-#       click_link @subject.subject_name
+#       click_link @subject.title
 #     end
 #     scenario 'User must be signed in to create a forum thread' do
 #       click_link 'New Thread'
 #
 #       expect(page).to have_content('You need to sign in or sign up before continuing')
 #
-#       visit '/forum_subjects/1/forum_threads/new'
+#       visit '/forum_topics/1/forum_threads/new'
 #       expect(page).to have_content('You need to sign in or sign up before continuing')
 #     end
 #   end

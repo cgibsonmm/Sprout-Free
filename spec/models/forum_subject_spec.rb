@@ -1,16 +1,16 @@
 # == Schema Information
 #
-# Table name: forum_subjects
+# Table name: forum_topics
 #
 #  id           :integer          not null, primary key
 #  position     :integer
-#  subject_name :string
+#  title :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 
 require 'rails_helper'
 
-RSpec.describe ForumSubject, type: :model do
+RSpec.describe ForumTopic, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
