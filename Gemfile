@@ -62,14 +62,21 @@ gem 'local_time'
 gem 'haml-rails'
 
 group :development, :test do
-  gem 'database_cleaner'
-  gem 'rspec-rails', '~> 3.8'
-  gem 'capybara'
-  gem 'factory_bot_rails'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.8'
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 group :development do

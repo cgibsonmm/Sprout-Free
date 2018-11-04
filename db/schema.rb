@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_153026) do
+ActiveRecord::Schema.define(version: 2018_11_04_163230) do
+
+  create_table "forum_Threads", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "subject"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "forum_topic_id"
+  end
+
+  create_table "forum_categories", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_forum_categories_on_user_id"
+  end
 
   create_table "forum_posts", force: :cascade do |t|
     t.integer "forum_thread_id"
@@ -20,19 +36,11 @@ ActiveRecord::Schema.define(version: 2018_10_31_153026) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "forum_subjects", force: :cascade do |t|
-    t.string "subject_name"
+  create_table "forum_topics", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
-  end
-
-  create_table "forum_threads", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "subject"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "forum_subject_id"
   end
 
   create_table "images", force: :cascade do |t|

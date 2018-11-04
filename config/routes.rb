@@ -1,20 +1,23 @@
 Rails.application.routes.draw do
+  get 'forums/index'
   namespace :admin do
       resources :users
       resources :forum_posts
       resources :forum_threads
-      resources :forum_subjects
+      resources :forum_topics
       resources :images
-      
+
       root to: "users#index"
     end
 
+  resources :forums, only: [:index]
+  resources :forum_categories
 
   devise_for :users
 
   resources :images, only: [:create]
 
-  resources :forum_subjects, shallow: true do
+  resources :forum_topics, shallow: true do
     collection do
       patch :sort
     end

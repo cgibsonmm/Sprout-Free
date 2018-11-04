@@ -1,12 +1,20 @@
-   # Specify service dependencies here if necessary
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+       - image: circleci/ruby:2.4.1-node-browsers
+
+      # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      - image: circleci/postgres:9.6-alpine
-        POSTGRES_DB: myapp-test
-        POSTGRES_USER: myapp-user
+      # - image: circleci/postgres:9.4
 
-
-    working_directory: ~/myapp
+    working_directory: ~/repo
 
     steps:
       - checkout
@@ -21,11 +29,11 @@
       - run:
           name: install dependencies
           command: |
-            bundle install --without development --jobs=4 --retry=3 --path vendor/bundle
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
           paths:
-            - ./venv
+            - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
@@ -39,10 +47,11 @@
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 
-            bundle exec rspec --format documentation \
+            bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
-                            -- $(sed -e 's/\n/\\n/' -e 's/ /\ /' <<< "${TEST_FILES}")
+                            --format progress \
+                            $TEST_FILES
 
       # collect reports
       - store_test_results:

@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.feature 'user can edit their thread' do
   before do
     @user = create(:user)
-    @subject = create(:forum_subject)
+    @topic = create(:forum_topic)
     @thread = create(:forum_thread)
   end
 
   context 'when user signed in' do
     before do
       sign_in_with(@user)
-      visit '/forum_subject/1/forum_thread'
+      visit '/forum_topic/1/forum_thread'
     end
 
     scenario 'can edit their thread' do

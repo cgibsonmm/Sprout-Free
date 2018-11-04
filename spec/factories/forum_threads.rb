@@ -13,7 +13,7 @@
 FactoryBot.define do
   factory :forum_thread do
     user_id { 1 }
-    forum_subject_id { 1 }
-    subject { 'First Forum Thread' }
+    forum_topic_id { 1 }
+    subject { Faker::Lorem.sentence }
   end
 end
