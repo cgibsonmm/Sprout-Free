@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User can create a new thread through forum subject' do
+RSpec.feature 'User can create a new thread through forum topic' do
   before do
     @admin = create(:admin_user, username: 'anewu123', email: 'new@email.com')
     @user = create(:user, id: 2)
@@ -13,7 +13,7 @@ RSpec.feature 'User can create a new thread through forum subject' do
       visit '/'
     end
 
-    scenario 'can create a new forum post under a forum subject' do
+    scenario 'can create a new forum post under a forum topic' do
       click_link 'Forum'
       click_link @forum_topic1.title
       expect(page).to have_content(@forum_topic1.title)

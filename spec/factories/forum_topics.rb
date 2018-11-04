@@ -11,6 +11,6 @@
 
 FactoryBot.define do
   factory :forum_topic do
-    title { 'This is a subject' }
+    title { Faker::Lorem.sentence }
   end
 end

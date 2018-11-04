@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'user can edit their thread' do
   before do
     @user = create(:user)
-    @subject = create(:forum_topic)
+    @topic = create(:forum_topic)
     @thread = create(:forum_thread)
   end
 
