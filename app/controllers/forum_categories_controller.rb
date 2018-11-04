@@ -12,9 +12,13 @@ class ForumCategoriesController < ApplicationController
 
   def create
     @forum_category = current_user.forum_categories.build(create_params)
-    @forum_category.save
-    flash[:success] = 'Successfully created a new category'
-    redirect_to @forum_category
+    if @forum_category.save
+      flash[:success] = 'Successfully created a new category'
+      redirect_to @forum_category
+    else
+      flash[:error] = @forum_category.errors.full_messages
+      render 'new'
+    end
   end
 
   def show
@@ -27,6 +31,9 @@ class ForumCategoriesController < ApplicationController
     if @forum_category.update(update_params)
       flash[:success] = "Successfully updated category"
       redirect_to @forum_category
+    else
+      flash[:error] = @forum_category.error.full_messages
+      render 'edit'
     end
   end
 
@@ -34,6 +41,9 @@ class ForumCategoriesController < ApplicationController
     if @forum_category.destroy
       flash[:success] = "Successfully deleted category"
       redirect_to forum_categories_path
+    else
+      flash[:error] = 'Error please view logs'
+      render 'edit'
     end
   end
 
