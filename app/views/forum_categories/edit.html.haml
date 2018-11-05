@@ -1,5 +1,5 @@
 Edit
 = render 'form'
 
-- if current_user.is_admin?
+- if user_admin?
   = link_to 'Delete category', @forum_category, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }
