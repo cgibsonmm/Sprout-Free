@@ -1,4 +1,4 @@
-class CreateForumTopic < ActiveRecord::Migration[5.2]
+class CreateForumTopics < ActiveRecord::Migration[5.2]
   def change
     create_table :forum_topics do |t|
       t.string :title
