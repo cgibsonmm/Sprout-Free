@@ -3,7 +3,7 @@
   %nav#logo-bar.bg-light.navbar.navbar-light.navbar-expand-lg.mx-3
     = link_to root_path, class: 'navbar-brand' do
       .logo
-        = image_tag 'Logo-white-bg.png', id: 'logo-2'
+        -# = image_tag 'Logo-white-bg.png', id: 'logo-2'
         .tag-line.ml-2
           .first Canada's Legalized
           .second Growing Community
@@ -17,9 +17,9 @@
           = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link mr-2'
       - else
         %li.nav-item
-          = link_to 'Log In', new_user_session_path, class: 'btn btn-secondary nav-link mr-2'
-        %li.nav-item
           = link_to 'Grow With Us', new_user_registration_path, class: 'btn btn-success nav-link mr-2'
+        %li.nav-item
+          = link_to 'Log In', new_user_session_path, class: 'btn btn-secondary nav-link mr-2'
   %nav#links-bar.bg-light.navbar.navbar-light.navbar-expand-lg.mx-3
     #navbarSupportedContent.collapse.navbar-collapse.not-logo-links
       %ul#site-links.navbar-nav.mx-auto.justified
