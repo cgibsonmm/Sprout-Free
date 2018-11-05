@@ -72,13 +72,13 @@
       text-shadow: 1px 1px 2px rgb(247, 225, 223);
 
       .nav-item {
-        padding: 5px 20px;
+        padding: 4px 20px;
         border-right: 2px solid rgb(222, 62, 62);
         box-shadow: 0 90 2px 1px rgb(119, 119, 119);
 
         .nav-link {
           text-align: center;
-          font-size: 1.1rem;
+          font-size: 1rem;
           padding-top: 0;
           padding-bottom: 0;
         }
@@ -99,6 +99,7 @@
     max-height: none;
   }
 }
+
 @media (max-width: 1000px) {
   #logo-2 {
     top:0 !important;
@@ -106,8 +107,8 @@
   .login-links-top{
     display: none;
   }
-  .login-links-botom{
-    display: inline;
+  #login-links-botom{
+    display: block;
   }
 }
 

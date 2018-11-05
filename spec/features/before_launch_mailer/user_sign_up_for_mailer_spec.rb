@@ -5,7 +5,7 @@ RSpec.feature 'Sign up for updates mailer' do
     visit root_path
   end
 
-  scenario 'User can sign up for updates mailer' do
+  pending 'User can sign up for updates mailer' do
     fill_in 'Email', with: 'Myemail@gmail.com'
     click_on 'Notify Me!'
 

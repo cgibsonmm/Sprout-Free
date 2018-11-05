@@ -17,7 +17,6 @@ RSpec.feature "edit forum category" do
 
     scenario  "can edit a forum category" do
       click_link @category.title
-      expect(page).to have_content('show')
       click_link 'Edit'
       fill_in 'Title', with: @updates
       click_on'Update Forum category'

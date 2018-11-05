@@ -12,9 +12,9 @@
     %ul.navbar-nav.ml-auto.login-links-top
       - if user_signed_in?
         %li.nav-item.user-name
-          = link_to fa_icon('user',text: current_user.username), edit_user_registration_path, class: 'nav-link mr-2'
+          = link_to fa_icon('user',text: current_user.username), edit_user_registration_path, class: 'btn btn-success nav-link mr-2'
         %li.nav-item
-          = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link mr-2'
+          = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger nav-link mr-2'
       - else
         %li.nav-item
           = link_to 'Grow With Us', new_user_registration_path, class: 'btn btn-success nav-link mr-2'
@@ -40,9 +40,9 @@
       %ul.navbar-nav.ml-auto#login-links-botom
         - if user_signed_in?
           %li.nav-item.user-name
-            = link_to fa_icon('user',text: current_user.username), edit_user_registration_path, class: 'nav-link mr-2'
+            = link_to fa_icon('user',text: current_user.username), edit_user_registration_path, class: 'btn btn-success nav-link mr-2'
           %li.nav-item
-            = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link mr-2'
+            = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger nav-link mr-2'
         - else
           %li.nav-item
             = link_to 'Log In', new_user_session_path, class: 'btn btn-secondary nav-link mr-2'

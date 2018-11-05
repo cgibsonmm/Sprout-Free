@@ -16,8 +16,8 @@ RSpec.feature 'Admin can delete a subject' do
     end
 
     scenario 'can delete a subject' do
-      click_link 'X'
-      expect(page).to have_content('Subject Deleted')
+      click_link 'Delete'
+      expect(page).to have_content('Topic Deleted')
       expect(page).not_to have_content(@subject.title)
     end
   end

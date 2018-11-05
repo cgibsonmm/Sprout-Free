@@ -17,6 +17,6 @@ class ForumThread < ApplicationRecord
 
   accepts_nested_attributes_for :forum_posts
 
-  validates :subject, presence: true, length: { in: 3..50 }
+  validates :subject, presence: true, length: { minimum: 3 }
   validates_associated :forum_posts
 end
