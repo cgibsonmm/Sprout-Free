@@ -72,17 +72,17 @@
 #   context 'No user signed in' do
 #     before do
 #       visit '/'
-#       expect(page).to have_content('Sign in')
+#       expect(page).to have_content('Log In')
 #       click_link 'Forum'
 #       click_link @topic.title
 #     end
 #     scenario 'User must be signed in to create a forum thread' do
 #       click_link 'New Thread'
 #
-#       expect(page).to have_content('You need to sign in or sign up before continuing')
+#       expect(page).to have_content('You need to Log In or sign up before continuing')
 #
 #       visit '/forum_topics/1/forum_threads/new'
-#       expect(page).to have_content('You need to sign in or sign up before continuing')
+#       expect(page).to have_content('You need to Log In or sign up before continuing')
 #     end
 #   end
 # end

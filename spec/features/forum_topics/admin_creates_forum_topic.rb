@@ -32,7 +32,7 @@ RSpec.feature 'Admin creates forum subject' do
     scenario 'can not create a new forum subject' do
       visit '/forum_topics/new'
 
-      expect(page).to have_content('You need to sign in')
+      expect(page).to have_content('You need to Log In')
     end
   end
 end
