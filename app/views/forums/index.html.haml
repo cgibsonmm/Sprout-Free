@@ -2,18 +2,18 @@
   = link_to 'New Category', new_forum_category_path
 
 #forums-page
-  %ul.list-group-flush.categories-list
+  %ul.list-group.categories-list
     - @categories.each do |category|
       %li.list-group-item
         %h3
           = link_to category.title, forum_category_path(category)
           - if user_admin?
             = link_to 'New Topic', new_forum_category_forum_topic_path(category)
-        %ul
+        %ul.list-group-flush
           - category.forum_topics.each do |topic|
             %li.list-group-item
               = link_to topic.title, forum_topic_path(topic)
-          Displaying
-          = category.forum_topics.count
-          of
-          = category.forum_topics.count
+        Displaying
+        = category.forum_topics.count
+        of
+        = category.forum_topics.count

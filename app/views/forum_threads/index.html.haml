@@ -1,5 +1,26 @@
-.forum-area
-  %h3.text-center Sprout Free Forum
-  -# = render 'topbar', locals: @fourm_threads
-  %ul.list-group
-    = render @forum_threads, class: 'forum-group'
+%table.table
+  %th
+    %tr
+      %th{'scope': 'col'}
+        Title
+      %th{'scope': 'col'}
+        Username
+      %th{'scope': 'col'}
+        Created At
+      %th{'scope': 'col'}
+        Likes
+      %th{'scope': 'col'}
+        Comments
+  %tb
+    - @forum_threads.each do |thread|
+      %tr
+        %th{'scope': 'row'}
+          = thread.subject
+        %td
+          = thread.user.username
+        %td
+          = thread.created_at
+        %td
+          Like placeholder
+        %td
+          = thread.forum_posts.count - 1

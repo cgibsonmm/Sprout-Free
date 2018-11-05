@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :forum_threads, only: [:index]
+
   devise_for :users
 
   resources :ticklers, only: [:new, :create]

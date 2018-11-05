@@ -6,7 +6,9 @@
   %li.nav-item.nav-link.ml-auto
     = link_to 'Top Threads', "#", class: 'nav-link'
   %li.nav-item.nav-link
-    = link_to 'Trending threads', '#', class: 'nav-link'
+    = link_to 'Trending Threads', '#', class: 'nav-link'
+  %li.nav-item.nav-link
+    = link_to 'Newest Threads', forum_threads_path, class: 'nav-link'
   %li.nav-item.nav-link.ml-auto
     = link_to "#", class: 'nav-link' do
       = fa_icon('search', text: 'Search')

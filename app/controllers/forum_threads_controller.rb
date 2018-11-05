@@ -5,8 +5,7 @@ class ForumThreadsController < ApplicationController
   # before_action :set_forum_topic
 
   def index
-    # @q = ForumThread.search(params[:q])
-    # @forum_threads = @q.result(distinct: true).includes(:user)
+    @forum_threads = ForumThread.order('created_at DESC')
   end
 
   def show
