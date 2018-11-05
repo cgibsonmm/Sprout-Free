@@ -15,14 +15,14 @@
       .white
       .red
     .container-fluid
-      = render 'parts/header'
-      = render 'parts/navbar'
+      -# = render 'parts/header'
+      -# = render 'parts/navbar'
       = render 'parts/flash'
       .dynamic-content.mx-3
         .current-controller-area.mt-3
-          - if forums_controller?
+          - if forum_area?
             = render 'parts/forum_parts/topbar'
           = yield
         .side-bar.mt-3
           = render 'user/info'
-      = render 'parts/footer'
+      -# = render 'parts/footer'

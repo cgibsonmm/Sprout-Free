@@ -1,14 +1,24 @@
 // Place all the styles related to the Forums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#forums-page{
-  width:100%;
 
-  .categories-list{
-    width: 50%;
+#forums-nav {
+  background-color: rgb(8, 86, 125);
+  .nav-link{
+    color: rgb(255, 255, 255);
+    font-family: "Raleway" !important;
+    font-weight: bold;
+  }
+}
+
+#forums-page {
+  width: 100%;
+
+  .categories-list {
+    width: 75%;
     // .list-group-item{
     //   border: none;
     // }
-    li{ }
+    li {}
   }
 }
