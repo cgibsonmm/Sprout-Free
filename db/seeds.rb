@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(username: 'cgibsonmm', email: 'cgibsonmm@gmail.com', password: 'testpass', confirmed_at: Time.now)
-@user = User.find(2)
+@user = User.find(1)
 @user.add_role(:admin)
 
 category_titles = ['Site Happenings', 'Growing Your Own Cannabis']
