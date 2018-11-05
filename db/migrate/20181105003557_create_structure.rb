@@ -1,7 +1,7 @@
 class CreateStructure < ActiveRecord::Migration[5.2]
   def change
     create_table "forum_Threads" do |t|
-      t.integer "user_id"
+      t.integer "user_id", foreign_key: true
       t.string "subject"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
@@ -10,15 +10,15 @@ class CreateStructure < ActiveRecord::Migration[5.2]
 
     create_table "forum_categories" do |t|
       t.string "title"
-      t.integer "user_id"
+      t.integer "user_id", foreign_key: true
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
       t.index ["user_id"], name: "index_forum_categories_on_user_id"
     end
 
     create_table "forum_posts" do |t|
-      t.integer "forum_thread_id"
-      t.integer "user_id"
+      t.integer "forum_thread_id", foreign_key: true
+      t.integer "user_id", foreign_key: true
       t.text "body"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
@@ -29,8 +29,8 @@ class CreateStructure < ActiveRecord::Migration[5.2]
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
       t.integer "position"
-      t.integer "forum_category_id"
-      t.integer "user_id"
+      t.integer "forum_category_id", foreign_key: true
+      t.integer "user_id", foreign_key: true
     end
 
     create_table "images" do |t|
