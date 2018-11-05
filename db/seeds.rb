@@ -11,3 +11,8 @@ category_titles = ['Site Happenings', 'Growing Your Own Cannabis']
 category_titles.each do |title|
   ForumCategory.create(user_id: 1, title: title)
 end
+
+User.create(username: 'testseed', email: 'test@email.com', password: 'testpass', confirmed_at: Time.now)
+User.create(username: 'cgibsonmm', email: 'cgibsonmm@gmail.com', password: 'testpass', confirmed_at: Time.now)
+@user = User.find(2)
+@user.add_role(:admin)

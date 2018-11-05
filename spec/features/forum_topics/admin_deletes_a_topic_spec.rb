@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Admin can delete a subject' do
   before do
     @user = create(:user, username: 'useruser', email: 'hello@emsil.com')
+    @cat = create(:forum_category)
     @admin = create(:user, id: 2) # TODO: Admin
     @admin.add_role :admin
     @subject = create(:forum_topic)
@@ -11,7 +12,7 @@ RSpec.feature 'Admin can delete a subject' do
   context 'when signed in as admin' do
     before do
       sign_in_with @admin
-      visit '/forum_topics'
+      visit '/forum_topics/1'
     end
 
     scenario 'can delete a subject' do

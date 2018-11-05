@@ -16,7 +16,7 @@
 class ForumCategory < ApplicationRecord
   resourcify
   belongs_to :user
-  has_many :forum_topics, dependent: :delete_all
+  has_many :forum_topics
 
   validates :title, presence: true, length: { minimum: 3 }
 end

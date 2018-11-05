@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Viewing forum posts(fourm_threads/show)' do
   before do
     @user = create(:user)
+    @cat = create(:forum_category)
     @forum_topic = create(:forum_topic)
     @forum_thread1 = create(:forum_thread)
     @forum_post = create(:forum_post)

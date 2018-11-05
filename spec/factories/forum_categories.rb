@@ -16,6 +16,6 @@
 FactoryBot.define do
   factory :forum_category do
     title { Faker::Cannabis.medical_use }
-    user { nil }
+    user_id { 1 }
   end
 end
