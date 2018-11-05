@@ -1,6 +1,7 @@
 class ForumThreads::ForumPostsController < ApplicationController
   load_and_authorize_resource
   before_action :set_forum_thread, only: [:create]
+  before_action :set_forum_post, only: [:edit, :update]
   # before_action :set_forum_post, only: [:destroy]
 
   def create
@@ -13,6 +14,19 @@ class ForumThreads::ForumPostsController < ApplicationController
     else
       flash[:error] = @forum_post.errors.full_messages
       redirect_to @forum_thread
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @forum_post.update(update_params)
+      flash[:success] = 'Updated Post'
+      redirect_to forum_thread_path(@forum_post.forum_thread_id)
+    else
+      flash[:alert] = @forum_post.errors.full_messages
+      render 'edit'
     end
   end
 
@@ -30,11 +44,16 @@ class ForumThreads::ForumPostsController < ApplicationController
 
   private
 
-  # def set_forum_post
-  # end
+  def set_forum_post
+    @forum_post = ForumPost.find(params[:id])
+  end
 
   def set_forum_thread
     @forum_thread = ForumThread.find(params[:forum_thread_id])
+  end
+
+  def update_params
+    params.require(:forum_post).permit(:body)
   end
 
   def forum_post_params

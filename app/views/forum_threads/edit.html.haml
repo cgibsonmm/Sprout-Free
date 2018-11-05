@@ -1,0 +1,8 @@
+= form_with(model: [@forum_topic, @forum_thread]) do |f|
+  .form-group
+    = f.text_field :subject, label: false, placeholder: 'Title', class: 'form-control string required'
+    = f.fields_for :forum_posts do |p|
+      .field.mt-3
+        = p.trix_editor :body, id: 'trix-body'
+        .form-actions.mt-2
+          = f.submit class: 'btn btn-success ml-auto'

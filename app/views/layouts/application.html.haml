@@ -23,7 +23,6 @@
           - if forums_controller?
             = render 'parts/forum_parts/topbar'
           = yield
-        -# TODO: Admin or base user
-        -# .side-bar.mt-3
-        -#   = render 'user/info'
-      -# = render 'parts/footer'
+        .side-bar.mt-3
+          = render 'user/info'
+      = render 'parts/footer'

@@ -1,0 +1,5 @@
+= simple_form_for([@forum_category, @forum_topic]) do |f|
+  = f.input :title, label: false, placeholder: 'Title'
+  = f.submit class: 'btn btn-success'
+
+= link_to 'Back', forums_path 

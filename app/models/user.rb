@@ -40,21 +40,28 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
+  after_create :assign_default_role
   # Validations
   validates_with UsernameValidator
   username_format = /\A[a-zA-Z]+[a-zA-z0-9]+\z/
   validates :username, format: {with: username_format}
-  validates :username, presence: true, length: { in: (4..13) }
+  validates :username, presence: true, length: { in: (3..20) }
   validates :username, uniqueness: true
 
   # Assosations
-  has_many :forum_threads, dependent: :destroy
-  has_many :forum_posts, dependent: :destroy
+  has_many :forum_categories
+  has_many :forum_topics, through: :forum_categories
+  has_many :forum_threads, through: :forum_topics, dependent: :destroy
+  has_many :forum_posts, through: :forum_threads, dependent: :destroy
   has_many :forum_post_photos, dependent: :destroy
 
 
-  after_create :assign_default_role
+
   def assign_default_role
-    self.add_role(:newuser) if self.roles.blank?
+    self.add_role(:new_user) if self.roles.blank?
+  end
+
+  def is_new_user?
+    has_role?(:new_user)
   end
 end

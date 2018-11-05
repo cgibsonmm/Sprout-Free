@@ -1,0 +1,29 @@
+-# .card
+-#   .forum-content
+-#     .left-area.list-column
+-#       %ul.threads-top-bar
+-#         %li.ml-2
+-#           %h4 Topics
+-#         - if user_signed_in? && current_user.has_role?(:admin)
+-#           %li.ml-auto.admin-link
+-#             = link_to "New Thread subject", new_forum_topic_forum_thread_path(@forum_topic)
+-#       %ul#subjects.list-group.subject-list{"data-url": sort_forum_topics_path}
+-#         - @forum_topics.each do |subject|
+-#           %li.list-group-item{id: dom_id(subject)}
+-#             = link_to subject.title, forum_topic_path(subject)
+-#             - if user_signed_in? && current_user.has_role?(:admin)
+-#               = link_to 'X', forum_topic_path(subject), method: :delete, data: {confirm: 'Are you sure?'}
+-#     .right-area.list-column
+-#       %ul.threads-top-bar
+-#         %li
+-#           %h4
+-#             = link_to 'Newest Thread', "#"
+-#         %li
+-#           %h4
+-#             = link_to "Top Threads", "#"
+-#       - @forum_threads.each do |thread|
+-#         %ul.list-group.threads-list
+-#           %li.list-group-item
+-#             = link_to "#" do
+-#               = image_tag thread.user.gravatar_url, class: 'forum-avatar'
+-#             = link_to thread.subject,  forum_thread_path(thread)

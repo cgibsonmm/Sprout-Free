@@ -1,29 +1,21 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'simplecov'
+SimpleCov.start 'rails'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'support/auth'
+require 'support/javascript'
+
+
 # Add additional requires below this line. Rails is not loaded until this point!
-
-module AuthHelpers
-  def create_user_and_sign_in
-    @user = create(:user)
-  end
-
-  def sign_in_with(user)
-    visit '/'
-    first(:link, 'Log In').click
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
-  end
-end
-
-
+require 'shoulda/matchers'
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
+    # Choose a test framework:
     with.test_framework :rspec
     with.library :rails
   end
@@ -60,10 +52,10 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   config.include AuthHelpers, type: :feature
-  # config.include JavascriptHelper, type: :feature
+  config.include JavascriptHelper, type: :feature
 
 
   # RSpec Rails can automatically mix in different behaviours to your tests

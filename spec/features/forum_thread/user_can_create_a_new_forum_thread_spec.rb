@@ -3,26 +3,26 @@
 # RSpec.feature 'User creates new forum thread' do
 #   before do
 #     @user = create(:user)
-#     @subject = create(:forum_subject)
+#     @topic = create(:forum_topic)
 #   end
 #
 #   context 'Signed in user' do
 #     before do
 #       sign_in_with(@user)
 #       click_link 'Forum'
-#       expect(page).to have_content 'Top Subjects'
-#       click_link @subject.subject_name
+#       expect(page).to have_content 'Top topics'
+#       click_link @topic.title
 #     end
 #
 #     scenario 'can create a new forum thread' do
 #       click_link 'New Thread'
 #
-#       fill_in("Title", with: 'This is a subject')
+#       fill_in("Title", with: 'This is a topic')
 #       find('trix-editor').click.set('This is a test body')
 #       click_button 'Post New Thread'
 #
 #       expect(page).to have_content('Successfully created a new thread')
-#       expect(page).to have_content('This is a subject')
+#       expect(page).to have_content('This is a topic')
 #       expect(page).to have_content('This is a test body')
 #     end
 #
@@ -33,7 +33,7 @@
 #       fill_in('body', with:'')
 #       click_button 'Post New Thread'
 #
-#       expect(page).to have_content("Subject can't be blank")
+#       expect(page).to have_content("topic can't be blank")
 #     end
 #
 #     scenario 'forum thread title must be greater than 3 chars' do
@@ -43,7 +43,7 @@
 #       fill_in('body', with:'')
 #       click_button 'Post New Thread'
 #
-#       expect(page).to have_content("Subject is too short")
+#       expect(page).to have_content("topic is too short")
 #     end
 #
 #     scenario 'forum thread title can not be greater than 50 chars' do
@@ -53,7 +53,7 @@
 #       fill_in('body', with:'')
 #       click_button 'Post New Thread'
 #
-#       expect(page).to have_content("Subject is too long")
+#       expect(page).to have_content("topic is too long")
 #     end
 #
 #     scenario 'forum thread must have a body' do
@@ -72,17 +72,17 @@
 #   context 'No user signed in' do
 #     before do
 #       visit '/'
-#       expect(page).to have_content('Sign in')
+#       expect(page).to have_content('Log In')
 #       click_link 'Forum'
-#       click_link @subject.subject_name
+#       click_link @topic.title
 #     end
 #     scenario 'User must be signed in to create a forum thread' do
 #       click_link 'New Thread'
 #
-#       expect(page).to have_content('You need to sign in or sign up before continuing')
+#       expect(page).to have_content('You need to Log In or sign up before continuing')
 #
-#       visit '/forum_subjects/1/forum_threads/new'
-#       expect(page).to have_content('You need to sign in or sign up before continuing')
+#       visit '/forum_topics/1/forum_threads/new'
+#       expect(page).to have_content('You need to Log In or sign up before continuing')
 #     end
 #   end
 # end

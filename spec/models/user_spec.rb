@@ -79,10 +79,10 @@ RSpec.describe User, type: :model do
    end
 
    it 'sends the email to the right email' do
-     user = create(:user)
+     @user = create(:user, confirmed_at: '')
 
      confirmation_email = Devise.mailer.deliveries.last
-     expect(user.email).to eq confirmation_email.to[0]
+     expect(@user.email).to eq confirmation_email.to[0]
    end
  end
 end

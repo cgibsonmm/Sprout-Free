@@ -1,0 +1,8 @@
+%h2 Top Categories
+%hr
+- if user_admin?
+  = link_to 'New category', new_forum_category_path
+%ul.list-group
+  - @forum_categories.each do |category|
+    %li.list-group-item
+      = link_to category.title, forum_category_path(category)

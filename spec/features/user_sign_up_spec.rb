@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User sign up' do
+RSpec.feature 'User Grow With Us' do
   let(:user_params) do
     { username: 'testuser1',
       email: 'test@email.com',
@@ -11,8 +11,8 @@ RSpec.feature 'User sign up' do
     visit '/'
   end
 
-  scenario 'website visitor can sign up for an account' do
-    click_link 'Grow With Us'
+  scenario 'website visitor can Grow With Us for an account' do
+    first(:link, 'Grow With Us').click
 
     fill_in 'Username', with: 'testuser2'
     fill_in 'Email', with: 'testemail@gmail.com'
@@ -25,8 +25,8 @@ RSpec.feature 'User sign up' do
 
   context 'Validations' do
     before do
-      create(:user)
-      click_link 'Sign up'
+      @user = create(:user)
+      first(:link, 'Grow With Us').click
     end
 
     scenario 'username must be present' do
@@ -41,7 +41,7 @@ RSpec.feature 'User sign up' do
     end
 
     scenario 'username must be unique' do
-      fill_in 'Username', with: 'testuser'
+      fill_in 'Username', with: @user.username
       fill_in 'Email', with: user_params[:email]
       fill_in 'user_password', with: user_params[:password]
       fill_in 'user_password_confirmation', with: user_params[:password]
