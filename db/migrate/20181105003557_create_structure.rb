@@ -5,7 +5,7 @@ class CreateStructure < ActiveRecord::Migration[5.2]
       t.string "subject"
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
-      t.integer "forum_topic_id"
+      t.integer "forum_topic_id", foreign_key: true
     end
 
     create_table "forum_categories" do |t|
