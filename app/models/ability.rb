@@ -5,7 +5,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.is_admin?
       can :manage, :all
-    elsif user.is_new_user?
+    elsif user
       can :manage, ForumThread, user_id: user.id
       can :manage, ForumPost, user_id: user.id
       can :read, :all

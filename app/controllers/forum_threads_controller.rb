@@ -35,6 +35,12 @@ class ForumThreadsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   # def set_forum_topic

@@ -5,12 +5,10 @@
   = local_time @forum_thread.created_at
   by
   = @forum_thread.user.username
-
-
+  = @forum_thread.user.id
+  = @current_user.id
 %hr
--# - @forum_thread.forum_posts.each do |post|
--#    post.files.each do |photo|
--#     = photoa
+
 = render @forum_thread.forum_posts
 
 

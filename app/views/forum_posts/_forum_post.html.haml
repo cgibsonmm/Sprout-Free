@@ -1,3 +1,7 @@
+- if user_admin? || user_signed_in? && current_user.id == @forum_thread.user_id
+  - if @forum_thread.forum_posts.first == forum_post
+    = link_to 'edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
+
 - unless @forum_thread.forum_posts.first == forum_post
   %p.text-muted
     Post by:
