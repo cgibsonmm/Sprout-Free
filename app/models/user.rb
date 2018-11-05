@@ -45,7 +45,7 @@ class User < ApplicationRecord
   validates_with UsernameValidator
   username_format = /\A[a-zA-Z]+[a-zA-z0-9]+\z/
   validates :username, format: {with: username_format}
-  validates :username, presence: true, length: { in: (4..13) }
+  validates :username, presence: true, length: { in: (3..20) }
   validates :username, uniqueness: true
 
   # Assosations
