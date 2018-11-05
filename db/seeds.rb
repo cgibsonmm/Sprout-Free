@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+category_titles = ['Site Happenings', 'Growing Your Own Cannabis']
+
+# Seed basic categories
+category_titles.each do |title|
+  ForumCategory.create(user_id: 1, title: title)
+end

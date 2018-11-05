@@ -1,2 +1,12 @@
 - if user_admin?
   = link_to 'New Category', new_forum_category_path
+
+%ul.list-group
+  - @categories.each do |category|
+    %li.list-group-item
+      %h3
+        = link_to category.title, forum_category_path(category)
+      %ul.list-group
+        - category.forum_topics.each do |topic|
+          %li.list-group-item
+            = link_to topic.title, forum_topic_path(topic)

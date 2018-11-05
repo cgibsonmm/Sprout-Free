@@ -11,20 +11,21 @@ Rails.application.routes.draw do
     end
 
   resources :forums, only: [:index]
-  resources :forum_categories
+  
+  resources :forum_categories do
+    resources :forum_topics, shallow: true do
+      collection do
+        patch :sort
+      end
+      resources :forum_threads do
+        resources :forum_posts, module: :forum_threads
+      end
+    end
+  end
 
   devise_for :users
 
   resources :images, only: [:create]
-
-  resources :forum_topics, shallow: true do
-    collection do
-      patch :sort
-    end
-    resources :forum_threads do
-      resources :forum_posts, module: :forum_threads
-    end
-  end
 
   root "home#index"
   get 'home/index'
