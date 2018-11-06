@@ -10,6 +10,8 @@ gem "administrate"
 gem 'cancancan'
 gem 'rolify'
 
+gem 'loaf'
+
 gem 'jquery-rails'
 gem 'acts_as_list'
 gem 'gon'
@@ -60,11 +62,6 @@ gem "aws-sdk-s3", "~> 1.2"
 gem 'jquery-fileupload-rails'
 gem 'local_time'
 gem 'haml-rails'
-
-group :test do
-  gem 'shoulda-matchers', '4.0.0.rc1'
-  gem 'rails-controller-testing'
-end
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

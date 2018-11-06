@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #forums-nav {
-  background-color: rgb(8, 86, 125);
-  .nav-link{
+  background-color: rgb(23, 23, 23);
+
+  .nav-link {
     color: rgb(255, 255, 255);
     font-family: "Raleway" !important;
     font-weight: bold;
@@ -15,10 +16,47 @@
   width: 100%;
 
   .categories-list {
-    width: 75%;
-    // .list-group-item{
-    //   border: none;
-    // }
-    li {}
+    width: 100%;
+
+    ul {
+      padding-left: 15px;
+    }
+
+    .category-item {
+      border-bottom: 3px solid rgb(8, 86, 125);
+
+      .list-group-item{
+        display: flex;
+        align-items: center;
+
+        .category-title {
+          padding-left: 10px;
+          font-weight: bold;
+          color: rgb(9, 105, 140);
+          text-decoration: underline;
+        }
+      }
+
+
+      .topic-link {
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: none !important;
+        }
+      }
+    }
+
+    .topic-count {
+      padding-left: 10px;
+      font-size: 0.8rem;
+      color: rgb(101, 101, 101);
+    }
+  }
+}
+@media(max-width:800px) {
+  #forums-page .categories-list {
+    width: 100%;
   }
 }

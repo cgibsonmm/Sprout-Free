@@ -15,7 +15,7 @@
     - @forum_threads.each do |thread|
       %tr
         %th{'scope': 'row'}
-          = thread.subject
+          = link_to thread.subject, forum_thread_path(thread)
         %td
           = thread.user.username
         %td
