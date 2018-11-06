@@ -19,7 +19,7 @@ RSpec.feature 'deleting a post from forum thread' do
     end
 
     scenario 'a user can delete their own post from thread' do
-      click_link 'X'
+      click_link 'Delete'
       expect(page).to have_content('Post Deleted')
       expect(page).not_to have_content('Hey this is user2')
     end
