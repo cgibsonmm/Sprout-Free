@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :images
+  
   resources :forum_threads, only: [:index]
 
   devise_for :users

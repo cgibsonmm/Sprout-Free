@@ -22,7 +22,12 @@
         .current-controller-area
           - if forum_area?
             = render 'parts/forum_parts/topbar'
-          = yield
+          - if devise_controller?
+            .container#devise-area.mt-3
+              .card
+                = yield
+          - else
+            = yield
         - unless root_controller?
           .side-bar.mt-3
             = render 'user/info'
