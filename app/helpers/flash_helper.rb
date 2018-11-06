@@ -4,6 +4,8 @@ module FlashHelper
       'alert-success'
     elsif %w[warning error].include?(type)
       'alert-danger'
+    else
+      'alert-warning'
     end
   end
 end

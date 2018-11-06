@@ -1,6 +1,7 @@
 - if flash.any?
   - flash.each do |type, msg|
-    %div{:class => "alert #{parse_flash(type)} alert-dismissible fade show", :role => "alert"}
+    %div#flash-bar{:class => "alert #{parse_flash(type)} alert-dismissible fade show", :role => "alert"}
       %strong= msg
       %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
         %span{"aria-hidden" => "true"}
+          &times;

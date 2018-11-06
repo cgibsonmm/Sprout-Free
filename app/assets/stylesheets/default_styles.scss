@@ -12,6 +12,14 @@ h5 {
   margin-right: 0;
 }
 
+#flash-bar{
+  display: none;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  opacity: 0.7;
+}
+
 .btn {
   padding: 10px 20px;
   font-size: 1.1rem;
