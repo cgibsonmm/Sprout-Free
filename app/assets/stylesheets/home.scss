@@ -62,7 +62,9 @@
 @media (max-width: 800px) {
   #main-landing-page {
     .jumbotron {
-      width: 100%;
+      width: 100% !important;
+      justify-content: center;
+      align-items: center;
 
       h1,
       h2,
