@@ -19,10 +19,11 @@
       = render 'parts/navbar'
       = render 'parts/flash'
       .dynamic-content.mx-3
-        .current-controller-area.mt-3
+        .current-controller-area
           - if forum_area?
             = render 'parts/forum_parts/topbar'
           = yield
-        .side-bar.mt-3
-          = render 'user/info'
+        - unless root_controller?
+          .side-bar.mt-3
+            = render 'user/info'
       -# = render 'parts/footer'

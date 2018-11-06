@@ -4,6 +4,10 @@ module ApplicationHelper
     controllers.include?(controller_name)
   end
 
+  def root_controller?
+    controller_name == 'home'
+  end
+
   def admin?
     current_user.admin == true
   end
