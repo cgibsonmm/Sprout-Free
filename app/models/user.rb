@@ -54,6 +54,7 @@ class User < ApplicationRecord
   has_many :forum_threads, through: :forum_topics, dependent: :destroy
   has_many :forum_posts, through: :forum_threads, dependent: :destroy
   has_many :forum_post_photos, dependent: :destroy
+  has_many :likes
 
 
 
@@ -63,5 +64,14 @@ class User < ApplicationRecord
 
   def is_new_user?
     has_role?(:new_user)
+  end
+
+  def likes?(post)
+    post.likes.where(user_id: id).any?
+  end
+
+  def avatar_url
+    hash = Digest::MD5.hexdigest(email)
+    "http://www.gravatar.com/avatar/#{hash}"
   end
 end

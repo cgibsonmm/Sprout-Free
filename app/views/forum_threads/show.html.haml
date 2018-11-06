@@ -6,7 +6,12 @@
   by
   = @forum_thread.user.username
   = @forum_thread.user.id
+  .card
+    = @forum_thread.user.username
+    = image_tag @forum_thread.user.gravatar_url, style: "max-height: 50px; max-width: 50px;"
 %hr
+
+
 
 = render @forum_thread.forum_posts
 

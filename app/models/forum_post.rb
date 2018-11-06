@@ -13,6 +13,7 @@
 class ForumPost < ApplicationRecord
   belongs_to :user
   belongs_to :forum_thread
+  has_many   :likes
 
   validates :body, presence: true, length: { minimum: 5 }
 end

@@ -14,12 +14,11 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-//= require rails-ujs
-//= require turbolinks
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
 //= require font_awesome5
+//= require rails-ujs
+//= require turbolinks
 //= require local-time
 //= require trix
 //= require_tree .

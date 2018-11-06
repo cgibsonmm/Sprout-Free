@@ -6,7 +6,7 @@
     -# = favicon_link_tag asset_path('icon.ico')
     = csrf_meta_tags
     = csp_meta_tag
-    = include_gon
+    = Gon::Base.render_data
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
@@ -15,8 +15,8 @@
       .white
       .red
     .container-fluid
-      = render 'parts/header'
-      = render 'parts/navbar'
+      -# = render 'parts/header'
+      -# = render 'parts/navbar'
       = render 'parts/flash'
       .dynamic-content.mx-3
         .current-controller-area
