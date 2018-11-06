@@ -617,12 +617,6 @@
         null,
         null
       ],
-      "/Users/coreygibson/Documents/workspace/daves_site/Sprout-Free/app/controllers/home_controller.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/coreygibson/Documents/workspace/daves_site/Sprout-Free/app/controllers/forum_threads_controller.rb": [
         1,
         1,
@@ -723,6 +717,12 @@
         null,
         null,
         null,
+        null,
+        null
+      ],
+      "/Users/coreygibson/Documents/workspace/daves_site/Sprout-Free/app/controllers/home_controller.rb": [
+        1,
+        1,
         null,
         null
       ],
@@ -1352,6 +1352,6 @@
         0
       ]
     },
-    "timestamp": 1541481704
+    "timestamp": 1541483062
   }
 }
