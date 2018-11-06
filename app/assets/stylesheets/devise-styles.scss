@@ -1,8 +1,21 @@
 #devise-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .card{
+    background-color: rgb(246, 246, 246);
     display: flex;
+    width: 75%;
     flex-direction: column;
     align-items: center;
-    
+    .card-head{
+      border-bottom: 1px solid rgb(179, 179, 179);
+    }
+    .card-body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
