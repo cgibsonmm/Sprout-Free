@@ -1,6 +1,7 @@
-%hr
-= simple_form_for [@forum_thread, @forum_post ] do |f|
-  = f.error_notification
-  
-  = f.input :body, placeholder: 'Leave a new post here...', label: false
-  = f.submit 'Submit Post', class: 'btn btn-secondary'
+.post
+  %hr
+  = simple_form_for [@forum_thread, @forum_post ] do |f|
+    = f.error_notification
+
+    = f.trix_editor :body, placeholder: 'Leave a new post here...', label: false
+    = f.submit 'Submit Post', class: 'btn btn-secondary'

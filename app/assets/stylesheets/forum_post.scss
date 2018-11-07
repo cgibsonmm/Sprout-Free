@@ -70,6 +70,17 @@
         }
       }
     }
+    .new-post-form{
+      padding: 10px 80px;
+      .post{
+        width: 100%;
+
+        #new_forum_post{
+          // TODO: Need to fit user box
+          width: 85% !important;
+        }
+      }
+    }
   }
 }
 
