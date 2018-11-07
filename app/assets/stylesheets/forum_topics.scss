@@ -1,0 +1,23 @@
+#topic-show {
+  .btn-sm {
+    color: rgb(255, 255, 255) !important;
+  }
+
+  a {
+    color: rgb(3, 167, 162);
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+
+    &:hover {
+      text-decoration: none !important;
+      color: rgb(16, 102, 173);
+    }
+  }
+
+  .forum-post {
+    background-color: rgb(215, 215, 215);
+    &:nth-child(even){
+      background-color:rgb(238, 238, 238);
+    }
+  }
+}

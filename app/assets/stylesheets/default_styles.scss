@@ -42,12 +42,13 @@ body {
   .dynamic-content {
     background-color: rgb(255, 255, 255);
     border-top: 2px solid rgb(252, 80, 71);
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     justify-content: space-between;
 
     .current-controller-area {
       flex-basis: 100%;
+      margin-right: 20px;
     }
 
     .side-bar {

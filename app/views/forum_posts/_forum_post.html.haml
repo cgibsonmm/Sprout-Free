@@ -2,16 +2,22 @@
 - if user_admin? || user_signed_in? && current_user.id == @forum_thread.user_id
   - if @forum_thread.forum_posts.first == forum_post
     = link_to 'edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
+.post
+  .user-card
+    = image_tag forum_post.user.gravatar_url
+    .details
+      %h5
+        = forum_post.user.username
 
--# Checks for first post
-- unless @forum_thread.forum_posts.first == forum_post
-  %p.text-muted
-    Post by:
-    = forum_post.user.username
-    = local_time_ago forum_post.created_at
 
-.post-content
-  = sanitize forum_post.body
+  .post-content
+    -# Checks for first post
+    - unless @forum_thread.forum_posts.first == forum_post
+      %p.text-muted
+        Post by:
+        = forum_post.user.username
+        = local_time_ago forum_post.created_at
+    = sanitize forum_post.body
 
 %div{id: "forum_posts_#{forum_post.id}" }
   = render partial: "forum_posts/likes", locals: { post: forum_post }

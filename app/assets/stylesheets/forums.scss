@@ -3,50 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #forums-nav {
-  background-color: rgb(23, 23, 23);
+  background-color: rgb(185, 5, 5);
 
   .nav-link {
     color: rgb(255, 255, 255);
-    font-family: "Raleway" !important;
+    font-family: "Open Sans", sans-serif !important;
     font-weight: bold;
   }
+}
+
+.list-group-flush{
+  padding-left: 0;
 }
 
 #forums-page {
   width: 100%;
 
-  .categories-list {
+  .category {
     width: 100%;
 
-    ul {
-      padding-left: 15px;
+    .title{
+      color: rgb(0, 0,0);
     }
 
-    .category-item {
-      border-bottom: 3px solid rgb(8, 86, 125);
-
-      .list-group-item{
-        display: flex;
-        align-items: center;
-
-        .category-title {
-          padding-left: 10px;
-          font-weight: bold;
-          color: rgb(9, 105, 140);
-          text-decoration: underline;
-        }
-      }
-
+    .topic-link-and-logo{
+      display: flex;
+      align-items: center;
 
       .topic-link {
-        color: rgb(0, 0, 0);
+        color: rgb(3, 167, 162);
         font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+        padding-left: 10px;
 
         &:hover {
           text-decoration: none !important;
+          color: rgb(16, 102, 173);
         }
       }
-    }
+  }
 
     .topic-count {
       padding-left: 10px;

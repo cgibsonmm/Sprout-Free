@@ -1,14 +1,16 @@
-%h3
-  = @forum_category.title
-- if user_admin?
-  = link_to 'Edit', edit_forum_category_path(@forum_category)
-  = link_to 'Back to Categories', forum_categories_path
-= link_to '<- Back', forums_path
-%hr
-- if user_admin?
-  = link_to 'New Topic', new_forum_category_forum_topic_path(@forum_category)
+#cat-show.mt-3
+  = link_to 'Back to Forum', forums_path, class: 'ml-3'
+  .heading-bar
+    %h3.ml-4
+      = @forum_category.title
+    - if user_admin?
+      = link_to 'Edit', edit_forum_category_path(@forum_category)
+      = link_to 'Back to Categories', forum_categories_path
+    %hr
+    - if user_admin?
+      = link_to 'New Topic', new_forum_category_forum_topic_path(@forum_category)
 
-%ul.list-group
-  - @forum_category.forum_topics.each do |topic|
-    %li.list-group-item
-      = link_to topic.title, forum_topic_path(topic)
+  %ul.list-group.topic-list
+    - @forum_category.forum_topics.each do |topic|
+      %li.list-group-item.topic-item
+        = link_to "- #{topic.title}", forum_topic_path(topic)

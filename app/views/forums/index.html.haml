@@ -4,15 +4,13 @@
 #forums-page
   %ul.list-group.categories-list
     - @categories.each do |category|
-      %li.list-group-item.category-item
+      %li.list-group-item.category
         %h3
-          = link_to category.title, forum_category_path(category), class: 'category-title'
-          - if user_admin?
-            = link_to 'New Topic', new_forum_category_forum_topic_path(category)
+          = link_to category.title, forum_category_path(category), class: 'title'
         %ul.list-group-flush
           - category.forum_topics.each do |topic|
-            .list-group-item
+            .list-group-item.topic-link-and-logo
               = fa_layered_icon style: 'background: MistyRose', size: '2x' do
                 = fa_icon 'circle', style: 'color: rgb(62, 212, 212)'
                 = fa_icon'cannabis', class: 'fa-inverse',style: 'color: rgb(6, 150, 29)', data: { fa_transform: 'shrink-6' }
-              = link_to topic.title, forum_topic_path(topic), class: 'category-title'
+              = link_to topic.title, forum_topic_path(topic), class: 'topic-link'

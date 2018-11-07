@@ -1,10 +1,12 @@
-%h2
-  = @forum_topic.title
-- if user_admin?
-  = link_to 'Edit', edit_forum_topic_path(@forum_topic)
-  = link_to 'Delete', forum_topic_path(@forum_topic), method: :delete, data: {confirm: 'Are you sure?'}
-%hr
-= link_to 'New Thread', new_forum_topic_forum_thread_path(@forum_topic.id)
-= link_to '<Back', forums_path
-%ul.list-group
-  = render @forum_topic.forum_threads
+#topic-show.mt-3.ml-3
+  - if user_admin?
+    = link_to 'Edit', edit_forum_topic_path(@forum_topic)
+    = link_to 'Delete', forum_topic_path(@forum_topic), method: :delete, data: {confirm: 'Are you sure?'}
+  = link_to 'Back To Forums', forums_path
+  %h3
+    = @forum_topic.title
+  %hr
+  = link_to 'Create a New Thread', new_forum_topic_forum_thread_path(@forum_topic.id), class: 'btn-sm btn-success'
+
+  %ul.list-group.thread-list.mt-2
+    = render @forum_topic.forum_threads, class: 'thread-item'

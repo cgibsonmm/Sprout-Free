@@ -1,21 +1,17 @@
-%h1
-  = @forum_thread.subject
-%p.text-muted
-  Created
-  = local_time @forum_thread.created_at
-  by
-  = @forum_thread.user.username
-  = @forum_thread.user.id
-  .card
-    = @forum_thread.user.username
-    = image_tag @forum_thread.user.gravatar_url, style: "max-height: 50px; max-width: 50px;"
-%hr
+.thread.mt-3.ml-3
+  .heading
+    %h3
+      = @forum_thread.subject
+    %p.text-muted.created-at
+      Created
+      = local_time @forum_thread.created_at
+      by
+      = @forum_thread.user.username
+      = @forum_thread.user.id
+  .posts-container
+    = render @forum_thread.forum_posts
 
 
-
-= render @forum_thread.forum_posts
-
-
-- if user_signed_in?
-  .new-post-form
-    = render partial: "forum_posts/form"
+    - if user_signed_in?
+      .new-post-form
+        = render partial: "forum_posts/form"
