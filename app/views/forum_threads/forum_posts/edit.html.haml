@@ -1,5 +1,7 @@
-= simple_form_for @forum_post do |f|
-  .form-group
-    = f.trix_editor :body, id: 'trix-body'
-    .form-actions.mt-2
-      = f.submit class: 'btn btn-success ml-auto'
+#edit-thread.mt-3.ml-3
+  %h3 Edit #{@forum_post.forum_thread.subject}
+  = simple_form_for @forum_post do |f|
+    .form-group
+      = f.trix_editor :body, id: 'trix-body'
+      .form-actions.mt-2
+        = f.submit class: 'btn btn-success ml-auto'

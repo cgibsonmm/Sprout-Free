@@ -1,13 +1,10 @@
 - post = post || @forum_post
+.contain
+  - if user_signed_in? && current_user.likes?(post)
+    = link_to fa_icon('angle-down', size: '2x'), forum_post_likes_path(post), method: :delete, remote: true
+  - elsif user_signed_in?
+    = link_to fa_icon('angle-up', size: '2x'), forum_post_likes_path(post), method: :post, remote: true
 
-- if user_signed_in? && current_user.likes?(post)
-  = link_to fa_icon('thumbs-down', size: '2x'), forum_post_likes_path(post), method: :delete, remote: true
-- else
-  = link_to fa_icon('thumbs-up', size: '2x'), forum_post_likes_path(post), method: :post, remote: true
+  = pluralize(post.likes.count, 'Like')
 
-= pluralize(post.likes.count, 'Like')
-
-- post.likes.each do |like|
-  .avatar
-    = image_tag like.user.avatar_url, {style: "width: 30px;"}
-    = "..."
+.avatars

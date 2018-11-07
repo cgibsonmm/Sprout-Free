@@ -1,11 +1,13 @@
-#trix-body{
-  min-height:500px;
-  img{
+#trix-body {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+
+  a img {
     max-height: 400px;
     max-width: 400px;
   }
 }
-
 
 .thread {
   max-width: 100%;
@@ -17,24 +19,25 @@
   .created-at {}
 
   .posts-container {
-
     .post {
       display: flex;
       width: 100%;
-      border: 1px solid red;
 
       .user-card {
         display: flex;
         padding: 10px;
-        min-height: 100px;
-        width: 250px;
-        border: 2px solid black;
+        height:40%;
+        min-width: 250px;
+        background-color: rgb(250, 250, 250);
+        border-radius: 2px;
+        box-shadow: 0 0 7px 1px rgb(224, 224, 224);
+
 
         .details {
           h5 {
             font-size: 1.05rem;
           }
-          margin-left: 5px;
+          margin-left: 15px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -46,16 +49,43 @@
       }
 
       .post-content {
-        width: 70%;
-        margin: 10px 30px;
-        border: 2px solid green;
+        width: 100%;
+        margin: 0px 80px;
+        padding: 20px 30px ;
+        background-color: rgb(250, 250, 250);
+        border-radius: 2px;
+        box-shadow: 0 0 7px 1px rgb(224, 224, 224);
+
+        .attachment-gallery {
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          a img {
+            height: auto;
+            max-width: 400px;
+            margin: 10px 20px;
+          }
+        }
       }
     }
   }
+}
 
-  div a img {
-    display: block;
-    width: 50%;
-    height: auto;
+.bottom-stats{
+  .contain{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding-right: 80px;
+  }
+  .avatars{
+    min-height:30px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 80px;
   }
 }

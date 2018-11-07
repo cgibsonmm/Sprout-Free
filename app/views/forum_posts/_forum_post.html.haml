@@ -3,11 +3,9 @@
   - if @forum_thread.forum_posts.first == forum_post
     = link_to 'edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
 .post
-  .user-card
-    = image_tag forum_post.user.gravatar_url
-    .details
-      %h5
-        = forum_post.user.username
+
+  -# User Card
+  = render partial: 'parts/user_card', locals: {user: forum_post.user }
 
 
   .post-content
@@ -18,9 +16,9 @@
         = forum_post.user.username
         = local_time_ago forum_post.created_at
     = sanitize forum_post.body
-
-%div{id: "forum_posts_#{forum_post.id}" }
-  = render partial: "forum_posts/likes", locals: { post: forum_post }
+.bottom-stats
+  %div{id: "forum_posts_#{forum_post.id}", class: 'likes'}
+    = render partial: "forum_posts/likes", locals: { post: forum_post }
 
 -# allows to delete a comment post
 - unless @forum_thread.forum_posts.first == forum_post
