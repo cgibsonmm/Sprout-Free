@@ -32,7 +32,7 @@ class User < ApplicationRecord
   rolify
   include ActiveModel::Validations
   include Gravtastic
-  gravtastic size: 48, default: "mm"
+  gravtastic size: 60, default: "mm"
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

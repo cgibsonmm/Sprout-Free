@@ -1,7 +1,7 @@
 #topic-show.mt-3.ml-3
   - if user_admin?
-    = link_to 'Edit', edit_forum_topic_path(@forum_topic)
-    = link_to 'Delete', forum_topic_path(@forum_topic), method: :delete, data: {confirm: 'Are you sure?'}
+    = link_to 'Edit Topic', edit_forum_topic_path(@forum_topic)
+    |
   = link_to 'Back To Forums', forums_path
   %h3
     = @forum_topic.title

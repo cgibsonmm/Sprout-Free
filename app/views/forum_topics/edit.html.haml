@@ -1,2 +1,5 @@
 %h2 Edit Topic
 = render 'form', locals: @forum_topic
+
+|
+= link_to 'Delete Topic', forum_topic_path(@forum_topic), method: :delete, data: {confirm: 'Are you sure?'}
