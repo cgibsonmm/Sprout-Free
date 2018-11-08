@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :check_admin
   # before_action :admin?
 
   # def prior_to_launch
@@ -10,14 +11,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
-protected
+  protected
 
-  def admin?
-    gon.admin = if user_signed_in? && current_user.has_role?(:admin)
-                  true
-                else
-                  false
-                end
+  def check_admin
+    gon.admin = (true if user_signed_in? && current_user.has_role?(:admin))
   end
 
   def configure_permitted_parameters
