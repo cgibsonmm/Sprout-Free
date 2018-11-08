@@ -15,7 +15,8 @@
         Post by:
         = forum_post.user.username
         = local_time_ago forum_post.created_at
-    = sanitize forum_post.body
+    .trix-content
+      = sanitize forum_post.body
 .bottom-stats
   %div{id: "forum_posts_#{forum_post.id}", class: 'likes'}
     = render partial: "forum_posts/likes", locals: { post: forum_post }

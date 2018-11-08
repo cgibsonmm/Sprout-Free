@@ -58,20 +58,24 @@
         border-radius: 2px;
         box-shadow: 0 0 7px 1px rgb(224, 224, 224);
 
-        .attachment-gallery {
-          // display: flex;
-          // justify-content: center;
-          // flex-direction: row;
-          // flex-wrap: wrap;
-          // max-width: 100%;
+        .trix-content{
 
-          a{
-            // max-width: 400px !important;
-            img {
-              // border: red;
-              // height: auto !important;
+          .attachment-gallery {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 100%;
+
+            a{
               // max-width: 400px !important;
-              // margin: 10px 20px;
+              img {
+                display: flex;
+                flex-direction: column;
+                height: auto !important;
+                max-width: 400px !important;
+                margin: 10px 20px;
+              }
             }
           }
         }
