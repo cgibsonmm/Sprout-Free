@@ -1,6 +1,7 @@
 class ForumCategoriesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:show]
+  before_action :check_admin, except: [:show]
   before_action :set_forum_category, except: [:new, :create, :index, :sort]
 
   def index
@@ -57,6 +58,12 @@ class ForumCategoriesController < ApplicationController
   end
 
   private
+
+  def check_admin
+    unless current_user.has_role?(:admin)
+      redirect_to forums_path
+    end
+  end
 
   def set_forum_category
     @forum_category = ForumCategory.find(params[:id])
