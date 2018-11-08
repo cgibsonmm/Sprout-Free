@@ -5,3 +5,4 @@
       = f.trix_editor :body, id: 'trix-body'
       .form-actions.mt-2
         = f.submit class: 'btn btn-success ml-auto'
+= link_to "Delete Thread", forum_thread_path(@forum_post.forum_thread), method: :delete, data: {comfirm: 'Are you sure you want to delete this thread?'}

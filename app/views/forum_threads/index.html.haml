@@ -7,10 +7,10 @@
         Username
       %th{'scope': 'col'}
         Created At
-      %th{'scope': 'col'}
-        Likes
-      %th{'scope': 'col'}
-        Comments
+      -# %th{'scope': 'col'}
+      -#   Likes
+      -# %th{'scope': 'col'}
+      -#   Comments
   %tb
     - @forum_threads.each do |thread|
       %tr
@@ -20,7 +20,7 @@
           = thread.user.username
         %td
           = thread.created_at
-        %td
-          Like placeholder
-        %td
-          = thread.forum_posts.count - 1
+        -# %td
+        -#   = thread.
+        -# %td
+        -#   = thread.forum_posts.count - 1

@@ -40,6 +40,16 @@ class ForumThreadsController < ApplicationController
   def update
   end
 
+  def destroy
+    if @forum_thread.destroy
+      flash[:now] = 'Thread has been deleted'
+      redirect_to forum_topic_path(@forum_thread.forum_topic)
+    else
+      render 'edit'
+      flash[:error] = @forum_thread.errors.full_messages
+    end
+  end
+
   private
 
   # def set_forum_topic
