@@ -32,7 +32,7 @@ class User < ApplicationRecord
   rolify
   include ActiveModel::Validations
   include Gravtastic
-  gravtastic
+  gravtastic size: 48, default: "mm"
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -68,10 +68,5 @@ class User < ApplicationRecord
 
   def likes?(post)
     post.likes.where(user_id: id).any?
-  end
-
-  def avatar_url
-    hash = Digest::MD5.hexdigest(email)
-    "http://www.gravatar.com/avatar/#{hash}"
   end
 end
