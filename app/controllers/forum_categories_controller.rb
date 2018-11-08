@@ -1,9 +1,18 @@
 class ForumCategoriesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:show]
-  before_action :set_forum_category, except: [:new, :create, :index]
+  before_action :set_forum_category, except: [:new, :create, :index, :sort]
 
   def index
+    @forum_categories = ForumCategory.order(:position)
+  end
+
+  def sort
+    params[:forum_category].each_with_index do |id, index|
+      ForumCategory.where(id: id).update_all(position: index + 1)
+    end
+
+    head :ok
   end
 
   def new

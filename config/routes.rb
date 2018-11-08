@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :forums, only: [:index]
 
   resources :forum_categories do
+    collection do
+      patch :sort
+    end
     resources :forum_topics, shallow: true do
       collection do
         patch :sort

@@ -1,5 +1,5 @@
 class ForumsController < ApplicationController
   def index
-    @categories = ForumCategory.all
+    @categories = ForumCategory.order(:position)
   end
 end
