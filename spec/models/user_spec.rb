@@ -76,7 +76,7 @@ RSpec.describe User, type: :model do
 
      expect {user.save}.to change(
        Devise.mailer.deliveries, :count
-     ).by(1)
+     ).by(3)
    end
 
    it 'sends the email to the right email' do

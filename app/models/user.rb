@@ -42,6 +42,8 @@ class User < ApplicationRecord
          :confirmable
 
   after_create :assign_default_role
+  after_create :send_mail_to_admins
+
   # Validations
   validates_with UsernameValidator
   username_format = /\A[a-zA-Z]+[a-zA-z0-9]+\z/
@@ -69,5 +71,13 @@ class User < ApplicationRecord
 
   def likes?(post)
     post.likes.where(user_id: id).any?
+  end
+
+  def send_mail_to_admins
+    admins = ['sproutfreecanada@gmail.com', 'cgibsonmmdev@gmail.com']
+    admins.each do |admin|
+      @user = self
+      NewUserNotifyMailer.admin_mailer(@user, admin).deliver_now
+    end
   end
 end
