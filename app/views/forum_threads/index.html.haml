@@ -6,7 +6,7 @@
       %th{'scope': 'col'}
         Username
       %th{'scope': 'col'}
-        Created At
+        Created
       -# %th{'scope': 'col'}
       -#   Likes
       -# %th{'scope': 'col'}
@@ -19,7 +19,7 @@
         %td
           = thread.user.username
         %td
-          = thread.created_at
+          = local_time_ago thread.created_at
         -# %td
         -#   = thread.
         -# %td

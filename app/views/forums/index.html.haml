@@ -10,7 +10,7 @@
         %h3
           = link_to category.title, forum_category_path(category), class: 'title'
         %ul.list-group-flush
-          - category.forum_topics.each do |topic|
+          - category.forum_topics.order(:position).each do |topic|
             .list-group-item.topic-link-and-logo
               = fa_layered_icon style: 'background: MistyRose', size: '2x' do
                 = fa_icon 'circle', style: 'color: rgb(62, 212, 212)'

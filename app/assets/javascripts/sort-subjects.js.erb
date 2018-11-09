@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
   if(gon.admin){
-    $('#subjects').sortable({
+    $('#forum_topics').sortable({
       update: function(e, ui){
         Rails.ajax({
           url: $(this).data('url'),
