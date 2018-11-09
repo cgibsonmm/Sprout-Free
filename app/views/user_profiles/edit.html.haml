@@ -1,0 +1,11 @@
+#user-profile
+  .edit-card.mt-3
+    .card-head
+      %h2
+        Edit your profile
+      %hr
+    .card-body
+
+      = simple_form_for @user_profile, url: user_profile_path do |f|
+        = f.input :about_me
+        = f.submit 'Update Profile', class: 'btn btn-success shadow'

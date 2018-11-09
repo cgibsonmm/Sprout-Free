@@ -1,15 +1,12 @@
 - post = post || @forum_post
 .contain
   - if user_signed_in? && current_user.likes?(post)
-    = link_to 'UnLike'
+
     = link_to forum_post_likes_path(post), method: :delete, class: 'small-box red', remote: true do
       = sanitize peace_icon_white
   - elsif user_signed_in?
-    = link_to 'Like'
     = link_to forum_post_likes_path(post), method: :post, class: 'small-box', remote: true do
       = sanitize peace_icon_white
 
   .like-counts
     = pluralize(post.likes.count, 'Like')
-
-.avatars

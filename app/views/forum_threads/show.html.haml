@@ -6,7 +6,7 @@
       Created
       = local_time @forum_thread.created_at
       by
-      = link_to  @forum_thread.user.username, "#"
+      = link_to  @forum_thread.user.username, user_profile_path(@forum_thread.user_id)
   .posts-container
     = render @forum_thread.forum_posts
 

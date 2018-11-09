@@ -1,0 +1,17 @@
+#user-profile
+  .card.mt-5.ml-5
+    .card-head
+      .left.ml-3.mt-3
+        = image_tag @profile.gravatar_url
+      .right.ml-2.mt-3
+        %h2.text-center
+          = @profile.username
+        Total posts:
+        = @profile.forum_posts.count
+      %hr
+    .card-body
+      %p
+        = @profile.about_me
+      %hr
+      - if current_user == @profile
+        = link_to 'Edit Profile', edit_user_profile_path(current_user)

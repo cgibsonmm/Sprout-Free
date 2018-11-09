@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'user_profiles/show'
+  get 'user_profiles/edit'
   get 'forums/index'
+
   namespace :admin do
       resources :users
       resources :forum_posts
@@ -9,7 +12,6 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
-
   resources :forums, only: [:index]
 
   resources :forum_categories do
@@ -27,6 +29,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :user_profiles, only: [:show, :edit, :update]
 
   resources :images
 

@@ -2,4 +2,4 @@
   = image_tag user.gravatar_url
   .details
     %h5
-      = user.username
+      = link_to user.username, user_profile_path(user.id)

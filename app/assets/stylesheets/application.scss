@@ -4,23 +4,3 @@
 @import "bootstrap";
 @import 'font_awesome5_webfont';
 @import "*";
-
-
-.small-box{
-  margin: 0 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(57, 224, 1);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 0 3px 1px rgb(176, 176, 176);
-  img{
-    height: 30px;
-  }
-}
-
-.red {
-  background-color: rgb(224, 1, 1);
-}

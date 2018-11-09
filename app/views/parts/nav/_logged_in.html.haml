@@ -1,0 +1,11 @@
+%li.nav-item.user-name
+  .btn-group
+    %btn.btn.btn-success.dropdown-toggle.mr-2.shadow{'data-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false}
+      = current_user.username
+
+    .dropdown-menu
+      = link_to 'My Profile', user_profile_path(current_user), class: 'dropdown-item'
+      = link_to 'Update Account', edit_user_registration_path, class: 'dropdown-item'
+
+%li.nav-item
+  = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger nav-link mr-2 shadow'

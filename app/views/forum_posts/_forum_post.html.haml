@@ -13,7 +13,7 @@
     - unless @forum_thread.forum_posts.first == forum_post
       %p.text-muted
         Post by:
-        = forum_post.user.username
+        = link_to forum_post.user.username, user_profile_path(forum_post.user.id)
         = local_time_ago forum_post.created_at
     .trix-content
       = sanitize forum_post.body
