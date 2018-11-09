@@ -5,8 +5,7 @@ class NewUserNotifyMailer < ApplicationMailer
     @count = User.all.count
     @user = user
     @admin = admin
-
-    puts @count
+    
       mail(
         to: @admin,
         subject: 'New user subcribed to site'
