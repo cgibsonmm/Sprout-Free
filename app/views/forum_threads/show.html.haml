@@ -8,7 +8,7 @@
       by
       = link_to  @forum_thread.user.username, user_profile_path(@forum_thread.user_id)
   .posts-container
-    = render @forum_thread.forum_posts
+    = render @forum_thread.forum_posts.order('created_at ASC')
 
 
     - if user_signed_in?
