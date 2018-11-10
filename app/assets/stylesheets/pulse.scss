@@ -1,7 +1,7 @@
 .temp-alert{
   color: rgb(82, 252, 78) !important;
   text-shadow: 0 0 1px rgb(162, 147, 147);
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   animation: flash-text 3s ease-in-out infinite;
 
   &:hover{
@@ -13,17 +13,17 @@
 @keyframes flash-text{
   0%{
     color: rgb(82, 252, 78);
-    font-size: 1.05rem;
+    font-size: 1.5rem;
   }
 
   50%{
     color: rgb(255, 255, 255);
-    font-size: 1.07rem;
+    font-size: 1.52rem;
   }
 
   100%{
     color: rgb(82, 252, 78);
-    font-size: 1.05rem;
+    font-size: 1.5rem;
   }
 
 }
