@@ -1,7 +1,37 @@
+.temp-alert{
+  color: rgb(82, 252, 78) !important;
+  text-shadow: 0 0 1px rgb(162, 147, 147);
+  font-size: 1.05rem;
+  animation: flash-text 3s ease-in-out infinite;
+
+  &:hover{
+    animation: none;
+    color: rgb(255, 255, 255) !important;
+  }
+}
+
+@keyframes flash-text{
+  0%{
+    color: rgb(82, 252, 78);
+    font-size: 1.05rem;
+  }
+
+  50%{
+    color: rgb(255, 255, 255);
+    font-size: 1.07rem;
+  }
+
+  100%{
+    color: rgb(82, 252, 78);
+    font-size: 1.05rem;
+  }
+
+}
+
 .pulse {
   cursor: pointer;
   box-shadow: 0 0 0 rgba(255, 255, 255, 1);
-  animation: pulse 3s infinite;
+  animation: pulse 2.25s infinite;
 }
 .pulse:hover {
   animation: none;
@@ -11,7 +41,7 @@
 .dark-red-pulse {
   cursor: pointer;
   box-shadow: 0 0 0 rgba(255, 255, 255, 1);
-  animation: pulse 3s infinite;
+  animation: pulse 1s infinite;
 }
 .dark-red-pulse:hover {
   animation: none;

@@ -15,7 +15,18 @@
   }
 
   .forum-post {
+    display: flex;
+    align-items: center;
     background-color: rgb(215, 215, 215);
+    .left-area{
+      div{
+        font-size: 0.8rem;
+        font-weight: normal;
+        color: rgb(0, 0, 0);
+      }
+      width:300px;
+      margin-left: auto;
+    }
     &:nth-child(even){
       background-color:rgb(238, 238, 238);
     }
