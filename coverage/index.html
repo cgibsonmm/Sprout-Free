@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-10T00:51:28-05:00">2018-11-10T00:51:28-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-10T01:48:16-05:00">2018-11-10T01:48:16-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -503,7 +503,7 @@
       <tr>
         <td class="strong"><a href="#d3892beb8238305739bb1b96087684cbf57f04cd" class="src_link" title="app/models/forum_topic.rb">app/models/forum_topic.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>20</td>
+        <td>21</td>
         <td>5</td>
         <td>5</td>
         <td>0</td>
@@ -888,7 +888,7 @@
       <tr>
         <td class="strong"><a href="#d3892beb8238305739bb1b96087684cbf57f04cd" class="src_link" title="app/models/forum_topic.rb">app/models/forum_topic.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>20</td>
+        <td>21</td>
         <td>5</td>
         <td>5</td>
         <td>0</td>
@@ -4477,7 +4477,7 @@
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">    params.require(:forum_topic).permit(:title, :user_id, :forum_categories_id)</code>
+          <code class="ruby">    params.require(:forum_topic).permit(:title, :description, :user_id, :forum_categories_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
@@ -4501,7 +4501,7 @@
         <li class="missed" data-hits="0" data-linenumber="73">
           
           
-          <code class="ruby">    params.require(:forum_topic).permit(:title)</code>
+          <code class="ruby">    params.require(:forum_topic).permit(:title, :description)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
@@ -9579,88 +9579,94 @@
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">#  position          :integer</code>
+          <code class="ruby">#  description       :text</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">#  title             :string</code>
+          <code class="ruby">#  position          :integer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">#  created_at        :datetime         not null</code>
+          <code class="ruby">#  title             :string</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">#  updated_at        :datetime         not null</code>
+          <code class="ruby">#  created_at        :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">#  forum_category_id :integer</code>
+          <code class="ruby">#  updated_at        :datetime         not null</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">#  user_id           :integer</code>
+          <code class="ruby">#  forum_category_id :integer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">#  user_id           :integer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">class ForumTopic &lt; ApplicationRecord</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :forum_threads, dependent: :delete_all</code>
+          <code class="ruby">class ForumTopic &lt; ApplicationRecord</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">  belongs_to :user</code>
+          <code class="ruby">  has_many :forum_threads, dependent: :delete_all</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
+          <code class="ruby">  belongs_to :user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
           <code class="ruby">  belongs_to :forum_category</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">  validates :title, presence: true, length: { minimum: 3 }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>

@@ -3,6 +3,7 @@
 # Table name: forum_topics
 #
 #  id                :integer          not null, primary key
+#  description       :text
 #  position          :integer
 #  title             :string
 #  created_at        :datetime         not null

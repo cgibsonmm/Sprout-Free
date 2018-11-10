@@ -66,10 +66,10 @@ class ForumTopicsController < ApplicationController
   end
 
   def create_params
-    params.require(:forum_topic).permit(:title, :user_id, :forum_categories_id)
+    params.require(:forum_topic).permit(:title, :description, :user_id, :forum_categories_id)
   end
 
   def update_params
-    params.require(:forum_topic).permit(:title)
+    params.require(:forum_topic).permit(:title, :description)
   end
 end
