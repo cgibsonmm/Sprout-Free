@@ -15,5 +15,6 @@ FactoryBot.define do
     user_id { 1 }
     forum_topic_id { 1 }
     subject {Faker::Lorem.sentence}
+    id { 1 }
   end
 end
