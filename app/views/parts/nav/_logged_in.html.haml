@@ -1,11 +1,20 @@
+%li.nav-item.mr-2
+  .dropdown
+    %btn#lightbulb.btn{'data-behavior': 'notifications','data-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false}
+      = fa_layered_icon align: :false do
+        = fa_icon 'lightbulb', color: 'gray', type:'far', size: '2x'
+        %span.fa-layers-text{'data-behavior': 'unread-count', size: '1x'}
+
+
+    .dropdown-menu{'data-behavior': 'notification-items'}
+      -# List of current notification
+
+
 %li.nav-item.user-name
   .btn-group
     %btn.btn.btn-success.dropdown-toggle.mr-2.shadow{'data-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false}
       = current_user.username
-
     .dropdown-menu
       = link_to 'My Profile', user_profile_path(current_user), class: 'dropdown-item'
       = link_to 'Update Account', edit_user_registration_path, class: 'dropdown-item'
-
-%li.nav-item
-  = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger nav-link mr-2 shadow'
+      = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item'

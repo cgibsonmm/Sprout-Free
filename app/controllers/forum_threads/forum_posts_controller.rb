@@ -11,6 +11,12 @@ class ForumThreads::ForumPostsController < ApplicationController
     if @forum_post.save
       flash[:success] = "Post Saved"
       redirect_to forum_thread_path(@forum_thread)
+
+      # Send Notifications
+      (@forum_thread.users.uniq - [current_user]).each do |user|
+        Notification.create(recipient: user, actor: current_user, action: 'posted', notifiable: @forum_post)
+      end
+
     else
       flash[:error] = @forum_post.errors.full_messages
       redirect_to @forum_thread

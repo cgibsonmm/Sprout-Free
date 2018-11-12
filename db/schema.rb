@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_064421) do
+ActiveRecord::Schema.define(version: 2018_11_11_163518) do
 
   create_table "forum_categories", force: :cascade do |t|
     t.string "title"
@@ -60,6 +60,17 @@ ActiveRecord::Schema.define(version: 2018_11_10_064421) do
     t.datetime "updated_at", null: false
     t.index ["forum_post_id"], name: "index_likes_on_forum_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.integer "actor_id"
+    t.datetime "read_at"
+    t.string "action"
+    t.integer "notifiable_id"
+    t.string "notifiable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
