@@ -29,7 +29,8 @@
           - else
             = yield
         - unless root_controller?
-          .side-bar.mt-3
-            = render 'user/info'
+          - if user_signed_in?
+            .side-bar.mt-3
+              = render 'user/info'
       .container
         = render 'parts/footer'

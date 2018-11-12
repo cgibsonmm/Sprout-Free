@@ -14,6 +14,13 @@
   color: rgb(34, 34, 34);
 }
 
+.disabled{
+  color: rgb(179, 179, 179) !important;
+  &:hover{
+    cursor: default;
+  }
+}
+
 .navbar-brand,
 h1,
 h2,

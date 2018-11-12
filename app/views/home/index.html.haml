@@ -1,10 +1,13 @@
 #main-landing-page
   .pic-area{style: "background-image: url(#{asset_path('g3.jpg')});"}
     .jumbotron
-      %h1.text-center.mb-3
+      %h1.text-center.mb-3.top
         Welcome to Canada’s Community of Growers
-      %h1.text-center.underline.mx-auto
-        GROW WITH US!
+      .grow-and-links.ml-auto.mr-5
+        %h1.text-center.underline
+          GROW WITH US!
+        = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger mb-3 pulse'
+        = link_to '*Read here for details', 'https://www.sproutfreecanada.ca/forum_threads/17'
       .card-body
         %h1.text-center
           Our First 100
@@ -14,6 +17,3 @@
           Will Be Entered Into
           %p.underline
             The FREE Seed Pack GIVEAWAY
-
-        = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger mb-3 pulse'
-        = link_to '*Read here for details', 'https://www.sproutfreecanada.ca/forum_threads/17'
