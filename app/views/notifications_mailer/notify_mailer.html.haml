@@ -1,0 +1,10 @@
+.div{style: "width: 100%; margin: 10px auto;"}
+  %h1{style: 'text-align: center; text-decoration: underline;'}
+    = @reciver.username
+  %p{style: 'text-align: center;'}
+    there is a new
+    = @action
+    from
+    = @actor
+    on
+    = link_to @post.forum_thread.subject, "https://www.sproutfreecanada.com/forum_threads/#{@post.forum_thread.id}"
