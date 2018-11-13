@@ -54,8 +54,8 @@ class User < ApplicationRecord
   # Assosations
   has_many :forum_categories
   has_many :forum_topics, through: :forum_categories
-  has_many :forum_threads, through: :forum_topics, dependent: :destroy
-  has_many :forum_posts, through: :forum_threads, dependent: :destroy
+  has_many :forum_threads, dependent: :destroy
+  has_many :forum_posts, dependent: :destroy
   has_many :forum_post_photos, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
   has_many :likes

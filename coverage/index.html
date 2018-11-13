@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-12T17:19:51-05:00">2018-11-12T17:19:51-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-12T19:01:38-05:00">2018-11-12T19:01:38-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">37.29%</span></span>
+    (<span class="covered_percent"><span class="red">37.46%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>57</b> files in total.
-    <b>700</b> relevant lines. 
-    <span class="green"><b>261</b> lines covered</span> and
+    <b>702</b> relevant lines. 
+    <span class="green"><b>263</b> lines covered</span> and
     <span class="red"><b>439</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -493,9 +493,9 @@
       <tr>
         <td class="strong"><a href="#a8c61004e8d70a53d6e3f99b334f65f86924c90d" class="src_link" title="app/models/forum_category.rb">app/models/forum_category.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>24</td>
-        <td>5</td>
-        <td>5</td>
+        <td>25</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -846,19 +846,19 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="yellow">85.87%</span></span>
+    (<span class="covered_percent"><span class="yellow">86.17%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.35
+         4.28
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>13</b> files in total.
-    <b>92</b> relevant lines. 
-    <span class="green"><b>79</b> lines covered</span> and
+    <b>94</b> relevant lines. 
+    <span class="green"><b>81</b> lines covered</span> and
     <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -898,9 +898,9 @@
       <tr>
         <td class="strong"><a href="#a8c61004e8d70a53d6e3f99b334f65f86924c90d" class="src_link" title="app/models/forum_category.rb">app/models/forum_category.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>24</td>
-        <td>5</td>
-        <td>5</td>
+        <td>25</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -9398,8 +9398,8 @@
     <h3>app/models/forum_category.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -9527,25 +9527,31 @@
           <code class="ruby">  has_many :forum_topics</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # has_many :forum_posts, through: :forum_topics</code>
+          <code class="ruby">  has_many :forum_threads, through: :forum_topics</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :forum_posts, through: :forum_threads</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">  validates :title, presence: true, length: { minimum: 3 }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
@@ -11160,13 +11166,13 @@
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :forum_threads, through: :forum_topics, dependent: :destroy</code>
+          <code class="ruby">  has_many :forum_threads, dependent: :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :forum_posts, through: :forum_threads, dependent: :destroy</code>
+          <code class="ruby">  has_many :forum_posts, dependent: :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="59">
