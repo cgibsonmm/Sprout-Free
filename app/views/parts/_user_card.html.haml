@@ -3,3 +3,5 @@
   .details
     %h5
       = link_to user.username, user_profile_path(user.id)
+    Post count:  
+    = user.forum_posts.count
