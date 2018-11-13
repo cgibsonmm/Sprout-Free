@@ -128,6 +128,24 @@
   #login-links-botom{
     display: block;
   }
+
+  #links-bar {
+    .not-logo-links {
+      #site-links {
+        .nav-item {
+          .nav-link {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-size: 2rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-family: 'Open Sans', sans-serif;
+            text-shadow: 0 0 0px rgb(255, 255, 255);
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 530px){
