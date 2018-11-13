@@ -23,5 +23,6 @@
 
 -# allows to delete a comment post
 - unless @forum_thread.forum_posts.first == forum_post
-  = link_to 'Delete', forum_post_path(forum_post), method: :delete, data: {confirm: "Are you sure?"}
+  - if forum_post.user == current_user.id
+    = link_to 'Delete', forum_post_path(forum_post), method: :delete, data: {confirm: "Are you sure?"}
 %hr

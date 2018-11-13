@@ -10,3 +10,14 @@
 
   .like-counts
     = pluralize(post.likes.count, 'Like')
+    - post.likes.each do |like|
+      = like.user.username
+
+
+  .dropdown
+    %btn.btn.btn-secondary.dropdown-toggle{type: "button", id: "LikesDropdownButton", 'data-toggle': "dropdown", 'aria-haspopup': true, 'aria-expanded': false}
+      = pluralize(post.likes.count, 'Like')
+    .dropdown-menu{'aria-labelledby': "LikesDropdownButton"}
+      - post.likes.each do |like|
+        .dropdown-item
+          = link_to like.user.username, user_profile_path(like.user)
