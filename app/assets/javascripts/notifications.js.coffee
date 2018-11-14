@@ -23,13 +23,9 @@ class Notifications
 
   handleSuccess: (data) =>
     if (data.length) != 0
-      $('#lightbulb').addClass('white')
-      length = data.length
       items = $.map data, (notification) ->
         "<a class='dropdown-item' href='#{notification.url}'>#{notification.actor} #{notification.action} #{notification.notifiable.type}</a>"
     else
-      $('#lightbulb').addClass('disabled')
-      length = ''
       items = "<a class='dropdown-item' href='#'>No new notifications</a>"
 
     $("[data-behavior='unread-count']").text(length)
