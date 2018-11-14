@@ -6,6 +6,8 @@ class ForumThreads::ForumPosts::LikesController < ApplicationController
 
   def create
     @forum_post.likes.where(user_id: current_user.id).first_or_create
+
+    # Sending Notifications
     Notification.create(recipient: @forum_post.user, actor: current_user, action: 'liked', notifiable: @forum_post)
 
     respond_to do |format|
