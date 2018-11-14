@@ -15,7 +15,8 @@
 FactoryBot.define do
   factory :forum_topic do
     title { Faker::Lorem.sentence }
-    user_id { 1 }
-    forum_category_id { 1 }
+    description { Faker::Lorem.paragraph }
+    user
+    forum_category
   end
 end

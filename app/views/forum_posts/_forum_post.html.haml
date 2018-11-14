@@ -3,10 +3,8 @@
   - if @forum_thread.forum_posts.first == forum_post
     = link_to 'Edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
 .post
-
   -# User Card
   = render partial: 'parts/user_card', locals: {user: forum_post.user }
-
 
   .post-content
     -# Checks for first post
@@ -18,6 +16,8 @@
     .trix-content
       = sanitize forum_post.body
 .bottom-stats
+  - if user_signed_in? && forum_post.user_id == current_user.id
+    = link_to 'Edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
   %div{id: "forum_posts_#{forum_post.id}", class: 'likes'}
     = render partial: "forum_posts/likes", locals: { post: forum_post }
 

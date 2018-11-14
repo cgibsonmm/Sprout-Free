@@ -12,8 +12,8 @@
 
 FactoryBot.define do
   factory :forum_thread do
-    user_id { 1 }
-    forum_topic_id { 1 }
+    user
+    forum_topic
     subject {Faker::Lorem.sentence}
   end
 end

@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.feature 'user can edit their thread' do
   before do
     @user = create(:user)
-    @category = create(:forum_category)
-    @topic = create(:forum_topic, forum_category_id: 1)
-    @thread = create(:forum_thread, forum_topic_id: 1, user_id: 1)
+    # @category = create(:forum_category)
+    # @topic = create(:forum_topic, forum_category_id: 1)
+    # @thread = create(:forum_thread, forum_topic_id: 1, user_id: 1)
+    @thread = create(:forum_post, user_id: @user.id)
     @new_content = {subject: Faker::Lorem.sentence, body: Faker::Lorem.paragraph}
   end
 
@@ -18,9 +19,9 @@ RSpec.feature 'user can edit their thread' do
     pending 'can edit their thread' do
       puts page.body
       click_link('Edit')
-      expect(page).to have_content('Edit Thread')
+      expect(page).to have_content("Edit #{@thread.forum_thread.subject}")
 
-      fill_in :body, with: @new_content[:subject]
+      fill_in "", with: @new_content[:subject]
       click_link 'Update'
 
       expect(page).to have_content('Success')

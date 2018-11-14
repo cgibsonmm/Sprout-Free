@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'Admin can delete a subject' do
   before do
-    @user = create(:user, username: 'useruser', email: 'hello@emsil.com')
+    @user = create(:user)
     @cat = create(:forum_category)
-    @admin = create(:user, id: 2) # TODO: Admin
-    @admin.add_role :admin
+    @admin = create(:admin_user) # TODO: Admin
     @subject = create(:forum_topic)
   end
 

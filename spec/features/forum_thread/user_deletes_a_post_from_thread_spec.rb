@@ -7,9 +7,9 @@ RSpec.feature 'deleting a post from forum thread' do
     @forum_topic = create(:forum_topic)
     @forum_thread1 = create(:forum_thread)
     @forum_post1 = create(:forum_post)
-    @user2 = create(:user, username: 'test_user_2', email: 'testemail2@email.com', id: '2')
+    @user2 = create(:user)
     @forum_thread1 = create(:forum_thread)
-    @forum_post2 = create(:forum_post, user_id: 2, body: 'Hey this is user2')
+    @forum_post2 = create(:forum_post, user_id: 2)
   end
 
   context "when user is signed in" do
