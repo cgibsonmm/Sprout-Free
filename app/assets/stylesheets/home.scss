@@ -2,96 +2,124 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#main-landing-page {
-  .underline{
-    text-decoration: underline !important;
-  }
-  .pic-area {
+#main-landing-page{
+  .pic-area{
     background-clip: border-box;
     background-size: cover;
     background-position: center;
     min-height: 80vh;
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
 
-    .jumbotron {
-      .top{
-        width: 40%;
-      }
-      min-height: 100%;
+    .left-area{
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0);
-      padding: 40px 20px;
-      margin-top: 10px;
-      h1,
-      h2,
-      h3 {
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 1px 5px rgb(0, 0, 0);
-      }
-
-      .grow-and-links{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .btn {
-          color: rgb(255, 255, 255) !important;
-          padding: 20px 70px;
-          // box-shadow: 0px 0px 10px 4px rgb(255, 255, 255);
-        }
-      }
-
-      .card-body {
-        width: 40%;
-        position: relative;
-        top: -130px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-
-        strong {
-          color: rgb(0, 198, 8);
-        }
-
-        p {
-          color: rgb(203, 1, 1);
-          text-shadow: 1px 1px 5px rgb(0, 0, 0);
-        }
-      }
+    }
+    .right-area{
+      margin-right: 10px;
     }
   }
 }
-@media (max-width: 1200px) {
-  #main-landing-page .pic-area {
 
-    .jumbotron .card-body {
-      position: static !important;
-    }
-
-    .jumbotron {
-      width: 100% !important;
-      justify-content: center;
-      align-items: center;
-
-      .grow-and-links {
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
-
-      h1,
-      h2,
-      h3 {
-        // font-weight: normal;
-      }
-    }
+@media (max-width: 1200px){
+  #main-landing-page .pic-area{
+    display:  inline-block;
   }
 }
+  // New
+
+  // old
+//   .underline{
+//     text-decoration: underline !important;
+//   }
+//   .pic-area {
+//     background-clip: border-box;
+//     background-size: cover;
+//     background-position: center;
+//     min-height: 80vh;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     // align-items: center;
+//
+//     .jumbotron {
+//       .top{
+//         width: 40%;
+//       }
+//       min-height: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+//       justify-content: flex-start;
+//       width: 100%;
+//       background-color: rgba(255, 255, 255, 0);
+//       padding: 40px 20px;
+//       margin-top: 10px;
+//       h1,
+//       h2,
+//       h3 {
+//         color: rgb(255, 255, 255);
+//         text-shadow: 1px 1px 5px rgb(0, 0, 0);
+//       }
+//
+//       .grow-and-links{
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//
+//         .btn {
+//           color: rgb(255, 255, 255) !important;
+//           padding: 20px 70px;
+//           // box-shadow: 0px 0px 10px 4px rgb(255, 255, 255);
+//         }
+//       }
+//
+//       .card-body {
+//         width: 40%;
+//         position: relative;
+//         top: -130px;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: space-around;
+//
+//         strong {
+//           color: rgb(0, 198, 8);
+//         }
+//
+//         p {
+//           color: rgb(203, 1, 1);
+//           text-shadow: 1px 1px 5px rgb(0, 0, 0);
+//         }
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 1200px) {
+//   #main-landing-page .pic-area {
+//
+//     .jumbotron .card-body {
+//       position: static !important;
+//     }
+//
+//     .jumbotron {
+//       width: 100% !important;
+//       justify-content: center;
+//       align-items: center;
+//
+//       .grow-and-links {
+//         margin-left: auto !important;
+//         margin-right: auto !important;
+//       }
+//
+//       h1,
+//       h2,
+//       h3 {
+//         // font-weight: normal;
+//       }
+//     }
+//   }
+// }
