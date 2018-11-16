@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   before_action :check_admin
   # before_action :admin?
 
+  before_action :set_notifications, if: :user_signed_in?
+
+  def set_notifications
+    @notifications = Notification.where(recipient: current_user).recent
+  end
+
   # def prior_to_launch
   #   redirect_to root_path unless user_signed_in? && current_user.hase_role?(:admin)
   # end

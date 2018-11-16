@@ -2,25 +2,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.white{
-  color:rgb(255, 252, 0);
-}
-
-.fa-layers-text{
-  position: relative;
-  top: 17px;
-  right: 3px;
-  font-size: 1.3rem;
-  color: rgb(34, 34, 34);
-}
-
-.disabled{
-  color: rgb(179, 179, 179) !important;
-  &:hover{
-    cursor: default;
-  }
-}
-
 .navbar-brand,
 h1,
 h2,

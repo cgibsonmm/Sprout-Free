@@ -1,13 +1,11 @@
+
 %li.nav-item.mr-2
-  .dropdown
-    %btn#lightbulb.btn{'data-behavior': 'notifications','data-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false}
-      = fa_layered_icon align: :false do
-        = fa_icon 'lightbulb', color: 'gray', type:'far', size: '2x'
-        %span.fa-layers-text{'data-behavior': 'unread-count', size: '1x'}
-
-
-    .dropdown-menu{'data-behavior': 'notification-items'}
-      -# List of current notification
+  .dropdown{'data-behavior': 'notifications'}
+    %btn.btn.btn-dark.dropdown-toggle{'data-toggle': 'dropdown', 'data-behavior': 'notifications-link' }
+      = fa_icon 'lightbulb'
+      %span{'data-behavior': 'unread-count'} 0
+    #notifications.dropdown-menu.dropdown-menu-right{'data-behavior': 'notification-items'}
+      / Dynamic dropdown
 
 
 %li.nav-item.user-name

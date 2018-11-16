@@ -1,0 +1,8 @@
+#notifications{
+  .notification{
+    padding: 10px 20px;
+    &.unread{
+      border-left: 4px solid red;
+    }
+  }
+}

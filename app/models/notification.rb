@@ -20,4 +20,5 @@ class Notification < ApplicationRecord
 
 
   scope :unread, -> { where(read_at: nil) }
+  scope :recent, -> { order(created_at: :desc).limit(5) }
 end
