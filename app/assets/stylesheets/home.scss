@@ -1,9 +1,43 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// New
 
-#main-landing-page{
-  .pic-area{
+#main-landing-page {
+
+  .btn{
+    color: rgb(255, 255, 255) !important;
+    padding: 20px 70px;
+  }
+
+  .details{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+
+  h1, h2, h3 {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+  }
+  .underline{
+    text-decoration: underline !important;
+  }
+
+  strong {
+    color: rgb(0, 198, 8);
+  }
+
+  p {
+    color: rgb(203, 1, 1);
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+  }
+
+  .user-count{
+  }
+
+  .user-icon{
+    color: rgb(0, 163, 51);
+    filter: drop-shadow(1px 1px 2px rgb(0, 0, 0));
+  }
+
+  .pic-area {
     background-clip: border-box;
     background-size: cover;
     background-position: center;
@@ -13,24 +47,50 @@
     width: 100%;
     text-align: center;
 
-    .left-area{
+    .left-area {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width:40%;
+      padding-bottom: 50px;
+    }
+
+    .right-area {
+      margin-right: 50px;
+      align-self: center;
+      .details{
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  #main-landing-page .pic-area {
+    h2, h3{
+      font-size: 2.8rem;
+    }
+    flex-direction: column;
+    align-items: center;
+    .left-area{
+      padding-top: 25px;
+      width: 100%;
+      background-color: rgba(221, 221, 221, 0.43);
+      .info{
+        align-self: center;
+      }
     }
     .right-area{
-      margin-right: 10px;
+      margin-right: 0;
+      align-self: center;
+      padding: 20px 0;
+      width: 100%;
+      background-color: rgba(221, 221, 221, 0.43);
+      padding-bottom: 50px;
     }
   }
 }
-
-@media (max-width: 1200px){
-  #main-landing-page .pic-area{
-    display:  inline-block;
-  }
-}
-  // New
-
-  // old
+// old
 //   .underline{
 //     text-decoration: underline !important;
 //   }

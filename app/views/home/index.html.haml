@@ -1,45 +1,30 @@
--# #main-landing-page
--#   .pic-area{style: "background-image: url(#{asset_path('g3.jpg')});"}
--#     .jumbotron
--#       %h1.text-center.mb-3.top
--#         Welcome to Canada’s Community of Growers
--#       .grow-and-links.ml-auto.mr-5
--#         %h1.text-center.underline
--#           GROW WITH US!
--#         = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger mb-3 pulse'
--#         = link_to '*Read here for details', 'https://www.sproutfreecanada.ca/forum_threads/17'
--#       .card-body
--#         %h1.text-center
--#           Our First 100
--#           %br
--#           %strong Forum Posters
--#           %br
--#           Will Be Entered Into
--#           %p.underline
--#             The FREE Seed Pack GIVEAWAY
-
-
--# New
 
 #main-landing-page
   .pic-area{style: "background-image: url(#{asset_path('g3.jpg')});"}
-    .left-area
-      %h1
-        Sprout Free Canada
-      %h2
-        Welcome to Canada's Community of Growers
-
-      %h3
-        Our First 100 "GROWERS" will be entered into
-        .underline
-          The FREE Seed Pack GIVEAWAYs
+    .left-area.pr-3
+      .heading
+        %h2
+          Welcome to Canada's Community of Growers
+        %h1
+          Sprout Free Canada
+      .info
+        %h2
+          Our First 100
+          %br
+          %strong
+            "Forum Posters"
+          %br
+          will be entered into
+          %p.underline
+            The FREE Seed Pack GIVEAWAY
     .right-area
-      %h3
+      %h2.user-count
         = total_users
-        = fa_icon('user')
+        = fa_icon('user', class: 'user-icon')
         %br
         Current users
       .grow-links
         %h3 GROW WITH US
-        = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger'
-        = link_to '* Read Deatails Here', 'https://www.sproutfreecanada.ca/forum_threads/17'
+        = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger pulse'
+        %br
+        = link_to '* Read Deatails Here', 'https://www.sproutfreecanada.ca/forum_threads/17', class: 'details'
