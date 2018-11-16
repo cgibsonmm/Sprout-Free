@@ -8,14 +8,14 @@
     = link_to forum_post_likes_path(post), method: :post, class: 'small-box', remote: true do
       = sanitize peace_icon_white
 
-  .like-counts
-    = pluralize(post.likes.count, 'Like')
-    - post.likes.each do |like|
-      = like.user.username
+  -# .like-counts
+  -#   = pluralize(post.likes.count, 'Like')
+  -#   - post.likes.each do |like|
+  -#     = like.user.username
 
 
   .dropdown
-    %btn.btn.btn-secondary.dropdown-toggle{type: "button", id: "LikesDropdownButton", 'data-toggle': "dropdown", 'aria-haspopup': true, 'aria-expanded': false}
+    %btn.btn.btn-teal.dropdown-toggle{id: "LikesDropdownButton", 'data-toggle': "dropdown", 'aria-haspopup': true, 'aria-expanded': false}
       = pluralize(post.likes.count, 'Like')
     .dropdown-menu{'aria-labelledby': "LikesDropdownButton"}
       - post.likes.each do |like|

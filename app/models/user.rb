@@ -59,6 +59,7 @@ class User < ApplicationRecord
   has_many :forum_post_photos, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
   has_many :likes
+  has_many :follows
 
 
 
@@ -72,6 +73,10 @@ class User < ApplicationRecord
 
   def likes?(post)
     post.likes.where(user_id: id).any?
+  end
+
+  def follows?(thread)
+    thread.follows.where(user_id: id).any?
   end
 
   def send_mail_to_admins

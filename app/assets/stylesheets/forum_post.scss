@@ -12,11 +12,20 @@
 .thread {
   max-width: 100%;
 
-  h3 {
-    margin-bottom: 0;
-  }
+  .heading{
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      margin-bottom: 0;
+    }
+    .created-at {}
 
-  .created-at {}
+    .right{
+      align-self: flex-end;
+      margin-right: 80px;
+      padding-bottom: 10px;
+    }
+  }
 
   .posts-container {
     .post {

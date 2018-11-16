@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         patch :sort
       end
       resources :forum_threads do
+        resource :follow, module: :forum_threads
         resources :forum_posts, module: :forum_threads do
           resource :likes, module: :forum_posts
         end

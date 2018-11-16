@@ -17,6 +17,11 @@ class ForumThreads::ForumPostsController < ApplicationController
         Notification.create(recipient: user, actor: current_user, action: 'posted', notifiable: @forum_post)
       end
 
+      @forum_thread.follows.each do |follow|
+        NotificationsMailer.notify_mailer(follow.user, current_user, 'posted', @forum_post).deliver_now
+      end
+      #send Emails
+
     else
       flash[:error] = @forum_post.errors.full_messages
       redirect_to @forum_thread

@@ -14,7 +14,8 @@ RSpec.feature 'Admin creates a new forum category' do
 
     scenario 'can create a new category' do
       visit '/forums'
-      click_link('New Category')
+      click_link 'Categories Index'
+      click_link('New category')
       fill_in 'Title', with: @title
       click_on 'Create Forum category'
 

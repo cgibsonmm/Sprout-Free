@@ -1,12 +1,17 @@
 .thread.mt-3.ml-3
   .heading
-    %h3
-      = @forum_thread.subject
-    %p.text-muted.created-at
-      Created
-      = local_time @forum_thread.created_at
-      by
-      = link_to  @forum_thread.user.username, user_profile_path(@forum_thread.user_id)
+    .left
+      %h3
+        = @forum_thread.subject
+      %p.text-muted.created-at
+        Created
+        = local_time @forum_thread.created_at
+        by
+        = link_to  @forum_thread.user.username, user_profile_path(@forum_thread.user_id)
+    .right
+      .follow-link
+        = render partial: 'follow_links', locals: { forum_thread: @forum_thread}
+
   .posts-container
     = render @forum_thread.forum_posts.order('created_at ASC')
 
