@@ -2,7 +2,7 @@
 - if user_admin? || user_signed_in? && current_user.id == @forum_thread.user_id
   - if @forum_thread.forum_posts.first == forum_post
     = link_to 'Edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
-.post
+.post{ anchor: dom_id(forum_post)}
   -# User Card
   = render partial: 'parts/user_card', locals: {user: forum_post.user }
 

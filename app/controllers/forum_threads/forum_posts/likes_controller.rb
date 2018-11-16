@@ -8,7 +8,9 @@ class ForumThreads::ForumPosts::LikesController < ApplicationController
     @forum_post.likes.where(user_id: current_user.id).first_or_create
 
     # Sending Notifications
-    Notification.create(recipient: @forum_post.user, actor: current_user, action: 'liked', notifiable: @forum_post)
+    if current_user != @forum_post.user
+      Notification.create(recipient: @forum_post.user, actor: current_user, action: 'liked', notifiable: @forum_post)
+    end
 
     respond_to do |format|
       format.js { render 'forum_posts/likes/create.js.erb' }
