@@ -60,6 +60,7 @@ class User < ApplicationRecord
   has_many :notifications, foreign_key: :recipient_id
   has_many :likes
   has_many :follows
+  has_many :site_notifications
 
 
 

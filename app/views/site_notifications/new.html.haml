@@ -1,0 +1,8 @@
+.card
+  .card-head
+    %h3 Create a new notification
+  .card-body
+    = simple_form_for @site_notification do |f|
+      = f.input :title
+      = f.input :body
+      = f.submit class: 'btn btn-success'

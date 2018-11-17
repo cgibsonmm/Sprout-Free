@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
+
   resources :forums, only: [:index]
+
+  resources :site_notifications
 
   resources :forum_categories do
     collection do

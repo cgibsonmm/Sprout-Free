@@ -1,0 +1,6 @@
+= link_to notification.notifiable.title, "#notification_#{notification.notifiable_id}_modal", class: "text-center site-notification modal-link dropdown-item notification #{"unread" if !notification.read_at?}", "data-target": "#notification_#{notification.notifiable_id}_modal", "data-toggle": "modal"
+
+:javascript
+  if ($("#notification_#{notification.notifiable_id}_modal").length < 1) {
+    $('body').append("#{j render partial: 'modal', locals: {notification: notification}}")
+  }

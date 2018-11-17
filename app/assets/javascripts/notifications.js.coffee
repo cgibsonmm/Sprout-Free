@@ -8,7 +8,7 @@ class Notifications
 
       setInterval (=>
         @getNewNotifications()
-      ), 10000
+      ), 3000
 
   getNewNotifications: ->
     $.ajax(

@@ -5,11 +5,12 @@ example_id                                                                      
 ./spec/controllers/forum_topics_controller_spec.rb[1:3:1]                                    | pending | 0 seconds       |
 ./spec/controllers/forums_controller_spec.rb[1:1:1]                                          | passed  | 0.01852 seconds |
 ./spec/controllers/tickler_controller_spec.rb[1:1:1]                                         | passed  | 0.01744 seconds |
-./spec/features/admin/create_a_forum_category_spec.rb[1:1:1]                                 | passed  | 0.155 seconds   |
-./spec/features/admin/create_a_forum_category_spec.rb[1:2:1]                                 | passed  | 0.10838 seconds |
-./spec/features/admin/delete_forum_category_spec.rb[1:1:1]                                   | passed  | 0.15081 seconds |
-./spec/features/admin/edit_forum_category_spec.rb[1:1:1]                                     | passed  | 0.15445 seconds |
-./spec/features/admin/edit_forum_category_spec.rb[1:2:1]                                     | passed  | 0.13146 seconds |
+./spec/features/admin/create_a_forum_category_spec.rb[1:1:1]                                 | passed  | 0.17046 seconds |
+./spec/features/admin/create_a_forum_category_spec.rb[1:2:1]                                 | passed  | 0.09812 seconds |
+./spec/features/admin/create_a_site_wide_notifications_spec.rb[1:1:1]                        | passed  | 1.06 seconds    |
+./spec/features/admin/delete_forum_category_spec.rb[1:1:1]                                   | passed  | 0.22569 seconds |
+./spec/features/admin/edit_forum_category_spec.rb[1:1:1]                                     | passed  | 0.19274 seconds |
+./spec/features/admin/edit_forum_category_spec.rb[1:2:1]                                     | passed  | 0.18223 seconds |
 ./spec/features/before_launch_mailer/user_sign_up_for_mailer_spec.rb[1:1]                    | pending | 0.01284 seconds |
 ./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:1:1]                 | failed  | 0.26062 seconds |
 ./spec/features/forum_thread/user_adding_post_to_forum_thread_spec.rb[1:1:2]                 | failed  | 0.29083 seconds |

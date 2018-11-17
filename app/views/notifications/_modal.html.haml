@@ -1,0 +1,11 @@
+.modal.fade{id: "notification_#{notification.notifiable_id}_modal", 'tabindex': "-1", 'role': "dialog", 'aria-labelledby': "notification_#{notification.notifiable_id}_modal", 'aria-hidden': true}
+  .modal-dialog{'role': "document"}
+    .modal-content
+      .modal-header
+        %h5.modal-title{ id: "notification_#{notification.notifiable_id}_modal"}
+          = notification.notifiable.title
+        %btn{class: "close", 'data-dismiss': "modal", 'aria-label': "Close"}
+          %span{'aria-hidden': true}
+            &times;
+      .modal-body
+        = notification.notifiable.body

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_16_203217) do
+ActiveRecord::Schema.define(version: 2018_11_16_224011) do
 
   create_table "follows", force: :cascade do |t|
     t.integer "user_id"
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 2018_11_16_203217) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "site_notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_site_notifications_on_user_id"
   end
 
   create_table "ticklers", force: :cascade do |t|
