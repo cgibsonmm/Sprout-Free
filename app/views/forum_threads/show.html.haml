@@ -13,7 +13,8 @@
         = render partial: 'follow_links', locals: { forum_thread: @forum_thread}
 
   .posts-container
-    = render @forum_thread.forum_posts.order('created_at ASC')
+    - @forum_posts.order('created_at ASC').each do |post|
+      = render post 
 
 
     - if user_signed_in?

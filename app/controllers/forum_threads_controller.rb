@@ -1,7 +1,8 @@
 class ForumThreadsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_forum_thread, except: [:index, :new, :create]
+  before_action :set_egear_load, only: [:show]
+  before_action :set_forum_thread, except: [:index, :new, :create, :show]
   # before_action :set_forum_topic
 
   def index
@@ -56,8 +57,14 @@ class ForumThreadsController < ApplicationController
   #   @forum_topic = ForumTopic.find(params[:forum_topic_id])
   # end
 
+  def set_egear_load
+    @forum_thread = ForumThread.find(params[:id])
+    @forum_posts = @forum_thread.forum_posts.includes(:user, { likes: :user })
+  end
+
   def set_forum_thread
     @forum_thread = ForumThread.find(params[:id])
+    @forum_thread = ForumThread.forum_posts.includes(:likes, :users)
   end
 
   def create_params
