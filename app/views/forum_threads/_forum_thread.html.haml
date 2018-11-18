@@ -3,4 +3,4 @@
   .ml-2
     = forum_thread.subject
   .left-area
-    = sanitize forum_thread.forum_posts.first.body.truncate(100)
+    = strip_tags(forum_thread.forum_posts.first.body.truncate(100))
