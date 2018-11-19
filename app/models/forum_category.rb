@@ -15,6 +15,7 @@
 #
 
 class ForumCategory < ApplicationRecord
+  searchkick
   resourcify
   belongs_to :user
   has_many :forum_topics

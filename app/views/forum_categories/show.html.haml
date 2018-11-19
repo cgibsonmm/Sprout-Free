@@ -14,5 +14,6 @@
 
   %ul#forum_topics.list-group.topic-list{'data-url': sort_forum_category_forum_topics_path(@forum_category) }
     - @forum_category.forum_topics.order(:position).each do |topic|
-      %li.list-group-item.topic-item{id: dom_id(topic)}
-        = link_to "- #{topic.title}", forum_topic_path(topic)
+      - cache topic do
+        %li.list-group-item.topic-item{id: dom_id(topic)}
+          = link_to "- #{topic.title}", forum_topic_path(topic)
