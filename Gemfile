@@ -4,20 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 
 
-gem 'devise'
-gem 'the_big_username_blacklist'
-gem "administrate"
-gem 'cancancan'
-gem 'rolify'
 
-gem 'loaf'
 
-gem 'jquery-rails'
-gem 'acts_as_list'
-gem 'gon'
-gem 'jquery-ui-rails'
 
-gem 'simple_form'
 
 # gem 'ransack', github: 'activerecord-hackery/ransack'
 
@@ -106,3 +95,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+gem 'the_big_username_blacklist'
+gem "administrate"
+gem 'cancancan'
+gem 'rolify'
+gem 'loaf'
+gem 'jquery-rails'
+gem 'acts_as_list'
+gem 'gon'
+gem 'jquery-ui-rails'
+gem 'simple_form'
