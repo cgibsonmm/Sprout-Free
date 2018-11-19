@@ -28,12 +28,12 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0 0 3px 1px rgb(176, 176, 176);
+    box-shadow: 0 0 3px 1px $shadow-white;
     img{
       height: 30px;
     }
   }
 
   .red {
-    background-color: rgb(224, 1, 1);
+    background-color: $red-bg;
   }

@@ -7,14 +7,14 @@
     align-content: space-between;
   }
   a{
-    color: rgb(3, 167, 162);
+    color: $dark-blue;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
     padding-left: 10px;
 
     &:hover {
       text-decoration: none !important;
-      color: rgb(16, 102, 173);
+      color: $light-blue;
     }
   }
 

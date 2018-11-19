@@ -4,20 +4,20 @@
   }
 
   a {
-    color: rgb(3, 167, 162);
+    color: $dark-blue;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
 
     &:hover {
       text-decoration: none !important;
-      color: rgb(16, 102, 173);
+      color: $light-blue;
     }
   }
 
   .forum-post {
     display: flex;
     align-items: center;
-    background-color: rgb(215, 215, 215);
+    background-color: $white-bg;
     .left-area{
       div{
         font-size: 0.8rem;
@@ -28,7 +28,7 @@
       margin-left: auto;
     }
     &:nth-child(even){
-      background-color:rgb(238, 238, 238);
+      background-color: $shadow-white;
     }
   }
 }

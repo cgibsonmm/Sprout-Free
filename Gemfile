@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 
 
+gem 'friendly_id', '~> 5.2.0'
 gem 'devise'
 gem 'the_big_username_blacklist'
 gem "administrate"

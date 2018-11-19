@@ -2,5 +2,7 @@
   = render 'forum_threads/gravatar/avatar', forum_thread: forum_thread
   .ml-2
     = forum_thread.subject
+  .ml-5
+    = forum_thread.user.username
   .left-area
     = strip_tags(forum_thread.forum_posts.first.body.truncate(100))
