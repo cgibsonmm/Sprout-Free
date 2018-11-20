@@ -11,5 +11,5 @@
 
   %ul.list-group.thread-list.mt-2
     -# Added for error while rendering formated text
-    - if @forum_topic.forum_threads
+    - if @forum_topic.forum_threads.length > 0
       = render @forum_topic.forum_threads, class: 'thread-item'
