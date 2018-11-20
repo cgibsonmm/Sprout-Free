@@ -30,8 +30,8 @@ class ForumThreadsController < ApplicationController
       redirect_to @forum_thread
       flash[:success] = "Successfully created a new thread"
     else
-      flash.now[:error] = @forum_thread.errors.full_messages
       render 'new'
+      flash[:danger] = 'Error Creating a new thread, make sure title and body are present'
     end
   end
 
@@ -44,11 +44,11 @@ class ForumThreadsController < ApplicationController
   def destroy
     @forum_thread = ForumThread.find(params[:id])
     if @forum_thread.destroy
-      flash[:now] = 'Thread has been deleted'
+      flash[:success] = 'Thread has been deleted'
       redirect_to forum_topic_path(@forum_thread.forum_topic)
     else
-      render 'edit'
       flash[:error] = @forum_thread.errors.full_messages
+      render 'edit'
     end
   end
 
