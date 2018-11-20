@@ -8,7 +8,7 @@ class Notifications
 
       setInterval (=>
         @getNewNotifications()
-      ), 3000
+      ), 5000
 
   getNewNotifications: ->
     $.ajax(
@@ -39,5 +39,5 @@ class Notifications
     $("[data-behavior='unread-count']").text(unread_count)
     $("[data-behavior='notification-items']").html(items)
 
-$(document).on 'turbolinks:load', ->
+jQuery ->
   new Notifications

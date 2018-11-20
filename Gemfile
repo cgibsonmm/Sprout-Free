@@ -11,7 +11,7 @@ gem "administrate"
 gem 'cancancan'
 gem 'rolify'
 
-gem 'loaf'
+gem "breadcrumbs_on_rails"
 
 gem 'jquery-rails'
 gem 'acts_as_list'

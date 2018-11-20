@@ -1,5 +1,7 @@
 class ForumThreadsController < ApplicationController
   load_and_authorize_resource
+  add_breadcrumb 'Forums', :forums_path
+  add_breadcrumb 'Categories', :forum_categories_path
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_egear_load, only: [:show]
   before_action :set_forum_thread, except: [:index, :new, :create, :show]
@@ -10,6 +12,8 @@ class ForumThreadsController < ApplicationController
   end
 
   def show
+    add_breadcrumb @forum_thread.forum_topic.forum_category.title, forum_category_path(@forum_thread.forum_topic.forum_category)
+    add_breadcrumb @forum_thread.forum_topic.title, forum_topic_path(@forum_thread.forum_topic)
     @forum_post = ForumPost.new
   end
 

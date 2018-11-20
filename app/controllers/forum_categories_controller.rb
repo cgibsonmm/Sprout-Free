@@ -1,5 +1,8 @@
 class ForumCategoriesController < ApplicationController
   load_and_authorize_resource
+  add_breadcrumb "Forum", :forums_path
+  add_breadcrumb "Categories", :forum_categories_path
+
   before_action :authenticate_user!, except: [:show]
   before_action :check_admin, except: [:show]
   before_action :set_forum_category, except: [:new, :create, :index, :sort]
@@ -32,6 +35,7 @@ class ForumCategoriesController < ApplicationController
   end
 
   def show
+    add_breadcrumb @forum_category.title
   end
 
   def edit

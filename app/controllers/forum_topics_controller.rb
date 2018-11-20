@@ -1,5 +1,7 @@
 class ForumTopicsController < ApplicationController
   load_and_authorize_resource
+  add_breadcrumb 'Forums', :forums_path
+  add_breadcrumb 'Categories', :forum_categories_path
   before_action :set_forum_category, only: [:new, :create]
   before_action :set_forum_topic, only: [:show, :destroy, :edit, :update]
 
@@ -25,6 +27,7 @@ class ForumTopicsController < ApplicationController
   end
 
   def show
+    add_breadcrumb @forum_topic.forum_category.title , forum_category_path(@forum_topic.forum_category)
   end
 
   def edit
