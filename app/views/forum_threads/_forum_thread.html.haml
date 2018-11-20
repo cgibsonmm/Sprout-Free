@@ -5,5 +5,5 @@
   .ml-5
     = forum_thread.user.username
   .left-area
-    - if forum_thread.forum_posts.first.body != nil
+    - if forum_thread.forum_posts.first != nil
       = strip_tags(forum_thread.forum_posts.first.body.truncate(100))
