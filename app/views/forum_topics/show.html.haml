@@ -10,4 +10,5 @@
   = link_to 'Create a New Thread', new_forum_topic_forum_thread_path(@forum_topic.id), class: 'btn-sm btn-success'
 
   %ul.list-group.thread-list.mt-2
-    = render @forum_topic.forum_threads, class: 'thread-item'
+    - if @forum_topic.forum_threads
+      = render @forum_topic.forum_threads, class: 'thread-item'
