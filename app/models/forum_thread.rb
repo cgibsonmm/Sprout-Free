@@ -15,7 +15,8 @@ class ForumThread < ApplicationRecord
   belongs_to :forum_topic
   has_many :forum_posts, dependent: :destroy
   has_many :users,       through: :forum_posts
-  has_many :follows
+  has_many :follows, dependent: :destroy
+  has_many :notifications, as: :notifiable, dependent: :delete_all
 
   accepts_nested_attributes_for :forum_posts
 
