@@ -2,7 +2,7 @@ class ForumThreadsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_egear_load, only: [:show]
-  before_action :set_forum_thread, except: [:index, :new, :create, :show]
+  before_action :set_forum_thread, except: [:index, :new, :create, :show, :destroy]
   # before_action :set_forum_topic
 
   def index
@@ -30,8 +30,8 @@ class ForumThreadsController < ApplicationController
       redirect_to @forum_thread
       flash[:success] = "Successfully created a new thread"
     else
-      flash.now[:error] = @forum_thread.errors.full_messages
       render 'new'
+      flash[:danger] = 'Error Creating a new thread, make sure title and body are present'
     end
   end
 
@@ -42,12 +42,13 @@ class ForumThreadsController < ApplicationController
   end
 
   def destroy
+    @forum_thread = ForumThread.find(params[:id])
     if @forum_thread.destroy
-      flash[:now] = 'Thread has been deleted'
+      flash[:success] = 'Thread has been deleted'
       redirect_to forum_topic_path(@forum_thread.forum_topic)
     else
-      render 'edit'
       flash[:error] = @forum_thread.errors.full_messages
+      render 'edit'
     end
   end
 

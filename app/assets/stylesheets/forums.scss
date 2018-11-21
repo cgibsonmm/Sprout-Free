@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #forums-nav {
-  background-color: rgb(185, 5, 5);
+  background-color: $red-bg;
+  border-bottom: 2px solid rgb(97, 97, 97);
 
   .nav-link {
     color: rgb(255, 255, 255);
@@ -24,6 +25,11 @@
 
     .title{
       color: rgb(0, 0,0);
+      text-shadow: 1px 1px 1px rgb(176, 176, 176);
+
+      &:hover{
+        color: $light-blue;
+      }
     }
 
     .topic-link-and-logo{
@@ -31,14 +37,14 @@
       align-items: center;
 
       .topic-link {
-        color: rgb(3, 167, 162);
+        color: $dark-blue;
         font-weight: bold;
         font-family: 'Open Sans', sans-serif;
         padding-left: 10px;
 
         &:hover {
           text-decoration: none !important;
-          color: rgb(16, 102, 173);
+          color: $light-blue;
         }
       }
   }

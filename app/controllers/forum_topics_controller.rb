@@ -58,11 +58,11 @@ class ForumTopicsController < ApplicationController
   private
 
   def set_forum_category
-    @forum_category = ForumCategory.find(params[:forum_category_id])
+    @forum_category = ForumCategory.friendly.find(params[:forum_category_id])
   end
 
   def set_forum_topic
-    @forum_topic = ForumTopic.find(params[:id])
+    @forum_topic = ForumTopic.friendly.find(params[:id])
   end
 
   def create_params

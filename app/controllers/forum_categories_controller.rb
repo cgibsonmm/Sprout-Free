@@ -66,7 +66,7 @@ class ForumCategoriesController < ApplicationController
   end
 
   def set_forum_category
-    @forum_category = ForumCategory.find(params[:id])
+    @forum_category = ForumCategory.friendly.find(params[:id])
   end
 
   def create_params

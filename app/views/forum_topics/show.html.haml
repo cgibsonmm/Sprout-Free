@@ -5,10 +5,10 @@
   = link_to 'Back To Forums', forums_path
   %h3
     = @forum_topic.title
-    %br
   = @forum_topic.description
   %hr
   = link_to 'Create a New Thread', new_forum_topic_forum_thread_path(@forum_topic.id), class: 'btn-sm btn-success'
 
   %ul.list-group.thread-list.mt-2
+    -# Added for error while rendering formated text
     = render @forum_topic.forum_threads, class: 'thread-item'

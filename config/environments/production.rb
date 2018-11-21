@@ -16,6 +16,9 @@ Rails.application.configure do
 
   config.force_ssl = true
 
+
+  config.exceptions_app = self.routes
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
@@ -53,7 +56,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :warn
+  config.log_level = :fatal
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
