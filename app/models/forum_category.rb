@@ -20,6 +20,7 @@ class ForumCategory < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  searchkick
   resourcify
   belongs_to :user
   has_many :forum_topics

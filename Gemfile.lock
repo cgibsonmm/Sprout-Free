@@ -426,7 +426,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   font_awesome5_rails
-  friendly_id (~> 5.2.0)
+  friendly_id
   gon
   gravtastic
   guard

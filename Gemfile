@@ -91,6 +91,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'friendly_id'
 gem 'searchkick'
 gem 'devise'
 gem 'the_big_username_blacklist'

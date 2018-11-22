@@ -6,6 +6,5 @@
         %button{'type': 'button', class: 'close', 'data-dismiss': 'modal', 'aria-label': 'close'}
           %span{'aria-hidden': 'true'} &times;
       .modal-body
-        A Form will go here
-        %br
-        %button{class: 'btn btn-success'} Submit
+        = form_tag forum_categories_path, method: :get do
+          = text_field_tag :q, nil, placeholder: 'search'
