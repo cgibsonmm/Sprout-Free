@@ -19,6 +19,7 @@ gem 'gon'
 gem 'jquery-ui-rails'
 
 gem 'simple_form'
+gem 'pagy'
 
 # gem 'ransack', github: 'activerecord-hackery/ransack'
 

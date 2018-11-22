@@ -8,7 +8,7 @@ class ForumThreadsController < ApplicationController
   # before_action :set_forum_topic
 
   def index
-    @forum_threads = ForumThread.order('created_at DESC')
+    @pagy, @forum_threads = pagy(ForumThread.order('created_at DESC'), items: 20)
   end
 
   def show
