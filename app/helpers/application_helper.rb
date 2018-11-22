@@ -12,6 +12,10 @@ module ApplicationHelper
     current_user.admin == true
   end
 
+  def admin_or_owner?(post)
+    current_user.has_role?(:admin) || post.user == current_user
+  end
+
   def user_admin?
     user_signed_in? && current_user.has_role?(:admin)
   end

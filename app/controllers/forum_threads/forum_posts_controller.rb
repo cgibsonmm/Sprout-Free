@@ -44,12 +44,9 @@ class ForumThreads::ForumPostsController < ApplicationController
   def destroy
     @forum_post = ForumPost.find(params[:id])
     @forum_thread = @forum_post.forum_thread
-    unless @forum_thread.forum_posts.first == @forum_post
-      if @forum_post.destroy
-        flash[:warning] = 'Post Deleted'
-        redirect_to @forum_thread
-      end
-    end
+    @forum_post.destroy
+    flash[:alert] = 'Post deleted'
+    redirect_to @forum_thread
   end
 
 
