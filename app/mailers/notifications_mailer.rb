@@ -11,4 +11,16 @@ class NotificationsMailer < ApplicationMailer
       subject: "New #{@action} on #{@post.forum_thread.subject}"
     )
   end
+
+  def site_notification_mailer(reciver, subject, title, body)
+    @reciver = reciver
+    @subject = subject
+    @title = title
+    @body = body
+
+    mail(
+      to: @reciver.email,
+      subject: @subject
+    )
+  end
 end

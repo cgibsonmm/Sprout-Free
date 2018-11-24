@@ -1,3 +1,10 @@
 %html
+  :css
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
   %body
-    = yield
+    .div{style: 'min-width:100%; min-height: 100px; background-color: blue;'}
+    .div{style: "min-width: 100%; min-height: 80vh; margin: 0 auto; background-color: rgb(185, 5, 5); font-family: 'Open Sans', sans-serif;"}
+      .white-area{style: 'max-width: 33%; min-height: 80vh; background-color: rgb(246, 246, 246);  margin: 0 auto; padding: 40px '}
+        .img{style: 'background-image: url("https://www.sproutfreecanada.com/assets/Logo-white-bg-84486f583ca3d9b6b5debeb875d9368eaf762effe49d53e75c4880e4a8bfe9eb.png")'}
+        .card
+          = yield

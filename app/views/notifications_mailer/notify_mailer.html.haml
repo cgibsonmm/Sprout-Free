@@ -1,12 +1,9 @@
-.div{style: "min-width: 100%; margin: 10px auto; background-color: red;"}
-  .white-area{style: 'max-width: 33%; background-color: white;  margin: 0 auto; padding: 40px '}
-    .img{style: 'background-image: url("https://www.sproutfreecanada.com/public/main_log.png")'}
-    %h1{style: 'text-align: center; text-decoration: underline;'}
-      = @reciver.username
-    %p{style: 'text-align: center;'}
-      there is a new
-      = @action
-      from
-      = @actor
-      on
-      = link_to @post.forum_thread.subject, "https://www.sproutfreecanada.com/forum_threads/#{@post.forum_thread.id}"
+%h1{style: 'text-align: center; text-decoration: underline;'}
+  = @reciver.username
+%p{style: 'text-align: center;'}
+  there is a new
+  = @action
+  from
+  = @actor
+  on
+  = link_to @post.forum_thread.subject, "https://www.sproutfreecanada.com/forum_threads/#{@post.forum_thread.id}"
