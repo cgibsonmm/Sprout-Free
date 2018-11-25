@@ -94,10 +94,15 @@
       padding: 10px 80px;
       .post{
         width: 100%;
+        min-height: 400px;
 
         #new_forum_post{
           // TODO: Need to fit user box
           width: 85% !important;
+
+          #forum_post_body{
+            min-height: 450px;
+          }
         }
       }
     }
