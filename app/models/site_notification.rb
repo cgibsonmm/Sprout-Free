@@ -7,6 +7,7 @@
 #  email_me      :boolean
 #  email_subject :string
 #  title         :string
+#  to_notify     :boolean
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  user_id       :integer

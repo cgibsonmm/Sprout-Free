@@ -4,16 +4,18 @@
   %body
     .div{style: 'min-width:100%; min-height: 100px; background-color: rgb(246,246,246); border: 1px solid rgb(215, 215, 215); display: flex; align-items:center;'}
       .img-left
-        = image_tag 'main_logo.png', style: "max-height: 95px; margin: 15px"
-      %h3{style: "font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 1.5rem; line-height:22px;"}
-        Canada's Legalized
-        %br
-        Growing Community
+        = image_tag 'main_logo.png', style: "max-height: 95px; margin: 15px; box-shadow: 0px 0px 8px 1px black; border-radius: 50%;"
+      %h3{style: "font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 1.5rem; line-height:22px; text-shadow: 0px 0px 2px #939393;"}
+        = link_to "https://www.SproutFreeCanada.com", style: "text-decoration: none; color: black;" do
+          Canada's Legalized
+          %br
+          Growing Community
 
     .div{style: "min-width: 100%; min-height: 80vh; margin: 0 auto; background-color: rgb(185, 5, 5); font-family: 'Open Sans', sans-serif;"}
       .white-area{style: 'max-width: 33%; min-height: 80vh; background-color: rgb(246, 246, 246);  margin: 0 auto; padding: 40px '}
         .card
           = yield
 
-    .footer{style: "width: 100%; min-height: 40px; background-color: rgb(246,246,246); " }
-      = link_to 'SproutFreeCanada', "https://www.SproutFreeCanada.com"
+    .footer{style: "width: 100%; min-height: 40px; background-color: rgb(246,246,246); display: flex; justify-content: center; align-items: center; font-family: 'Open Sans', sans-serif;" }
+      .link{style: "margin: 10px auto"}
+        = link_to 'SproutFreeCanada', "https://www.SproutFreeCanada.com", style: "margin: 10px auto;"

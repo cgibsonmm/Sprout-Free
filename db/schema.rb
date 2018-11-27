@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_153314) do
+ActiveRecord::Schema.define(version: 2018_11_27_012015) do
 
   create_table "follows", force: :cascade do |t|
     t.integer "user_id"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_153314) do
     t.datetime "updated_at", null: false
     t.boolean "email_me"
     t.string "email_subject"
+    t.boolean "to_notify"
     t.index ["user_id"], name: "index_site_notifications_on_user_id"
   end
 

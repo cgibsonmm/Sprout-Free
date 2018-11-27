@@ -9,11 +9,14 @@ class SiteNotificationsController < ApplicationController
   def create
     @site_notification = current_user.site_notifications.build(create_params)
     @to_email = @site_notification.email_me
+    @to_notify = @site_notification.to_notify
 
     if @site_notification.save
       # Post Notification
       (User.all).each do |user|
-        Notification.create(recipient: user, actor: current_user, action: 'notification', notifiable: @site_notification)
+        if @to_notify
+          Notification.create(recipient: user, actor: current_user, action: 'notification', notifiable: @site_notification)
+        end
         if @to_email
           NotificationsMailer.site_notification_mailer(user, @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
         end
@@ -27,7 +30,7 @@ class SiteNotificationsController < ApplicationController
   private
 
   def create_params
-    params.require(:site_notification).permit(:user_id, :title, :body, :email_me, :email_subject)
+    params.require(:site_notification).permit(:user_id, :title, :body, :email_me, :email_subject, :to_notify)
   end
 
   def site_admin?
