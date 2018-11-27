@@ -11,7 +11,13 @@ class ForumThreadsController < ApplicationController
 
 
   def index
-    @pagy, @forum_threads = pagy(ForumThread.order(sort_column + " " + sort_direction).includes(:user), items: 20)
+    # @local = locals
+    if params[:sort]
+      puts true
+      @pagy, @forum_threads = pagy(ForumThread.order(params[:sort] + " desc" ).includes(:user), items: 20)
+    else
+      @pagy, @forum_threads = pagy(ForumThread.order("#{sort_column} #{sort_direction}").includes(:user), items: 20)
+    end
   end
 
   def show
@@ -61,12 +67,16 @@ class ForumThreadsController < ApplicationController
 
   private
 
+  def sortable_columns
+    ["created_at", "last_forum_post_time"]
+  end
+
   def sort_column
-    @forum_threads.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    sortable_columns.include?(params[:column]) ? params[:column] : "created_at"
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 
   # def set_forum_topic

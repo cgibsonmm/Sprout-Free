@@ -1,9 +1,12 @@
-= link_to forum_thread, { class: 'forum-post list-group-item' } do
-  = render 'forum_threads/gravatar/avatar', forum_thread: forum_thread
-  .ml-2
-    = forum_thread.subject
-  .ml-5
+%tr
+  %td{style: 'display: flex; align-items: center;'}
+    = render 'forum_threads/gravatar/avatar', forum_thread: forum_thread
+    .ml-2
+      = forum_thread.subject
+  %td.ml-5
     = forum_thread.user.username
-  .left-area
+  %td
+    = local_date(forum_thread.created_at)
+  %td.left-area
     - if forum_thread.forum_posts.first != nil
       = strip_tags(forum_thread.forum_posts.first.body.truncate(100))

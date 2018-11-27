@@ -28,6 +28,7 @@ class ForumTopicsController < ApplicationController
 
   def show
     add_breadcrumb @forum_topic.forum_category.title , forum_category_path(@forum_topic.forum_category)
+    @topic_threads = @forum_topic.forum_threads.order('Created_at desc').includes(:user)
   end
 
   def edit

@@ -13,6 +13,8 @@ require 'support/javascript'
 
 
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
 require 'shoulda/matchers'
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

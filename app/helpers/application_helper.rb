@@ -1,15 +1,11 @@
 module ApplicationHelper
 
-  def sortable(column, title = nil)
+  def sort_link(column, title = nil)
     title ||= column.titleize
-    # css_class = column == sort_column ? "current #{sort_direction}" : nil
-    puts sort_direction
-    puts column
-    puts sort_column
-    puts '-----'
-    direction = column == sort_column && sort_direction == "desc" ? "desc" : "asc"
-    puts direction
-    link_to title, {sort: column, direction: direction}
+    direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
+    icon = sort_direction == "asc" ? 'chevron-circle-up' : 'chevron-circle-down'
+    icon = column == sort_column ? icon : "minus-circle"
+    link_to "#{fa_icon(icon, text: title)}".html_safe, {column: column, direction: direction}
   end
 
   def forum_area?

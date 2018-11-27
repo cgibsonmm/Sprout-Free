@@ -9,6 +9,19 @@
   %hr
   = link_to 'Create a New Thread', new_forum_topic_forum_thread_path(@forum_topic.id), class: 'btn-sm btn-success'
 
-  %ul.list-group.thread-list.mt-2
-    -# Added for error while rendering formated text
-    = render @forum_topic.forum_threads, class: 'thread-item'
+  -# %ul.list-group.thread-list.mt-2
+  -#   -# Added for error while rendering formated text
+  -#   - @topic_threads.each do |forum_thread|
+  -#     = render partial: "forum_threads/forum_thread", locals: {forum_thread: forum_thread}
+
+  .table-responsive-md
+    %table.table.thread-list.mt-2
+      %thead
+        %tr
+          %th{scope: "col"} Subject
+          %th{scope: "col"} user
+          %th{scope: "col"} Created
+          %th{scope: "col"} Post
+      %tbody
+        - @topic_threads.each do |forum_thread|
+          = render partial: "forum_threads/forum_thread", locals: {forum_thread: forum_thread}

@@ -1,4 +1,4 @@
-%table.table
+%table.table#thread-table
   %th
     %tr
       %th{'scope': 'col'}
@@ -6,11 +6,11 @@
       %th{'scope': 'col'}
         Username
       %th{'scope': 'col'}
-        = sortable :created_at, 'Created at'
+        = sort_link "created_at"
       -# %th{'scope': 'col'}
       -#   Likes
       %th{'scope': 'col'}
-        = sortable :last_forum_post_time, 'Last Comment'
+        = sort_link "last_forum_post_time", 'Last Comment'
   %tb
     - @forum_threads.each do |thread|
       %tr
@@ -23,5 +23,5 @@
         -# %td
         -#   = thread.
         %td
-          = render_time_ago(thread.last_forum_post_time)
+          = link_to render_time_ago(thread.last_forum_post_time), forum_thread_path(thread, anchor: dom_id(thread.forum_posts.last))
 = raw pagy_nav_bootstrap(@pagy).html_safe

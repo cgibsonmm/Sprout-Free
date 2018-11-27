@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Admin can create a site wide notification' do
+RSpec.feature 'Admin can create a site wide notification', :js do
   before do
     @user = create(:user)
     @admin = create(:admin_user)
@@ -15,6 +15,7 @@ RSpec.feature 'Admin can create a site wide notification' do
     end
 
     scenario 'can create and deliver a site wide notification' do
+      save_screenshot('../file.png')
       click_on 'New Site Notification'
 
       fill_in 'Title', with: @data[:title]

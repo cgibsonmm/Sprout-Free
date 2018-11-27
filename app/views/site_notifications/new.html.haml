@@ -7,7 +7,7 @@
         = f.input :email_me, as: :radio_buttons, label: 'Send Email'
         .ml-3
           = f.input :to_notify, as: :radio_buttons, label: 'Send Notification'
-      = f.input :email_subject
+      = f.input :email_subject, placeholder: 'Only needed if sending email...'
       = f.input :title
       = f.input :body, as: :trix_editor
       = f.submit class: 'btn btn-success'

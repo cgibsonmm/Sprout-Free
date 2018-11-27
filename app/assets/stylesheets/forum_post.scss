@@ -117,3 +117,21 @@
     padding-right: 80px;
   }
 }
+
+@media(max-width:1000px){
+  .thread .posts-container .new-post-form .post #new_forum_post{
+    width: 100% !important;
+  }
+  .posts-container {
+    .post {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .user-card{
+        width: 100%;
+      }
+    }
+  }
+}

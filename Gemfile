@@ -79,6 +79,7 @@ group :test do
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'rails-controller-testing'
   gem 'capybara'
+  gem 'poltergeist'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'database_cleaner'
