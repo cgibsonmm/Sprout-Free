@@ -1,12 +1,14 @@
-%tr
+%tr{'class': 'clickable-row', 'data-href': forum_thread_path(forum_thread)}
   %td{style: 'display: flex; align-items: center;'}
     = render 'forum_threads/gravatar/avatar', forum_thread: forum_thread
     .ml-2
       = forum_thread.subject
-  %td.ml-5
-    = forum_thread.user.username
   %td
-    = local_date(forum_thread.created_at)
+    .mt-3
+      = forum_thread.user.username
+  %td
+    .mt-3
+      = local_date(forum_thread.created_at)
   %td.left-area
     - if forum_thread.forum_posts.first != nil
       = strip_tags(forum_thread.forum_posts.first.body.truncate(100))

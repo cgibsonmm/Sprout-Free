@@ -1,5 +1,6 @@
 class ForumTopicsController < ApplicationController
   load_and_authorize_resource
+  helper_method :sort_column, :sort_direction
   add_breadcrumb 'Forums', :forums_path
   add_breadcrumb 'Categories', :forum_categories_path
   before_action :set_forum_category, only: [:new, :create]
@@ -28,7 +29,7 @@ class ForumTopicsController < ApplicationController
 
   def show
     add_breadcrumb @forum_topic.forum_category.title , forum_category_path(@forum_topic.forum_category)
-    @topic_threads = @forum_topic.forum_threads.order('Created_at desc').includes(:user)
+    @topic_threads = @forum_topic.forum_threads.order("#{sort_column} #{sort_direction}").includes(:user)
   end
 
   def edit
@@ -60,6 +61,18 @@ class ForumTopicsController < ApplicationController
   end
 
   private
+
+  def sortable_columns
+    ["created_at"]
+  end
+
+  def sort_column
+    sortable_columns.include?(params[:column]) ? params[:column] : "created_at"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
 
   def set_forum_category
     @forum_category = ForumCategory.friendly.find(params[:forum_category_id])

@@ -15,12 +15,13 @@
   -#     = render partial: "forum_threads/forum_thread", locals: {forum_thread: forum_thread}
 
   .table-responsive-md
-    %table.table.thread-list.mt-2
+    %table.table.thread-list.mt-2.table-striped
       %thead
         %tr
           %th{scope: "col"} Subject
           %th{scope: "col"} user
-          %th{scope: "col"} Created
+          %th{scope: "col"}
+            = sort_link 'created_at'
           %th{scope: "col"} Post
       %tbody
         - @topic_threads.each do |forum_thread|
