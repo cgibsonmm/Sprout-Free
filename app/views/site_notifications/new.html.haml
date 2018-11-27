@@ -4,7 +4,7 @@
   .card-body
     = simple_form_for @site_notification do |f|
       = f.input :title
-      = f.input :body
+      = f.input :body, as: :trix_editor
       = f.input :email_me, as: :radio_buttons
       = f.input :email_subject
       = f.submit class: 'btn btn-success'

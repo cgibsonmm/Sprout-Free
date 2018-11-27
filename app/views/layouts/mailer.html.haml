@@ -5,7 +5,7 @@
     .div{style: 'min-width:100%; min-height: 100px; background-color: rgb(246,246,246); border: 1px solid rgb(215, 215, 215); display: flex; align-items:center;'}
       .img-left
         = image_tag 'main_logo.png', style: "max-height: 95px; margin: 15px"
-      %h3{style: "font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 1.5rem; line-height:13px;"}
+      %h3{style: "font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 1.5rem; line-height:22px;"}
         Canada's Legalized
         %br
         Growing Community
@@ -15,5 +15,5 @@
         .card
           = yield
 
-    .footer
+    .footer{style: "width: 100%; min-height: 40px; background-color: rgb(246,246,246); " }
       = link_to 'SproutFreeCanada', "https://www.SproutFreeCanada.com"
