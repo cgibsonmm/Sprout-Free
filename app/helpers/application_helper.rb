@@ -1,4 +1,17 @@
 module ApplicationHelper
+
+  def sortable(column, title = nil)
+    title ||= column.titleize
+    # css_class = column == sort_column ? "current #{sort_direction}" : nil
+    puts sort_direction
+    puts column
+    puts sort_column
+    puts '-----'
+    direction = column == sort_column && sort_direction == "desc" ? "desc" : "asc"
+    puts direction
+    link_to title, {sort: column, direction: direction}
+  end
+
   def forum_area?
     controllers = %w[forums forum_categories forum_threads forum_topics forum_posts]
     controllers.include?(controller_name)

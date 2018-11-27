@@ -2,12 +2,13 @@
 #
 # Table name: forum_threads
 #
-#  id             :integer          not null, primary key
-#  subject        :string
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  forum_topic_id :integer
-#  user_id        :integer
+#  id                   :integer          not null, primary key
+#  last_forum_post_time :datetime
+#  subject              :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  forum_topic_id       :integer
+#  user_id              :integer
 #
 
 require 'rails_helper'

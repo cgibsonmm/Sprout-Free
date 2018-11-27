@@ -1,5 +1,6 @@
 class ForumThreadsController < ApplicationController
   load_and_authorize_resource
+  helper_method :sort_column, :sort_direction
   add_breadcrumb 'Forums', :forums_path
   add_breadcrumb 'Categories', :forum_categories_path
   before_action :authenticate_user!, except: [:index, :show]
@@ -7,8 +8,10 @@ class ForumThreadsController < ApplicationController
   before_action :set_forum_thread, except: [:index, :new, :create, :show, :destroy]
   # before_action :set_forum_topic
 
+
+
   def index
-    @pagy, @forum_threads = pagy(ForumThread.order('created_at DESC'), items: 20)
+    @pagy, @forum_threads = pagy(ForumThread.order(sort_column + " " + sort_direction).includes(:user), items: 20)
   end
 
   def show
@@ -57,6 +60,14 @@ class ForumThreadsController < ApplicationController
   end
 
   private
+
+  def sort_column
+    @forum_threads.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 
   # def set_forum_topic
   #   @forum_topic = ForumTopic.find(params[:forum_topic_id])

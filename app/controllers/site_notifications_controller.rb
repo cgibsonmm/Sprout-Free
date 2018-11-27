@@ -15,7 +15,7 @@ class SiteNotificationsController < ApplicationController
       (User.all).each do |user|
         Notification.create(recipient: user, actor: current_user, action: 'notification', notifiable: @site_notification)
         if @to_email
-          NotificationsMailer.site_notification_mailer(user, @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_now
+          NotificationsMailer.site_notification_mailer(user, @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
         end
       end
 

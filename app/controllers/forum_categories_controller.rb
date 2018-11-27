@@ -8,7 +8,7 @@ class ForumCategoriesController < ApplicationController
   before_action :set_forum_category, except: [:new, :create, :index, :sort]
 
   def index
-    @forum_categories = ForumCategory.order(:position).includes(:user)
+    @forum_categories = ForumCategory.order(:position)
   end
 
   def sort

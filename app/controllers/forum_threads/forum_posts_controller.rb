@@ -9,6 +9,7 @@ class ForumThreads::ForumPostsController < ApplicationController
     @forum_post.user = current_user
 
     if @forum_post.save
+      @forum_thread.update(last_forum_post_time: Time.now)
       flash[:success] = "Post Saved"
       redirect_to forum_thread_path(@forum_thread)
 

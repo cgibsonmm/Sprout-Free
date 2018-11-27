@@ -6,22 +6,22 @@
       %th{'scope': 'col'}
         Username
       %th{'scope': 'col'}
-        Created
+        = sortable :created_at, 'Created at'
       -# %th{'scope': 'col'}
       -#   Likes
-      -# %th{'scope': 'col'}
-      -#   Comments
+      %th{'scope': 'col'}
+        = sortable :last_forum_post_time, 'Last Comment'
   %tb
     - @forum_threads.each do |thread|
       %tr
         %th{'scope': 'row'}
           = link_to thread.subject, forum_thread_path(thread)
         %td
-          = thread.user.username
+          = link_to thread.user.username
         %td
           = local_time_ago thread.created_at
         -# %td
         -#   = thread.
-        -# %td
-        -#   = thread.forum_posts.count - 1
+        %td
+          = render_time_ago(thread.last_forum_post_time)
 = raw pagy_nav_bootstrap(@pagy).html_safe
