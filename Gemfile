@@ -21,6 +21,8 @@ gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'pagy'
 
+gem 'sidekiq'
+
 # gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
