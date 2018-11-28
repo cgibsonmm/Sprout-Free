@@ -4,23 +4,35 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 
 
-gem 'friendly_id', '~> 5.2.0'
+# styling
+gem 'bootstrap', '~> 4.1.3'
+gem 'font_awesome5_rails'
+gem 'gravtastic'
+gem 'trix-rails', require: 'trix'
+gem 'shrine'
+gem "aws-sdk-s3", "~> 1.2"
+gem 'jquery-fileupload-rails'
+gem 'local_time'
+gem 'haml-rails'
+gem "breadcrumbs_on_rails"
+
+# auth
+
 gem 'devise'
 gem 'the_big_username_blacklist'
 gem "administrate"
 gem 'cancancan'
 gem 'rolify'
 
-gem "breadcrumbs_on_rails"
 
+# Gen
+gem 'friendly_id', '~> 5.2.0'
 gem 'jquery-rails'
 gem 'acts_as_list'
 gem 'gon'
 gem 'jquery-ui-rails'
-
 gem 'simple_form'
 gem 'pagy'
-
 gem 'sidekiq'
 
 # gem 'ransack', github: 'activerecord-hackery/ransack'
@@ -56,20 +68,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# CSS Framework
-gem 'bootstrap', '~> 4.1.3'
-gem 'font_awesome5_rails'
-gem 'gravtastic'
-gem 'trix-rails', require: 'trix'
-gem 'shrine'
-gem "aws-sdk-s3", "~> 1.2"
-gem 'jquery-fileupload-rails'
-gem 'local_time'
-gem 'haml-rails'
-
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
