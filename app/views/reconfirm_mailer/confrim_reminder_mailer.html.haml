@@ -1,0 +1,10 @@
+.container{style: "text-align: center;"}
+  %h3
+    = @user.username
+  .body{style: "margin: 0 60px;"}
+    %p
+      It looks like there was a problem with our account creation over the past few days.
+      The problem should now be fixed a you can now confirm your account
+      = link_to 'Click here to confirm your account', "https://www.sproutfreecanada.com/users/confirmation/new"
+    %p
+      We are sorry for any inconvinous that this may have caused.

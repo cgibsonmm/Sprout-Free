@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :forums, only: [:index]
 
   resources :site_notifications
+  resource :confirm_reminder, only: [:create]
 
   resources :forum_categories do
     collection do

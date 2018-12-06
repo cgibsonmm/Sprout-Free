@@ -16,5 +16,9 @@ FactoryBot.define do
       # confirmed_at { Time.now }
       after(:create) { |user| user.add_role(:admin) }
     end
+
+    factory :non_confirmed_user, class: User do
+      confirmed_at {nil}
+    end
   end
 end

@@ -1,6 +1,6 @@
 class ReconfirmMailer < ApplicationMailer
 
-  def confirm_mailer(user)
+  def confrim_reminder_mailer(user)
     @user = user
 
     mail(

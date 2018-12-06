@@ -21,6 +21,11 @@ module ApplicationHelper
     current_user.has_role?(:admin)
   end
 
+
+  def unconfirmed_user_count
+    User.select{ |user| user.confirmed_at.nil? }.count
+  end
+
   def admin_or_owner?(post)
     current_user.has_role?(:admin) || post.user == current_user
   end
