@@ -3,7 +3,8 @@ class ConfirmRemindersController < ApplicationController
   before_action :confirm_admin!
 
   def create
-    @unconfirmed_users = User.select { |user| user.confirmed_at.nil? }
+    # @unconfirmed_users = User.select { |user| user.confirmed_at.nil? }
+    @unconfirmed_users = User.find(1)
     @unconfirmed_users.each do |user|
       ReconfirmMailer.confrim_reminder_mailer(user).deliver_now
     end
