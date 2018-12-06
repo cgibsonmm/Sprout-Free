@@ -5,9 +5,10 @@ class ConfirmRemindersController < ApplicationController
   def create
     # @unconfirmed_users = User.select { |user| user.confirmed_at.nil? }
     @unconfirmed_users = User.find(1)
-    @unconfirmed_users.each do |user|
-      ReconfirmMailer.confrim_reminder_mailer(user).deliver_now
-    end
+    ReconfirmMailer.confrim_reminder_mailer(@unconfirmed_users).deliver_now
+    # @unconfirmed_users.each do |user|
+    #   ReconfirmMailer.confrim_reminder_mailer(user).deliver_now
+    # end
 
 
     flash[:success] = "sent email to #{@unconfirmed_users.count} unconfirm users"
