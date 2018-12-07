@@ -25,6 +25,9 @@ gem 'cancancan'
 gem 'rolify'
 
 
+# Added for checking memory leaks
+# gem 'derailed'
+
 # Gen
 gem 'friendly_id', '~> 5.2.0'
 gem 'jquery-rails'
