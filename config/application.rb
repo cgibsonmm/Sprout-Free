@@ -34,5 +34,7 @@ module SproutFree
     config.action_mailer.asset_host = "https://sprout-free-canada.herokuapp.com"
 
     config.active_job.queue_adapter = :sidekiq
+
+    config.exceptions_app = self.routes
   end
 end

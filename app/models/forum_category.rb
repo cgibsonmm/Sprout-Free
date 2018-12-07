@@ -19,10 +19,10 @@
 class ForumCategory < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
-  
+
   resourcify
   belongs_to :user
-  has_many :forum_topics
+  has_many :forum_topics, dependent: :delete_all
   has_many :forum_threads, through: :forum_topics
   has_many :forum_posts, through: :forum_threads
 
