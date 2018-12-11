@@ -3,12 +3,13 @@ class Notifications
     @notifications = $("[data-behavior='notifications']")
 
     if @notifications.length > 0
+      @getNewNotifications()
       @handleSuccess @notifications.data("notifications")
       $("[data-behavior='notifications-link']").on "click", @handleClick
 
       setInterval (=>
         @getNewNotifications()
-      ), 5000
+      ), 10000
 
   getNewNotifications: ->
     $.ajax(
