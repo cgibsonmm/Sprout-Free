@@ -2,10 +2,13 @@ module ForumThreadHelper
   include Pagy::Frontend
 
   def render_time_ago(time)
-    if time
-      local_time_ago(time)
+    puts time
+    if !time
+      'No Comments'
+    elsif time.year < 2000
+      'No Comments'
     else
-      'NA'
+      local_time_ago(time)
     end
   end
 end

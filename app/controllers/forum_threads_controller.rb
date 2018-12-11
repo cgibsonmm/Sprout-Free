@@ -13,7 +13,6 @@ class ForumThreadsController < ApplicationController
   def index
     # @local = locals
     if params[:sort]
-      puts true
       @pagy, @forum_threads = pagy(ForumThread.order(params[:sort] + " desc" ).includes(:user), items: 20)
     else
       @pagy, @forum_threads = pagy(ForumThread.order("#{sort_column} #{sort_direction}").includes(:user), items: 20)
@@ -38,6 +37,7 @@ class ForumThreadsController < ApplicationController
     @forum_thread.user = current_user
     # @forum_thread = current_user.forum_threads.new(forum_thread_params)
     @forum_thread.forum_posts.first.user_id = current_user.id
+    @forum_thread.last_forum_post_time = Time.now - 10000000000
 
     if @forum_thread.save
       redirect_to @forum_thread
@@ -94,6 +94,6 @@ class ForumThreadsController < ApplicationController
   end
 
   def create_params
-    params.require(:forum_thread).permit(:subject, :forum_topic_id, forum_posts_attributes: [:body])
+    params.require(:forum_thread).permit(:subject, :forum_topic_id, :last_forum_post_time, forum_posts_attributes: [:body])
   end
 end
