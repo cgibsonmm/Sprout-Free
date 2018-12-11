@@ -18,9 +18,12 @@ class SiteNotificationsController < ApplicationController
           Notification.create(recipient: user, actor: current_user, action: 'notification', notifiable: @site_notification)
         end
         if @to_email
+          # test mailer
+          # NotificationsMailer.site_notification_mailer('cgibsonmmdev@gmail.com', @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
           NotificationsMailer.site_notification_mailer(user, @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
         end
       end
+
 
       flash[:success] = 'Site notification posted'
       redirect_to '/forums'

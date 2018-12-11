@@ -79,6 +79,7 @@
             a{
               // max-width: 400px !important;
               img {
+                image-orientation: from-image;
                 display: flex;
                 flex-direction: column;
                 height: auto !important;

@@ -19,7 +19,7 @@ class NotificationsMailer < ApplicationMailer
     @body = body
 
     mail(
-      to: @reciver.email,
+      to: @reciver,
       subject: @subject
     )
   end

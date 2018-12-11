@@ -11,5 +11,18 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ForumsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  # first_post_in_thread?
+  it 'is expected to return true if post is first in thread' do
+    post1 = create(:forum_post)
+    post2 = create(:forum_post, forum_thread_id: 1)
+    thread = ForumThread.find(1)
+    # True
+    first_post = helper.first_post_in_thread?(post1, thread)
+    expect(first_post).to be(true)
+
+    # False
+    second_post = helper.first_post_in_thread?(post2, thread)
+    expect(second_post).to be(false)
+  end
 end
