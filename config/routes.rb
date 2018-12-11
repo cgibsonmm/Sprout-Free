@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :forum_threads
       resources :forum_topics
       resources :images
+      resources :notifications
 
       root to: "users#index"
     end

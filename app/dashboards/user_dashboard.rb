@@ -10,6 +10,7 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     forum_threads: Field::HasMany,
     forum_posts: Field::HasMany,
+    likes: Field::HasMany,
     id: Field::Number,
     username: Field::String,
     email: Field::String,
@@ -27,6 +28,8 @@ class UserDashboard < Administrate::BaseDashboard
     unconfirmed_email: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    password: PasswordField,
+    password_confirmation: PasswordField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -35,10 +38,11 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :forum_threads,
-    :forum_posts,
     :id,
     :username,
+    :forum_threads,
+    :forum_posts,
+    :likes
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -49,18 +53,18 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :username,
     :email,
-    :encrypted_password,
-    :reset_password_token,
+    # :encrypted_password,
+    # :reset_password_token,
     :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :confirmation_token,
+    # :remember_created_at,
+    # :sign_in_count,
+    # :last_sign_in_at,
+    # :current_sign_in_ip,
+    # :last_sign_in_ip,
+    # :confirmation_token,
     :confirmed_at,
     :confirmation_sent_at,
-    :unconfirmed_email,
+    # :unconfirmed_email,
     :created_at,
     :updated_at,
   ].freeze
@@ -69,22 +73,17 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :forum_threads,
-    :forum_posts,
+    # :forum_threads,
+    # :forum_posts,
     :username,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :confirmation_token,
+    :password,
+    :password_confirmation,
+    # :reset_password_sent_at,
+    # :remember_created_at,
     :confirmed_at,
     :confirmation_sent_at,
-    :unconfirmed_email,
+    # :unconfirmed_email,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
