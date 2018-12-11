@@ -103,6 +103,7 @@
 
           #forum_post_body{
             min-height: 450px;
+            font-size: 18px;
           }
         }
       }
@@ -122,6 +123,7 @@
 @media(max-width:1000px){
   .thread .posts-container .new-post-form .post #new_forum_post{
     width: 100% !important;
+    font-size: 16px;
   }
   .posts-container {
     .post {
