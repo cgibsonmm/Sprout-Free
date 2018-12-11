@@ -1,0 +1,13 @@
+%nav#mobile-bottom-nav.fixed-bottom.navbar-light
+  %ul.links
+    %li.nav-item
+      = link_to 'Forum', forums_path
+    %li.nav-item
+      = link_to 'News', "https://www.sproutfreecanada.com/forum_categories/cannabis-news"
+    %li.nav-item
+      .dropup{'data-behavior': 'notifications'}
+        %btn.dropdown-toggle{'data-toggle': 'dropdown', 'data-behavior': 'notifications-link' }
+          = fa_icon 'lightbulb', data: {'fa-transform': 'rotate-180'}, id: 'lightbulb-icon'
+          %span{'data-behavior': 'unread-count'} 0
+        #notifications.dropdown-menu.dropdown-menu-right{'data-behavior': 'notification-items'}
+          / Dynamic dropdown

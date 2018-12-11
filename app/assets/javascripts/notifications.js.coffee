@@ -26,6 +26,8 @@ class Notifications
       method: "POST"
       success: ->
         $("[data-behavior='unread-count']").text(0)
+        lightbulb = $('#lightbulb-icon');
+        lightbulb.removeClass('lightbulb-glow')
     )
 
   handleSuccess: (data) =>
@@ -36,6 +38,13 @@ class Notifications
     $.each data, (i, notification) ->
       if notification.unread
         unread_count += 1
+
+    lightbulb = $('#lightbulb-icon');
+    if unread_count > 0
+      lightbulb.addClass('lightbulb-glow')
+
+    if unread_count == 0
+      lightbulb.removeClass('lightbulb-glow')
 
     $("[data-behavior='unread-count']").text(unread_count)
     $("[data-behavior='notification-items']").html(items)

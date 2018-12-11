@@ -1,0 +1,47 @@
+.lightbulb-glow{
+  color: rgb(255, 245, 6);
+}
+
+#mobile-bottom-nav{
+  background-color: rgb(80, 80, 80);
+  ul.links{
+    padding: 0;
+    min-height: 8vh;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0;
+    list-style: none;
+    li{
+      text-decoration: none;
+      color: $white-bg;
+      font-weight: bold;
+      font-size: 2rem;
+      padding: 0;
+      margin: 0;
+      height:100%;
+
+      a{
+        color: $white-bg;
+      }
+      a:visited{
+        color: $white-bg;
+      }
+    }
+  }
+
+  .dropdown-toggle::after {
+    display:none;
+  }
+
+  #notifications{
+    width:50vw;
+    font-size: 2rem;
+    padding: 0 !important;
+    a{
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+}

@@ -15,6 +15,7 @@ gem 'jquery-fileupload-rails'
 gem 'local_time'
 gem 'haml-rails'
 gem "breadcrumbs_on_rails"
+gem 'browser', '2.0.3'
 
 # auth
 

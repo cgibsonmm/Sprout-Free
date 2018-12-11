@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  before_action :detect_device_variant
   include Pagy::Backend
-  
+
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :check_admin
-  # before_action :admin?
 
   before_action :set_notifications, if: :user_signed_in?
 
@@ -28,4 +30,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
   end
+
+  private
+
+ def detect_device_variant
+   request.variant = :phone if browser.device.mobile?
+ end
 end

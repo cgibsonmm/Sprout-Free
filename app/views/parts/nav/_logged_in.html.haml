@@ -1,7 +1,7 @@
 %li.nav-item.mr-2
   .dropdown{'data-behavior': 'notifications'}
     %btn.btn.btn-dark.dropdown-toggle{'data-toggle': 'dropdown', 'data-behavior': 'notifications-link' }
-      = fa_icon 'lightbulb', data: {'fa-transform': 'rotate-180'}
+      = fa_icon 'lightbulb', data: {'fa-transform': 'rotate-180'}, id: 'lightbulb-icon'
       %span{'data-behavior': 'unread-count'} 0
     #notifications.dropdown-menu.dropdown-menu-right{'data-behavior': 'notification-items'}
       / Dynamic dropdown
