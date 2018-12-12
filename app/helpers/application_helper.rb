@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def user_avatar(user, size=40)
+    if user.avatar.attached?
+      user.avatar.variant(resize: "#{size}x#{size}!")
+    else
+      user.gravatar_url(size: size)
+    end
+  end
+
   def sort_link(column, title = nil)
     title ||= column.titleize
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"

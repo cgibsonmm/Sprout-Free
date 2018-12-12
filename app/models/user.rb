@@ -52,6 +52,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   # Assosations
+  has_one_attached :avatar
   has_many :forum_categories
   has_many :forum_topics, through: :forum_categories
   has_many :forum_threads, dependent: :destroy
