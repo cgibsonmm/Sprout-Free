@@ -29,6 +29,8 @@ gem 'rolify'
 # Added for checking memory leaks
 # gem 'derailed'
 
+gem 'pg'
+
 # Gen
 gem 'friendly_id', '~> 5.2.0'
 gem 'jquery-rails'
@@ -78,7 +80,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'sqlite3'
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'rails-controller-testing'
@@ -91,7 +92,6 @@ group :test do
 end
 
 group :development do
-  gem 'pg'
   gem 'guard'
   gem 'guard-livereload', '~> 2.5', require: false
   gem "letter_opener"

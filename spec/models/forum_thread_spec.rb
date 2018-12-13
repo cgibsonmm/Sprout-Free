@@ -2,7 +2,7 @@
 #
 # Table name: forum_threads
 #
-#  id                   :integer          not null, primary key
+#  id                   :bigint(8)        not null, primary key
 #  last_forum_post_time :datetime
 #  subject              :string
 #  created_at           :datetime         not null
