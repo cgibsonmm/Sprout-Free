@@ -13,5 +13,14 @@
 
           = f.input :avatar
 
+        = f.input :province, collection: ['Nunavut', 'Quebec', 'Northwest Territories', |
+                                          'Ontario', 'British Columbia', 'Alberta',     |
+                                          'Saskatchewan', 'Manitoba', 'Yukon',          |
+                                          'Newfoundland and Labrador', 'New Brunswick', |
+                                          'Nova Scotia', 'Prince Edward Island'],       |
+                                          prompt: 'Select your province'                |
+
+        = f.input :city
+
         = f.input :about_me
         = f.submit 'Update Profile', class: 'btn btn-success shadow'

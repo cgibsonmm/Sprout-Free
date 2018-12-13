@@ -25,7 +25,7 @@ class UserProfilesController < ApplicationController
   private
 
   def update_params
-    params.require(:user).permit(:about_me, :avatar)
+    params.require(:user).permit(:about_me, :avatar, :province, :city)
   end
 
   def set_profile

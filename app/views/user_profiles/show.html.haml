@@ -2,10 +2,16 @@
   .card.mt-5.ml-5
     .card-head
       .left.ml-3.mt-3
-        = image_tag @profile.gravatar_url
+        = image_tag user_avatar(@profile, 100), class: 'rounded-circle'
       .right.ml-2.mt-3
-        %h2.text-center
+        %h3.text-center
           = @profile.username
+        Province:
+        = user_province(@profile)
+        %br
+        City:
+        = user_city(@profile)
+        %br
         Total posts:
         = @profile.forum_posts.count
       %hr

@@ -49,5 +49,10 @@ class Notifications
     $("[data-behavior='unread-count']").text(unread_count)
     $("[data-behavior='notification-items']").html(items)
 
-jQuery ->
+$(document).on('turbolinks:load', ->
   new Notifications
+)
+
+$(document).on('page:load', ->
+  new Notifications
+)

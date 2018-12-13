@@ -1,7 +1,7 @@
 - if user_signed_in?
   #user-info-area
     .user-gravatar
-      = image_tag current_user.gravatar_url
+      = image_tag user_avatar(current_user, 60)
     .user-info.mt-2
       .username
         = current_user.username
