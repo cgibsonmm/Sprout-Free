@@ -22,7 +22,8 @@ class ForumPost < ApplicationRecord
 
   def notifiy_users
     mentioned_users.each do |user|
-      Notification.create!(recipient: user, actor: self.user, action: 'mentioned', notifiable: self)
+      notification = Notification.create(recipient: user, actor: self.user, action: 'mentioned', notifiable: self)
+      notification.save
     end
   end
 
