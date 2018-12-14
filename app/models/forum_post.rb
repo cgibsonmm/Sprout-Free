@@ -17,4 +17,23 @@ class ForumPost < ApplicationRecord
   has_many   :notifications, as: :notifiable, dependent: :delete_all
 
   validates :body, presence: true, length: { minimum: 5 }
+
+  after_create :notifiy_users
+
+  def notifiy_users
+    mentioned_users.each do |user|
+      Notification.create!(recipient: user, actor: self.user, action: 'mentioned', notifiable: self)
+    end
+  end
+
+  def mentions
+    @mentions ||= begin
+                    regex = /@([\w]+)/
+                    matches = body.scan(regex).flatten
+                  end
+  end
+
+  def mentioned_users
+    @mentioned_users ||= User.where(username: mentions)
+  end
 end

@@ -6,11 +6,6 @@
       .right.ml-2.mt-3
         %h3.text-center
           = @profile.username
-        Province:
-        = user_province(@profile)
-        %br
-        City:
-        = user_city(@profile)
         %br
         Total posts:
         = @profile.forum_posts.count

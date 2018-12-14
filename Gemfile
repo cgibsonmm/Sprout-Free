@@ -10,7 +10,7 @@ gem 'font_awesome5_rails'
 gem 'gravtastic'
 gem 'trix-rails', require: 'trix'
 gem 'shrine'
-gem "aws-sdk-s3", "~> 1.2"
+gem "aws-sdk-s3", "~> 1.2", require: false
 gem 'jquery-fileupload-rails'
 gem 'local_time'
 gem 'haml-rails'
@@ -24,6 +24,8 @@ gem 'the_big_username_blacklist'
 gem "administrate"
 gem 'cancancan'
 gem 'rolify'
+
+gem 'jquery-atwho-rails'
 
 
 # Added for checking memory leaks
@@ -92,6 +94,7 @@ group :test do
 end
 
 group :development do
+  gem 'redis-rails'
   gem 'guard'
   gem 'guard-livereload', '~> 2.5', require: false
   gem "letter_opener"
@@ -108,7 +111,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
 end
 
 

@@ -3,9 +3,6 @@
   .details
     %h5
       = link_to user.username, user_profile_path(user.id)
-
-    .profile-details{style: 'font-size: 0.7rem;'}
-      = user_city(user)
     %br
     Post count:
     = user.forum_posts.count

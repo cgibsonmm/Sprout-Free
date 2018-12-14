@@ -2,4 +2,5 @@
   = image_tag user_avatar(notification.actor, 60)
   = notification.actor.username
   = notification.action
-  a #{notification.notifiable_type.underscore.humanize.downcase}
+  you in a
+  #{notification.notifiable_type.underscore.humanize.downcase}

@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
+//= require jquery.atwho
 //= require font_awesome5
 //= require rails-ujs
 //= require turbolinks
