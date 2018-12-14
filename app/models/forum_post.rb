@@ -22,8 +22,13 @@ class ForumPost < ApplicationRecord
 
   def notifiy_users
     mentioned_users.each do |user|
+      puts '!!!!!!!!HELLO'
+      puts ''
+      puts ''
+      puts ''
       notification = Notification.create(recipient: user, actor: self.user, action: 'mentioned', notifiable: self)
       notification.save
+      puts '________________'
     end
   end
 
