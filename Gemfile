@@ -111,6 +111,7 @@ group :development do
 end
 
 group :production do
+  gem 'scout_apm'
 end
 
 

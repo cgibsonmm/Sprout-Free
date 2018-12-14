@@ -360,6 +360,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    scout_apm (2.4.21)
     selectize-rails (0.12.5)
     sexp_processor (4.11.0)
     shellany (0.0.1)
@@ -468,6 +469,7 @@ DEPENDENCIES
   rolify
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
+  scout_apm
   shoulda-matchers (= 4.0.0.rc1)
   shrine
   sidekiq
