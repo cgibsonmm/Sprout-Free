@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'user_profiles/edit'
   get 'forums/index'
 
-  resources :users
+  resources :users, only: [:index]
 
   namespace :admin do
       resources :users
