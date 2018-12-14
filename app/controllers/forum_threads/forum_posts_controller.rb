@@ -9,19 +9,23 @@ class ForumThreads::ForumPostsController < ApplicationController
     @forum_post.user = current_user
 
     if @forum_post.save
+      # Update last comment time
       @forum_thread.update(last_forum_post_time: Time.now)
       flash[:success] = "Post Saved"
       redirect_to forum_thread_path(@forum_thread)
 
-      # Send Notifications
+      # Send post notifications
       (@forum_thread.users.uniq - [current_user]).each do |user|
         Notification.create(recipient: user, actor: current_user, action: 'posted', notifiable: @forum_post)
+      end
+
+      @forum_post.mentioned_users.each do |user|
+        Notification.create(recipient: user, actor: current_user, action: 'mentioned', notifiable: @forum_post)
       end
 
       @forum_thread.follows.each do |follow|
         NotificationsMailer.notify_mailer(follow.user, current_user, 'posted', @forum_post).deliver_now
       end
-      #send Emails
 
     else
       flash[:error] = @forum_post.errors.full_messages

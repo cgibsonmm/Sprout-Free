@@ -18,14 +18,13 @@ class ForumPost < ApplicationRecord
 
   validates :body, presence: true, length: { minimum: 5 }
 
-  after_create :notifiy_users
-
-  def notifiy_users
-    mentioned_users.each do |user|
-      notification = Notification.create(recipient: user, actor: self.user, action: 'mentioned', notifiable: self)
-      notification.save
-    end
-  end
+  # def notifiy_users
+  #   puts mentioned_users
+  #   mentioned_users.each do |user|
+  #     notification = Notification.create(recipient: user, actor: self.user, action: 'mentioned', notifiable: self)
+  #     notification.save
+  #   end
+  # end
 
   def mentions
     @mentions ||= begin
