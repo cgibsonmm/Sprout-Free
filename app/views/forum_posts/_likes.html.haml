@@ -1,5 +1,6 @@
 - post = post || @forum_post
 .contain
+  = social_share_button_tag(post.forum_thread.subject , desc: strip_tags(post.body))
   - if user_signed_in? && current_user.likes?(post)
 
     = link_to forum_post_likes_path(post), method: :delete, class: 'small-box red', remote: true do

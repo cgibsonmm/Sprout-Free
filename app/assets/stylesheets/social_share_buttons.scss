@@ -1,0 +1,10 @@
+$size: 30px;
+
+.social-share-button {
+  .ssb-icon {
+    margin-top: 5px;
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
