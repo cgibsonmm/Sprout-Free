@@ -17,6 +17,9 @@ gem 'haml-rails'
 gem "breadcrumbs_on_rails"
 gem 'browser', '2.0.3'
 
+# @ mentions
+gem 'tribute'
+
 # auth
 
 gem 'devise'
@@ -25,7 +28,6 @@ gem "administrate"
 gem 'cancancan'
 gem 'rolify'
 
-gem 'jquery-atwho-rails'
 
 
 # Added for checking memory leaks
