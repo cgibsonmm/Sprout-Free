@@ -22,4 +22,5 @@
 //= require local-time
 //= require trix
 //= require tribute
+//= require social-share-button
 //= require_tree .

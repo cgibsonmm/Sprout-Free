@@ -19,6 +19,7 @@ gem 'browser', '2.0.3'
 
 # @ mentions
 gem 'tribute'
+gem 'social-share-button'
 
 # auth
 
