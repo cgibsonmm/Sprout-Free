@@ -1,11 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.logger = Le.new('54aacd6c-1f01-4ed2-8829-002ddf5ef1e9')
-  config.logger.warn("Look at me, I'm a warning message")
-  config.logger.info("Look at me, I'm an info message")
-  config.logger.debug("Look at me, I'm a debug message")
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
