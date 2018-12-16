@@ -36,6 +36,7 @@ gem 'rolify'
 
 gem 'pg'
 gem 'puma_worker_killer'
+gem 'newrelic_rpm'
 
 # Gen
 gem 'friendly_id', '~> 5.2.0'

@@ -18,4 +18,8 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  cofig.after(:suite) do
+    Sidekiq::Worker.clear_jobs
+  end
 end

@@ -14,12 +14,10 @@ class SiteNotificationsController < ApplicationController
     if @site_notification.save
       # Post Notification
       (User.all).each do |user|
-        if @to_notify
+        if @to_notify == true
           Notification.create(recipient: user, actor: current_user, action: 'notification', notifiable: @site_notification)
         end
-        if @to_email
-          # test mailer
-          # NotificationsMailer.site_notification_mailer('cgibsonmmdev@gmail.com', @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
+        if @to_email == true
           NotificationsMailer.site_notification_mailer(user, @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
         end
       end
