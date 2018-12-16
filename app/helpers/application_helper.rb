@@ -34,8 +34,8 @@ module ApplicationHelper
     User.select{ |user| user.confirmed_at.nil? }.count
   end
 
-  def admin_or_owner?(post)
-    current_user.has_role?(:admin) || post.user == current_user
+  def admin_or_post_owner?(post)
+    user_signed_in? && current_user.has_role?(:admin) || post.user == current_user
   end
 
   def user_admin?

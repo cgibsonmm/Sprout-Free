@@ -4,8 +4,7 @@ class ForumThreadsController < ApplicationController
   add_breadcrumb 'Forums', :forums_path
   add_breadcrumb 'Categories', :forum_categories_path
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_egear_load, only: [:show]
-  before_action :set_forum_thread, except: [:index, :new, :create, :show, :destroy]
+  before_action :set_forum_thread, except: [:index, :new, :create, :destroy]
   # before_action :set_forum_topic
 
 
@@ -35,7 +34,6 @@ class ForumThreadsController < ApplicationController
     @forum_topic = ForumTopic.find(params[:forum_topic_id])
     @forum_thread = @forum_topic.forum_threads.build(create_params)
     @forum_thread.user = current_user
-    # @forum_thread = current_user.forum_threads.new(forum_thread_params)
     @forum_thread.forum_posts.first.user_id = current_user.id
     @forum_thread.last_forum_post_time = Time.now - 10000000000
 
@@ -79,18 +77,8 @@ class ForumThreadsController < ApplicationController
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 
-  # def set_forum_topic
-  #   @forum_topic = ForumTopic.find(params[:forum_topic_id])
-  # end
-
-  def set_egear_load
-    @forum_thread = ForumThread.find(params[:id])
-    @forum_posts = @forum_thread.forum_posts.includes(:user, { likes: :user })
-  end
-
   def set_forum_thread
-    @forum_thread = ForumThread.find(params[:id])
-    @forum_thread = ForumThread.forum_posts.includes(:likes, :users)
+    @forum_thread = ForumThread.includes(forum_posts: [:user, :likes]).find(params[:id])
   end
 
   def create_params

@@ -14,7 +14,9 @@ RSpec.feature 'Deleting a forum category' do
     end
 
     scenario 'can delete a category' do
-      click_link 'Delete category'
+      accept_alert do
+        click_link 'Delete category'
+      end
 
       expect(page).to have_content('deleted')
       expect(page).not_to have_content(@category.title)

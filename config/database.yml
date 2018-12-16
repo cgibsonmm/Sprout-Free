@@ -29,11 +29,10 @@ development:
   encoding: unicode
 
 test:
-  host: 127.0.0.1
-  username: coreygibson
-  adapter: postgresql
-  database: sprout_test
-  encoding: unicode
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  database: db/test.sqlite3
 
 production:
   url:  <%= ENV["DATABASE_URL"] %>

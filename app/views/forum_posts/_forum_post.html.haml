@@ -1,11 +1,6 @@
 -# Edit Link
-- if user_signed_in? && admin_or_owner?(@forum_post)
-  - if first_post_in_thread?(@forum_post, @forum_thread)
-    = link_to 'Edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
-
-
-- if user_admin? || user_signed_in? && current_user.id == @forum_thread.user_id
-  - if @forum_thread.forum_posts.first == forum_post
+- if admin_or_post_owner?(forum_post)
+  - if first_post_in_thread?(@forum_thread, forum_post)
     = link_to 'Edit', edit_forum_post_path(id: forum_post.id, forum_thread_id: @forum_thread_id)
 
 .post{ id: dom_id(forum_post)}

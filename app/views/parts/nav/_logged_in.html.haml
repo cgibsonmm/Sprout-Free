@@ -9,7 +9,7 @@
 
 %li.nav-item.user-name
   .btn-group
-    %btn.btn.btn-success.dropdown-toggle.mr-2.shadow{'data-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false}
+    %btn#user-btn.btn.btn-success.dropdown-toggle.mr-2.shadow{'data-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false}
       = current_user.username
     .dropdown-menu
       = link_to 'My Profile', user_profile_path(current_user), class: 'dropdown-item'

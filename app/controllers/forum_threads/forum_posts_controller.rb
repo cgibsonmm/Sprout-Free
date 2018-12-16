@@ -2,7 +2,6 @@ class ForumThreads::ForumPostsController < ApplicationController
   load_and_authorize_resource
   before_action :set_forum_thread, only: [:create]
   before_action :set_forum_post, only: [:edit, :update]
-  # before_action :set_forum_post, only: [:destroy]
 
   def create
     @forum_post = @forum_thread.forum_posts.new(forum_post_params)

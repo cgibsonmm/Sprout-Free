@@ -16,24 +16,10 @@ RSpec.feature 'Adding Post to a forum thread' do
     end
 
     scenario 'they can add a new post to a thread' do
-      fill_in('Leave a new post here...', with: 'This is a great thread')
+      fill_in_trix_editor('forum_post_body', 'You will discover treasures of Anatolia')
       click_button 'Submit Post'
 
       expect(page).to have_content('Post Saved')
-    end
-
-    scenario 'Post body must be present' do
-      fill_in('Leave a new post here...', with: '')
-      click_button 'Submit Post'
-
-      expect(page).to have_content("Body can't be blank")
-    end
-
-    scenario 'Post body must be at least 10 chars' do
-      fill_in('Leave a new post here...', with: 'hhh')
-      click_button 'Submit Post'
-
-      expect(page).to have_content('Body is too short')
     end
   end
 

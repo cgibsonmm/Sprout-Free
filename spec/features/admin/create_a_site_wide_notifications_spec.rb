@@ -15,11 +15,10 @@ RSpec.feature 'Admin can create a site wide notification', :js do
     end
 
     scenario 'can create and deliver a site wide notification' do
-      save_screenshot('../file.png')
       click_on 'New Site Notification'
 
       fill_in 'Title', with: @data[:title]
-      fill_in 'Body',  with: @data[:body]
+      find('trix-editor').click.set(@data[:body])
       click_on 'Create Site notification'
 
       expect(page).to have_content('Site notification posted')

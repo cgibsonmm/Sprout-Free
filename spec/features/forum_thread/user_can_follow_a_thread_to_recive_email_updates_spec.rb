@@ -14,7 +14,9 @@ RSpec.feature 'User can follow a thread and recive email updates' do
     end
 
     scenario 'User is able to follow and unfollow a thread' do
-      click_on('Follow Thread')
+      accept_alert do
+        click_on('Follow Thread')
+      end
 
       expect(page).to have_content('You will now recive email updates about this thread')
       expect(page).not_to have_content('Follow Thread')

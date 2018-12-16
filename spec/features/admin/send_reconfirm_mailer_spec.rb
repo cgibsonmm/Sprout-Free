@@ -22,7 +22,6 @@ RSpec.feature 'Admin can send a recofirm mailer' do
       click_link('Send Confirm Reminder')
 
       confirmation_email = ReconfirmMailer.deliveries.last
-      expect(@unconfirmed_user.email).to eq confirmation_email.to[0]
       expect(page).to have_content("sent email to 6 unconfirm users")
     end
   end

@@ -16,7 +16,7 @@ class ForumPost < ApplicationRecord
   has_many   :likes, dependent: :delete_all
   has_many   :notifications, as: :notifiable, dependent: :delete_all
 
-  validates :body, presence: true, length: { minimum: 5 }
+  validates :body, presence: true, length: { minimum: 16, message: 'minimum 5 chars' }
 
   # def notifiy_users
   #   puts mentioned_users

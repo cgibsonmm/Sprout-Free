@@ -18,11 +18,11 @@ RSpec.describe ForumsHelper, type: :helper do
     post2 = create(:forum_post, forum_thread_id: 1)
     thread = ForumThread.find(1)
     # True
-    first_post = helper.first_post_in_thread?(post1, thread)
+    first_post = helper.first_post_in_thread?(thread, post1)
     expect(first_post).to be(true)
 
     # False
-    second_post = helper.first_post_in_thread?(post2, thread)
+    second_post = helper.first_post_in_thread?(thread, post2)
     expect(second_post).to be(false)
   end
 end
