@@ -40,7 +40,6 @@ gem 'pg'
 gem 'friendly_id', '~> 5.2.0'
 gem 'jquery-rails'
 gem 'acts_as_list'
-gem 'gon'
 gem 'jquery-ui-rails'
 gem 'simple_form'
 gem 'pagy'
@@ -72,6 +71,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -111,9 +111,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'derailed_benchmarks'
 end
 
 group :production do
+  gem 'puma_worker_killer'
   gem 'scout_apm'
 end
 
