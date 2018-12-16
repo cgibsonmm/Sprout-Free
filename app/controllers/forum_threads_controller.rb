@@ -78,7 +78,7 @@ class ForumThreadsController < ApplicationController
   end
 
   def set_forum_thread
-    @forum_thread = ForumThread.includes(forum_posts: [:user, :likes]).find(params[:id])
+    @forum_thread = ForumThread.includes(forum_posts: [:user, likes: [:user]]).find(params[:id])
   end
 
   def create_params
