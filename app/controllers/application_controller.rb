@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :check_admin
 
   before_action :set_notifications, if: :user_signed_in?
 
@@ -22,10 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
-  def check_admin
-    gon.admin = (true if user_signed_in? && current_user.has_role?(:admin))
-  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])

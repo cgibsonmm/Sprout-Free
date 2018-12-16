@@ -35,6 +35,7 @@ gem 'rolify'
 # gem 'derailed'
 
 gem 'pg'
+gem 'puma_worker_killer'
 
 # Gen
 gem 'friendly_id', '~> 5.2.0'
@@ -115,7 +116,6 @@ group :development do
 end
 
 group :production do
-  gem 'puma_worker_killer'
   gem 'scout_apm'
 end
 
