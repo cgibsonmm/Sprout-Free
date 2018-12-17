@@ -74,15 +74,15 @@ RSpec.describe User, type: :model do
 
  describe 'after creation' do
    it 'sends a conformation mailer' do
-     user = FactoryBot.build(:user, confirmed_at: '')
+     @user = build(:user, confirmed_at: '')
 
-     expect {user.save}.to change(
+     expect {@user.save}.to change(
        Devise.mailer.deliveries, :count
      ).by(3)
    end
 
    it 'sends the email to the right email' do
-     @user = create(:user, confirmed_at: '')
+     @user = FactoryBot.create(:user, confirmed_at: '')
 
      confirmation_email = Devise.mailer.deliveries.last
      expect(@user.email).to eq confirmation_email.to[0]

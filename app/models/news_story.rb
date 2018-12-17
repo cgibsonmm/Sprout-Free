@@ -22,4 +22,8 @@
 
 class NewsStory < ApplicationRecord
   belongs_to :user
+
+  validates :heading, presence: true
+  validates :body,    presence: true, length: {minimum: 15}
+
 end
