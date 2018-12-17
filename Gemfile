@@ -91,6 +91,7 @@ group :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'rails-controller-testing'
+  gem 'rspec-sidekiq'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper' # <- New!
