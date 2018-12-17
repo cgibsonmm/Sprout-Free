@@ -30,6 +30,9 @@ Guardfile
 /public/assets
 .byebug_history
 
+# Ignore Reddis dump 
+*.rdp
+
 # Ignore local tests examples
 !/spec/examples.txt
 
