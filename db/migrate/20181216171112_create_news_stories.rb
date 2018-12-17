@@ -5,7 +5,7 @@ class CreateNewsStories < ActiveRecord::Migration[5.2]
       t.string :heading
       t.string :body
       t.boolean :published
-      t.time :published_on
+      t.datetime :published_on
 
       t.timestamps
     end

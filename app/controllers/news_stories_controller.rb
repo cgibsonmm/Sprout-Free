@@ -39,7 +39,7 @@ class NewsStoriesController < ApplicationController
   def publish_params
     hash = {
             published: true,
-            published_on: Time.now
+            published_on: DateTime.current
           }
     hash
   end

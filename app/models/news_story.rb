@@ -6,7 +6,7 @@
 #  body         :string
 #  heading      :string
 #  published    :boolean
-#  published_on :time
+#  published_on :datetime
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  user_id      :bigint(8)

@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2018_12_16_171112) do
     t.string "heading"
     t.string "body"
     t.boolean "published"
-    t.time "published_on"
+    t.datetime "published_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_news_stories_on_user_id"
