@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_032720) do
+ActiveRecord::Schema.define(version: 2018_12_16_171112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,17 @@ ActiveRecord::Schema.define(version: 2018_12_12_032720) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "news_stories", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "heading"
+    t.string "body"
+    t.boolean "published"
+    t.time "published_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_news_stories_on_user_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.integer "recipient_id"
     t.integer "actor_id"
@@ -192,5 +203,6 @@ ActiveRecord::Schema.define(version: 2018_12_12_032720) do
   add_foreign_key "forum_categories", "users"
   add_foreign_key "likes", "forum_posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "news_stories", "users"
   add_foreign_key "site_notifications", "users"
 end

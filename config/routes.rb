@@ -5,6 +5,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
 
+  resources :news_stories do
+    member do
+      get 'preview'
+      patch :publish
+    end
+  end
+
   namespace :admin do
       resources :users
       resources :forum_posts
