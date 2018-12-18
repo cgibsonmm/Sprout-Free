@@ -118,7 +118,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   #logo-2 {
     top:0 !important;
   }
@@ -136,16 +136,31 @@
   }
   #login-links-botom{
     display: block;
+
+    hr{
+      -moz-border-bottom-colors: none;
+      -moz-border-image: none;
+      -moz-border-left-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-top-colors: none;
+      border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+      border-style: solid none;
+      border-width: 1px 0;
+      margin: 18px 0;
+    }
   }
 
   #links-bar {
+    .btn{
+      font-size: 2.6em;
+    }
     .not-logo-links {
       #site-links {
         .nav-item {
           .nav-link {
             color: rgb(0, 0, 0);
             text-align: center;
-            font-size: 2rem;
+            font-size:2.6em;
             padding-top: 0;
             padding-bottom: 0;
             font-family: 'Open Sans', sans-serif;
