@@ -15,7 +15,7 @@ RSpec.feature 'User can create their user profile' do
 
     scenario 'user can update their profile' do
       find('btn#user-btn.dropdown-toggle').click
-      click_link 'My Profile'
+      find('.find-btn', match: :first).click
       click_link 'Edit Profile'
       fill_in 'About me', with: @context[:about]
       click_on 'Update Profile'
