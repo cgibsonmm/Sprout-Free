@@ -1,5 +1,5 @@
 class NewUserNotifyMailer < ApplicationMailer
-  default from: 'Donotreply@sproutfreecanada.com'
+  default from: 'Donotreply@sproutfreecanada.ca'
 
   def admin_mailer(user, admin)
     @count = User.all.count
