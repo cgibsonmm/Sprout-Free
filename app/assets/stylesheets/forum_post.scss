@@ -99,7 +99,7 @@
 
         #new_forum_post{
           // TODO: Need to fit user box
-          width: 85% !important;
+          width: 85%;
 
           #forum_post_body{
             min-height: 450px;
@@ -120,10 +120,22 @@
   }
 }
 
-@media(max-width:1000px){
+@media (max-width: 1200px){
+  trix-editor, .new-post-form{
+    max-width: 95vw;
+    padding: 10px !important;
+  }
+
+  trix-editor#forum_post_body.formatted_content.trix-content{
+    font-size: 2.2em !important;
+  }
+
+  #new_forum_post{
+    width: 100%;
+  }
+
   .thread .posts-container .new-post-form .post #new_forum_post{
-    width: 100% !important;
-    font-size: 16px;
+    font-size: 20px;
   }
   .posts-container {
     .post {

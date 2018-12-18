@@ -35,11 +35,11 @@
           - else
             = yield
         - unless root_controller?
-          - if user_signed_in?
-            .side-bar.mt-3
-              - if user_admin?
-                = render 'parts/admin_links'
-              = render 'user/info'
+          -# - if user_signed_in?
+          -#   .side-bar.mt-3
+          -#     - if user_admin?
+          -#       = render 'parts/admin_links'
+          -#     = render 'user/info'
       .container
         - if user_signed_in?
           = render 'parts/mobile_bottom'
