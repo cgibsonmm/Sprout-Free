@@ -4,3 +4,7 @@
     color: $light-blue;
   }
 }
+
+@media (max-width:1000px){
+  display: none;
+}

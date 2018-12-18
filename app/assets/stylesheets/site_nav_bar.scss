@@ -122,6 +122,15 @@
   #logo-2 {
     top:0 !important;
   }
+  .sticky-top{
+    width: 100vw;
+    left:-40px;
+  }
+
+  .navbar-toggler-icon{
+    height: 3em;
+    width: 3em;
+  }
   .login-links-top{
     display: none;
   }

@@ -141,3 +141,9 @@ body {
     input[type="week"], input[type="number"], input[type="email"],
     input[type="url"]{ font-size: 16px; }
 }
+
+@media (max-width:1000px){
+  .container-fluid{
+    padding:0;
+  }
+}

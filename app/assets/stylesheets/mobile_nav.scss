@@ -36,10 +36,13 @@
   }
 
   #notifications{
-    width:50vw;
-    font-size: 2rem;
+    position: relative;
+    left:-50px;
+    width:100vw;
+    font-size: 1rem;
     padding: 0 !important;
     a{
+      color: black;
       margin: 0;
       padding: 10px 0;
     }
