@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #user-profile{
-  font-size: 2em;
   .btn{
     color: rgb(255, 255, 255);
   }
@@ -46,6 +45,7 @@
 
 @media (max-width: 1200px) {
   #user-profile{
+    font-size: 2em;
     .card, .edit-card{
       h3{
         font-size: 1.4em;
