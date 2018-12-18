@@ -8,8 +8,8 @@
 
       = simple_form_for @user_profile, url: user_profile_path do |f|
         .row
-          -# .current-avatar.mr-3
-          -#   = image_tag user_avatar(@user_profile, 100), class: 'rounded-circle'
+          .current-avatar.mr-3
+            = image_tag user_avatar(@user_profile, 100), class: 'rounded-circle'
 
           = f.input :avatar
 

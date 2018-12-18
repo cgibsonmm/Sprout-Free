@@ -2,7 +2,7 @@
   .card.mt-5.m-5
     .card-head
       .left.ml-3.mt-3
-        -# = image_tag user_avatar(@profile, 100), class: 'rounded-circle'
+        = image_tag user_avatar(@profile, 100), class: 'rounded-circle'
       .right.ml-2.mt-3
         %h3.text-center
           = @profile.username
