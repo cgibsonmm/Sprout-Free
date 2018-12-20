@@ -29,8 +29,6 @@ gem "administrate"
 gem 'cancancan'
 gem 'rolify'
 
-
-
 # Added for checking memory leaks
 # gem 'derailed'
 

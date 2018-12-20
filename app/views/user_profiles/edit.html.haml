@@ -11,7 +11,7 @@
           .current-avatar.mr-3
             = image_tag user_avatar(@user_profile, 100), class: 'rounded-circle'
 
-          = f.input :avatar
+          = f.input :avatar, input_html: {data: {behavior: 'image-upload'}}
 
         = f.input :province, collection: ['Nunavut', 'Quebec', 'Northwest Territories', |
                                           'Ontario', 'British Columbia', 'Alberta',     |

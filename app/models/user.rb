@@ -52,9 +52,12 @@ class User < ApplicationRecord
   validates :username, format: {with: username_format}
   validates :username, presence: true, length: { in: (3..20) }
   validates :username, uniqueness: true
+  validate :avatar_validation
 
   # Assosations
   has_one_attached :avatar
+
+
   has_many :forum_categories
   has_many :forum_topics, through: :forum_categories
   has_many :forum_threads, dependent: :destroy
@@ -87,6 +90,23 @@ class User < ApplicationRecord
     admins.each do |admin|
       @user = self
       NewUserNotifyMailer.admin_mailer(@user, admin).deliver_now
+    end
+  end
+
+  def analyze_avatar
+    if avatar.attached?
+      avatar.analyze
+    end
+  end
+
+  private
+
+  def avatar_validation
+    if avatar.attached?
+      if !avatar.blob.content_type.in?(%w[image/png image/jpg image/jpeg])
+        avatar.purge
+        errors.add(:avatar, 'file type needs to be JPEG, JPG, or PNG')
+      end
     end
   end
 end
