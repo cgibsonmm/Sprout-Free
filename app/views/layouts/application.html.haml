@@ -1,4 +1,4 @@
--# !!!
+!!!
 %html
   %head
     - if Rails.env.production?
@@ -22,24 +22,24 @@
       .white
       .red
     .container-fluid
-      = render 'parts/header'
+      -# = render 'parts/header'
       = render 'parts/navbar'
-      = render 'parts/flash'
-      .dynamic-content.mx-3
-        .current-controller-area
-          - if forum_area?
-            = render 'parts/forum_parts/topbar'
-          - if devise_controller?
-            .container#devise-area.mt-3
-              .card
-                = yield
-          - else
-            = yield
-        - unless root_controller?
-          - if user_signed_in?
-            .side-bar.mt-3
-              - if user_admin?
-                = render 'parts/admin_links'
-              = render 'user/info'
-      .container
-        = render 'parts/footer'
+      -# = render 'parts/flash'
+      -# .dynamic-content.mx-3
+      -#   .current-controller-area
+      -#     - if forum_area?
+      -#       = render 'parts/forum_parts/topbar'
+      -#     - if devise_controller?
+      -#       .container#devise-area.mt-3
+      -#         .card
+      -#           = yield
+      -#     - else
+      -#       = yield
+      -#   - unless root_controller?
+      -#     - if user_signed_in?
+      -#       .side-bar.mt-3
+      -#         - if user_admin?
+      -#           = render 'parts/admin_links'
+      -#         = render 'user/info'
+      -# .container
+      -#   = render 'parts/footer'

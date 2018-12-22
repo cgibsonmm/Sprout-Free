@@ -1,30 +1,31 @@
 
 #main-landing-page
-  .pic-area{style: "background-image: url(#{asset_path('g3.jpg')});"}
-    .left-area.pr-3
-      .heading
-        %h2
-          Welcome to Canada's Community of Growers
-        %h1
-          Sprout Free Canada
-      .info
-        %h2
-          Our First 100
-          %br
-          %strong
-            "Forum Posters"
-          %br
-          will be entered into
-          %p.underline
-            The FREE Seed Pack GIVEAWAY
-    .right-area
-      %h2.user-count
-        = total_users
-        = fa_icon('user', class: 'user-icon')
-        %br
-        Current users
-      .grow-links
-        %h3 GROW WITH US
-        = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger pulse'
-        %br
-        = link_to '* Read Details Here', 'https://www.sproutfreecanada.ca/forum_threads/17', class: 'details'
+  = render partial: 'parts/carousels/main_carousel'
+  -# .pic-area{style: "background-image: url(#{asset_path('g3.jpg')});"}
+  -#   .left-area.pr-3
+  -#     .heading
+  -#       %h2
+  -#         Welcome to Canada's Community of Growers
+  -#       %h1
+  -#         Sprout Free Canada
+  -#     .info
+  -#       %h2
+  -#         Our First 100
+  -#         %br
+  -#         %strong
+  -#           "Forum Posters"
+  -#         %br
+  -#         will be entered into
+  -#         %p.underline
+  -#           The FREE Seed Pack GIVEAWAY
+  -#   .right-area
+  -#     %h2.user-count
+  -#       = total_users
+  -#       = fa_icon('user', class: 'user-icon')
+  -#       %br
+  -#       Current users
+  -#     .grow-links
+  -#       %h3 GROW WITH US
+  -#       = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger pulse'
+  -#       %br
+  -#       = link_to '* Read Details Here', 'https://www.sproutfreecanada.ca/forum_threads/17', class: 'details'
