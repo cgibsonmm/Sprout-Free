@@ -1,18 +1,17 @@
 #main-carousel{
   .carousel-inner{
-    max-height: 100%;
+    height: 40vh;
     .carousel-item{
       .text{
-        padding: 10px 0;
+        padding: 50px 0;
         width: 100%;
-        height: 100%;
+        height:40vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
       }
-      height: 300px;
-      background-image: url('g3.jpg');
-      background-size: contain;
+      background-image: url('bg-logo.png');
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       box-sizing: content-box;

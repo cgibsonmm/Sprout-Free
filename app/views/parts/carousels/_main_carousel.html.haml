@@ -1,24 +1,35 @@
 #main-carousel.carousel.slide{'data-ride': "carousel"}
   %ol.carousel-indicators
-    %li.active{'data-target': "#main-carousel", 'data-slide-to': "0"}
-    %li{'data-target': "#main-carousel", 'data-slide-to': "1"}
-    %li{'data-target': "#main-carousel", 'data-slide-to': "2"}
+    - 3.times do |i|
+      - if i == 0
+        %li.active{'data-target': "#main-carousel", 'data-slide-to': i }
+      - else
+        %li{'data-target': "#main-carousel", 'data-slide-to': i }
 
   .carousel-inner
     .carousel-item.active
+      %h3.text.text-center
+        .top
+          %p
+            = t('tag-line1')
+          = t('tag-line2')
+        .bottom
+          = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
+
+    .carousel-item
       %h3.text.text-center
         .top
           = t('tag-line1')
           = t('tag-line2')
         .bottom
           = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
-
     .carousel-item
-      %h1.text-center no
-      -# %img.d-block.w-100{src: asset_path('main_logo.png'), alt:"Second slide"}
-    .carousel-item
-      %h1.text-center yup
-      -# %img.d-block.w-100{src: asset_path('main_logo.png'), alt:"Third slide"}
+      %h3.text.text-center
+        .top
+          = t('tag-line1')
+          = t('tag-line2')
+        .bottom
+          = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
 
   %a.carousel-control-prev{ href: "#main-carousel", role: "button", 'data-slide': "prev"}
     %span.carousel-control-prev-icon{'aria-hidden': "true"}
