@@ -42,7 +42,7 @@ class ForumThreadsController < ApplicationController
       flash[:success] = "Successfully created a new thread"
     else
       render 'new'
-      flash[:danger] = 'Error Creating a new thread, make sure title and body are present'
+      flash.now[:danger] = 'Error Creating a new thread, make sure title and body are present'
     end
   end
 

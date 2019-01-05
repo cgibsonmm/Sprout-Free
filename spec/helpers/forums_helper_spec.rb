@@ -14,8 +14,8 @@ RSpec.describe ForumsHelper, type: :helper do
 
   # first_post_in_thread?
   it 'is expected to return true if post is first in thread' do
-    post1 = create(:forum_post)
-    post2 = create(:forum_post, forum_thread_id: 1)
+    post1 = create(:forum_post_in_thread)
+    post2 = create(:forum_post_in_thread,forum_thread_id: 1)
     thread = ForumThread.find(1)
     # True
     first_post = helper.first_post_in_thread?(thread, post1)

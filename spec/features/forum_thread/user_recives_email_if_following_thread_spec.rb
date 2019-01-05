@@ -15,7 +15,7 @@ RSpec.feature 'User reccives email when following thread' do
 
     scenario 'user recives an email when there is new post on thread' do
       click_on 'Follow Thread'
-      @post = create(:forum_post, forum_thread_id: @thread.id)
+      @post = create(:forum_post_in_thread,forum_thread_id: @thread.id)
     end
   end
 

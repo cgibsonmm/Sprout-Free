@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.feature 'deleting a post from forum thread' do
   before do
     @user = create(:user)
-    thread = create(:forum_post, user_id: 1)
-    post = create(:forum_post, forum_thread_id: 1, user_id: @user.id)
+    thread = create(:forum_post_in_thread,user_id: 1)
+    post = create(:forum_post_in_thread,forum_thread_id: 1, user_id: @user.id)
   end
 
   context "when user is signed in" do

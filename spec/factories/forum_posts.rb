@@ -13,8 +13,12 @@
 
 FactoryBot.define do
   factory :forum_post do
-    forum_thread
     user
     body { Faker::Lorem.paragraph }
+
+    factory :forum_post_in_thread do
+      forum_thread
+      body { Faker::Lorem.paragraph }
+    end
   end
 end

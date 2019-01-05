@@ -24,19 +24,19 @@ RSpec.describe ApplicationHelper, type: :helper do
   it 'returns true when current_user owns post or admin' do
     allow(helper).to receive(:user_signed_in?).and_return(admin_user)
     allow(helper).to receive(:current_user).and_return(user)
-    post = create(:forum_post, user_id: user.id)
+    post = create(:forum_post_in_thread,user_id: user.id)
     post_owner = helper.admin_or_post_owner?(post)
 
     expect(post_owner).to eq(true)
     allow(helper).to receive(:user_signed_in?).and_return(admin_user)
     allow(helper).to receive(:current_user).and_return(admin_user)
-    post = create(:forum_post, user_id: user.id)
+    post = create(:forum_post_in_thread,user_id: user.id)
     post_owner = helper.admin_or_post_owner?(post)
 
     expect(post_owner).to eq(true)
     allow(helper).to receive(:user_signed_in?).and_return(admin_user)
     allow(helper).to receive(:current_user).and_return(user2)
-    post = create(:forum_post, user_id: user.id)
+    post = create(:forum_post_in_thread,user_id: user.id)
     post_owner = helper.admin_or_post_owner?(post)
 
     expect(post_owner).to eq(false)

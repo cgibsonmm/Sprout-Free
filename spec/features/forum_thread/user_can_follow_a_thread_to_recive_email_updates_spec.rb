@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'User can follow a thread and recive email updates' do
   before do
     @user = create(:user)
-    @post = create(:forum_post, user_id: @user.id)
+    @post = create(:forum_post_in_thread,user_id: @user.id)
     @user2 = create(:user)
   end
 
