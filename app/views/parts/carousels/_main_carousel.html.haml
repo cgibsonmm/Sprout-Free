@@ -14,7 +14,7 @@
             = t('tag-line1')
           = t('tag-line2')
         .bottom
-          = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
+          = link_to t('sign_in'), new_user_registration_path, class: 'btn btn-success'
 
     .carousel-item
       %h3.text.text-center
@@ -22,14 +22,14 @@
           = t('tag-line1')
           = t('tag-line2')
         .bottom
-          = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
+          = link_to t('sign_up'), new_user_registration_path, class: 'btn btn-success'
     .carousel-item
       %h3.text.text-center
         .top
           = t('tag-line1')
           = t('tag-line2')
         .bottom
-          = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
+          = link_to t('sign_up'), new_user_registration_path, class: 'btn btn-success'
 
   %a.carousel-control-prev{ href: "#main-carousel", role: "button", 'data-slide': "prev"}
     %span.carousel-control-prev-icon{'aria-hidden': "true"}
