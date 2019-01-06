@@ -1,0 +1,12 @@
+.modal#terms_modal{'tabindex': "-1", role: "dialog", 'data-keyboard':false, 'data-backdrop': "static"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %h5.modal-title
+          Our Terms of Service have changed
+      .modal-body
+        %p
+          Please take a minute and review our updated
+          = link_to 'Terms of Service', 'https://app.termly.io/document/terms-of-use-for-website/f45bc05b-f1e8-4db6-a263-bd2a10d2db62', target: '_blank'
+      .modal-footer
+        = link_to 'Accept Terms of Service', accept_terms_user_profile_path(current_user.id, current_user), method: :patch, class: 'btn btn-primary mx-auto'

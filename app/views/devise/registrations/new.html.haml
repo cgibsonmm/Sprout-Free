@@ -8,6 +8,10 @@
       = f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }
       = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" }
       = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }
+
+      Please Review
+      = link_to 'Terms of Services', 'https://app.termly.io/document/terms-of-use-for-website/f45bc05b-f1e8-4db6-a263-bd2a10d2db62', target: '_blank'
+      = f.input :terms_of_service, as: :boolean, label: 'I accept terms'
     .form-actions
       = f.button :submit, "Sign up"
   = render "devise/shared/links"

@@ -44,7 +44,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user_profiles, only: [:show, :edit, :update]
+  resources :user_profiles, only: [:show, :edit, :update] do
+    member do
+      patch :accept_terms
+      post :accept_terms
+    end
+  end
 
   resources :images
 

@@ -22,6 +22,8 @@
       .white
       .red
     .container-fluid
+      - if user_accepted_terms?
+        = render 'parts/terms_modal'
       = render 'parts/header'
       = render 'parts/navbar'
       = render 'parts/flash'

@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def user_accepted_terms?
+    user_signed_in? && current_user.terms_of_service == nil
+  end
+
   def user_avatar(user, size=40)
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}!", auto_orient: true).processed

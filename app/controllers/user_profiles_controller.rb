@@ -12,6 +12,14 @@ class UserProfilesController < ApplicationController
     @user_profile = User.find(params[:id])
   end
 
+  def accept_terms
+    @current_user.terms_of_service = true
+    if @current_user.update(update_terms_params)
+      flash[:success] = 'Thank you!'
+      redirect_to forums_path
+    end
+  end
+
   def update
     if @user_profile.update(update_params)
       flash[:success] = 'Profile Updated'
@@ -25,7 +33,11 @@ class UserProfilesController < ApplicationController
   private
 
   def update_params
-    params.require(:user).permit(:about_me, :avatar, :province, :city)
+    params.require(:user).permit(:about_me, :avatar, :province, :city, :terms_of_service)
+  end
+
+  def update_terms_params
+    params.permit(:terms_of_service)
   end
 
   def set_profile
