@@ -22,7 +22,7 @@
       .white
       .red
     .container-fluid
-      - if user_accepted_terms?
+      - if user_has_not_accepted_terms?
         = render 'parts/terms_modal'
       = render 'parts/header'
       = render 'parts/navbar'

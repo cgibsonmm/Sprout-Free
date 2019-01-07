@@ -60,10 +60,8 @@ RSpec.feature 'User Grow With Us' do
       fill_in 'Email', with: user_params[:email]
       fill_in 'user_password', with: user_params[:password]
       fill_in 'user_password_confirmation', with: user_params[:password]
-      click_button 'Sign up'
 
-      expect(page).to have_content("Terms of service must be accepted")
-      expect(page).not_to have_content('Sign out')
+      expect(page).to have_button('Sign up', disabled: true)
     end
   end
 end

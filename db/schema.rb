@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_01_05_213426) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -86,17 +83,8 @@ ActiveRecord::Schema.define(version: 2019_01_05_213426) do
     t.index ["slug"], name: "index_forum_topics_on_slug", unique: true
   end
 
-  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
-    t.string "slug", null: false
-    t.integer "sluggable_id", null: false
-    t.string "sluggable_type", limit: 50
-    t.string "scope"
-    t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-  end
+# Could not dump table "friendly_id_slugs" because of following StandardError
+#   Unknown type 'serial' for column 'id'
 
   create_table "images", force: :cascade do |t|
     t.text "image_data"
@@ -185,7 +173,7 @@ ActiveRecord::Schema.define(version: 2019_01_05_213426) do
     t.text "about_me"
     t.string "city"
     t.string "province"
-    t.boolean "terms_of_service"
+    t.boolean "terms_of_service", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -200,11 +188,4 @@ ActiveRecord::Schema.define(version: 2019_01_05_213426) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
-  add_foreign_key "follows", "forum_threads"
-  add_foreign_key "follows", "users"
-  add_foreign_key "forum_categories", "users"
-  add_foreign_key "likes", "forum_posts"
-  add_foreign_key "likes", "users"
-  add_foreign_key "news_stories", "users"
-  add_foreign_key "site_notifications", "users"
 end

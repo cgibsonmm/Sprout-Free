@@ -11,7 +11,7 @@
 
       Please Review
       = link_to 'Terms of Services', 'https://app.termly.io/document/terms-of-use-for-website/f45bc05b-f1e8-4db6-a263-bd2a10d2db62', target: '_blank'
-      = f.input :terms_of_service, as: :boolean, label: 'I accept terms'
+      = f.input :terms_of_service, as: :boolean, label: 'I accept terms', require: true
     .form-actions
-      = f.button :submit, "Sign up"
+      = f.button :submit, "Sign up", id: 'submitbtn', disabled: "disabled", class: 'btn btn-primary'
   = render "devise/shared/links"

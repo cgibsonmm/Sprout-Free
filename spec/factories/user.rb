@@ -4,9 +4,8 @@ FactoryBot.define do
     email { Faker::Internet.unique.email }
     password { Faker::Internet.password }
     id {  }
+    terms_of_service { true }
     confirmed_at { Time.now }
-
-
 
     factory :admin_user, class: User do
       # username { 'testuser1' }

@@ -18,7 +18,7 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
-#  terms_of_service       :boolean
+#  terms_of_service       :boolean          default(FALSE)
 #  unconfirmed_email      :string
 #  username               :string           default(""), not null
 #  created_at             :datetime         not null
@@ -75,9 +75,9 @@ RSpec.describe User, type: :model do
 
   it 'validates user has accepted terms of services' do
     record = User.new
-    record.terms_of_service = false
+    record.terms_of_service = nil
     record.valid?
-    expect(record.errors[:terms_of_service]).to eq(['must be accepted'])
+    expect(record.errors[:terms_of_service]).to eq(['is not included in the list'])
   end
 
   describe 'after creation' do

@@ -1,22 +1,16 @@
 require 'rails_helper'
 
-RSpec.feature 'User terms of service' do
+RSpec.feature 'User terms of service', js: true do
   before do
-    @user = create(:user)
+    @user = create(:user, terms_of_service: false)
+    sign_in_with @user
   end
-
-  context 'when user signs into site' do
-    before do
-      sign_in_with @user
+  scenario 'they must accept the terms of service' do
+    within('.modal-footer') do
+      click_on('Accept Terms of Service')
     end
-    pending 'they must accept the terms of service' do
-      within('#terms_modal') do
-        page.should have_content('Our Terms of Service have changed') # async
-      end
-      expect(page).to have_css('#terms_modal')
 
-      click_link 'Appcept Terms of service'
-      expect(page).to have_content('Thank you!')
-    end
+    expect(page).to have_content('Thank you!')
+    expect(page).not_to have_content('#terms_modal')
   end
 end
