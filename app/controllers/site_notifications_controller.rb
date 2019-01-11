@@ -13,15 +13,18 @@ class SiteNotificationsController < ApplicationController
 
     if @site_notification.save
       # Post Notification
-      (User.all).each do |user|
-        if @to_notify == true
+      if @to_notify == true
+        (User.all).each do |user|
           Notification.create(recipient: user, actor: current_user, action: 'notification', notifiable: @site_notification)
-        end
-        if @to_email == true
-          NotificationsMailer.site_notification_mailer(user, @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
         end
       end
 
+      #Send Email
+      if @to_email == true
+        User.all.each do |user|
+          NotificationsMailer.site_notification_mailer(user, @site_notification.email_subject, @site_notification.title, @site_notification.body).deliver_later
+        end
+      end
 
       flash[:success] = 'Site notification posted'
       redirect_to '/forums'

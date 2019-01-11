@@ -11,8 +11,8 @@ class NotificationsMailer < ApplicationMailer
     )
   end
 
-  def site_notification_mailer(reciver, subject, title, body)
-    @reciver = reciver
+  def site_notification_mailer(user, subject, title, body)
+    @reciver = user
     @subject = subject
     @title = title
     @body = body

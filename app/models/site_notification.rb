@@ -4,10 +4,10 @@
 #
 #  id            :bigint(8)        not null, primary key
 #  body          :text
-#  email_me      :boolean
+#  email_me      :boolean          default(FALSE)
 #  email_subject :string
 #  title         :string
-#  to_notify     :boolean
+#  to_notify     :boolean          default(FALSE)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  user_id       :bigint(8)
