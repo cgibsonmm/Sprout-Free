@@ -15,7 +15,7 @@
     list-style: none;
     li{
       text-decoration: none;
-      color: $white-bg;
+      // color: $white-bg;
       font-weight: bold;
       font-size: 2rem;
       padding: 0;
@@ -23,10 +23,10 @@
       height:100%;
 
       a{
-        color: $white-bg;
+        // color: $white-bg;
       }
       a:visited{
-        color: $white-bg;
+        // color: $white-bg;
       }
     }
   }

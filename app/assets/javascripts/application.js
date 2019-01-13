@@ -12,8 +12,7 @@
 //
 
 //= require jquery3
-//= require popper
-//= require bootstrap-sprockets
+//= require materialize-sprockets
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
 //= require font_awesome5

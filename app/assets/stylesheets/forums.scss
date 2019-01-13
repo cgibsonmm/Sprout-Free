@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #forums-nav {
-  background-color: $red-bg;
+  // background-color: $red-bg;
   border-bottom: 2px solid rgb(97, 97, 97);
 
   .nav-link {
@@ -28,7 +28,7 @@
       text-shadow: 1px 1px 1px rgb(176, 176, 176);
 
       &:hover{
-        color: $light-blue;
+        // color: $light-blue;
       }
     }
 
@@ -37,14 +37,14 @@
       align-items: center;
 
       .topic-link {
-        color: $dark-blue;
+        // color: $dark-blue;
         font-weight: bold;
         font-family: 'Open Sans', sans-serif;
         padding-left: 10px;
 
         &:hover {
           text-decoration: none !important;
-          color: $light-blue;
+          // color: $light-blue;
         }
       }
   }

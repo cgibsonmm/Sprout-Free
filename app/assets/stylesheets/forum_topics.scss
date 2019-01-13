@@ -4,20 +4,20 @@
   }
 
   a {
-    color: $dark-blue;
+    // color: $dark-blue;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
 
     &:hover {
       text-decoration: none !important;
-      color: $light-blue;
+      // color: $light-blue;
     }
   }
 
   .forum-post {
     display: flex;
     align-items: center;
-    background-color: $white-bg;
+    // background-color: $white-bg;
     .left-area{
       div{
         font-size: 0.8rem;
@@ -28,7 +28,7 @@
       margin-left: auto;
     }
     &:nth-child(even){
-      background-color: $shadow-white;
+      // background-color: $shadow-white;
     }
   }
 }

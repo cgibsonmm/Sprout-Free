@@ -5,7 +5,9 @@ ruby '2.4.1'
 
 
 # styling
-gem 'bootstrap', '~> 4.1.3'
+
+gem 'materialize-sass', '~> 1.0.0'
+
 gem 'font_awesome5_rails'
 gem 'gravtastic'
 gem 'trix-rails', require: 'trix'

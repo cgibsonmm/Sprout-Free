@@ -19,7 +19,7 @@
   left: 0;
   bottom: 0;
   opacity: 0.2;
-  background: $light-blue;
+  // background: $light-blue;
   transition: width 120ms ease-out, opacity 60ms 60ms ease-in;
   transform: translate3d(0, 0, 0);
 }
@@ -29,7 +29,7 @@
 }
 
 .direct-upload--error {
-  border-color: $red-bg;
+  // border-color: $red-bg;
 }
 
 input[type=file][data-direct-upload-url][disabled] {
