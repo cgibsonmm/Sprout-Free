@@ -1,8 +1,0 @@
-.user-card
-  = image_tag user_avatar(user, 100)
-  .details
-    %h5
-      = link_to user.username, user_profile_path(user.id)
-    %br
-    Post count:
-    = user.forum_posts.count

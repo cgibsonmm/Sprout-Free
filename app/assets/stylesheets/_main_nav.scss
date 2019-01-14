@@ -1,0 +1,32 @@
+#main-site-navbar{
+  .brand-logo{
+    display: flex;
+    height: 100%;
+    .tag-line{
+      width: 250px;
+      font-size: 0.7em;
+    }
+  }
+  #main-logo-nav{
+    height: 100%;
+    padding: 5px;
+  }
+
+
+  #user-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      margin-right: 5px;
+    }
+    svg{
+      padding-left: 2px;
+    }
+  }
+
+
+  #user-navbar-dropdown{
+    font-size: 1em;
+  }
+}

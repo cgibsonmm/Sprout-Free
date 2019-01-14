@@ -7,6 +7,7 @@ ruby '2.4.1'
 # styling
 
 gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons' 
 
 gem 'font_awesome5_rails'
 gem 'gravtastic'
