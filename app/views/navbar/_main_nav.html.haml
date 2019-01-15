@@ -19,13 +19,8 @@
             %label.label-icon{for: 'nav-search'}
               = material_icon.search
             = material_icon.close
-
-
+      -# nav-right
       - if user_signed_in?
-
+        = render 'navbar/signed_in'
       - else
-        .col.s7.l5.out-nav-btns.right
-          %li
-            = link_to 'sign in', '#', class: 'btn red sign-in waves-effect waves-light'
-          %li
-            = link_to 'Grow With Us', '#', class: 'btn green waves-effect waves-light'
+        = render 'navbar/signed_out'
