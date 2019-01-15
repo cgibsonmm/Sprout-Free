@@ -1,4 +1,7 @@
 #main-site-navbar{
+  .search{
+    height:100%;
+  }
 
   .input-field label.active i {
     color: #d8d8d8;
@@ -36,14 +39,15 @@
       text-align: center;
     }
   }
-  .nav-btns{
-    height: 100%;
+  .out-nav-btns{
     display: flex;
-    align-items: center;
     justify-content: flex-end;
 
-    a.btn{
-      margin: auto;
+    .btn{
+      margin: auto ;
+    }
+    .sign-in{
+      margin-right: 5px !important;
     }
   }
 }

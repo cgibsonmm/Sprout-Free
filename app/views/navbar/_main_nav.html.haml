@@ -3,14 +3,16 @@
 %nav#main-site-navbar.white
   .nav-wrapper.container
     %ul.row
-      .li.col.s8.m3
+      %li.col.s5.m5.l3
         = link_to '#', {id: 'nav-logo', class: 'dropdown-trigger', 'data-target': 'main_nav_dropdown' } do
           = image_tag 'main_logo', id: 'main-logo'
           .tag-line
             Canada's Legalized Growing Community
           .icon
             = material_icon.expand_more
-      .li.col.m4
+
+
+      %li.col.l4.hide-on-med-and-down.search
         %form
           .input-field
             %input#nav-search{type: 'search', required: true, placeholder: 'Search Forums' }
@@ -18,12 +20,12 @@
               = material_icon.search
             = material_icon.close
 
+
       - if user_signed_in?
 
       - else
-        .li.col.m3.offset-m2.nav-btns
-          - if user_signed_in?
-            = image_tag user_avatar(current_user)
-          - else
-            = link_to 'Log In', new_user_session_path, class: 'btn red darken-1'
-            = link_to 'Grow With Us', new_user_registration_path, class: 'btn green darken-1'
+        .col.s7.l5.out-nav-btns.right
+          %li
+            = link_to 'sign in', '#', class: 'btn red sign-in waves-effect waves-light'
+          %li
+            = link_to 'Grow With Us', '#', class: 'btn green waves-effect waves-light'
