@@ -1,32 +1,53 @@
 #main-site-navbar{
-  .brand-logo{
+
+  .input-field label.active i {
+    color: #d8d8d8;
+  }
+  #nav-logo, #main-logo{
+    height: 100% !important;
+  }
+  #nav-logo{
     display: flex;
-    height: 100%;
+    width: 100%;
+
+    .icon {
+      color: black;
+    }
+
+    #main-logo{
+      padding: 2px 5px 2px 0px;
+    }
+
+    #nav-search{
+      color: black;
+    }
+
     .tag-line{
-      width: 250px;
-      font-size: 0.7em;
+      font-family: 'Robot', sans-serif;
+      font-variant-caps: all-petite-caps;
+      font-weight: 600;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      line-height: 14px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 10px 10px 0px;
+      text-align: center;
     }
   }
-  #main-logo-nav{
+  .nav-btns{
     height: 100%;
-    padding: 5px;
-  }
-
-
-  #user-button{
     display: flex;
-    justify-content: center;
     align-items: center;
-    img{
-      margin-right: 5px;
-    }
-    svg{
-      padding-left: 2px;
+    justify-content: flex-end;
+
+    a.btn{
+      margin: auto;
     }
   }
+}
 
-
-  #user-navbar-dropdown{
-    font-size: 1em;
-  }
+#main_nav_dropdown{
+  border-top: 2px solid red;
 }

@@ -1,30 +1,29 @@
-%nav#main-site-navbar
+= render 'navbar/main_nav_dropdown'
+
+%nav#main-site-navbar.white
   .nav-wrapper.container
-    = link_to root_path, {class: 'brand-logo'} do
-      = image_tag 'main_logo', id: 'main-logo-nav'
-      .tag-line
-        Sprout Free Canada
-    %ul.hide-on-med-and-down.right
-      %li
-        %a{href: '#'}
-          Latest Topics
-      %li.alerts
-        %a{href: '#'}
-          = material_icon.notifications
-      %li
-        %a#user-button.dropdown-trigger{href: '#', 'data-target': 'user-navbar-dropdown'}
-          = image_tag user_avatar(current_user, 30), class: 'circle'
-          = current_user.username
-          = fa_icon 'chevron-down'
+    %ul.row
+      .li.col.s8.m3
+        = link_to '#', {id: 'nav-logo', class: 'dropdown-trigger', 'data-target': 'main_nav_dropdown' } do
+          = image_tag 'main_logo', id: 'main-logo'
+          .tag-line
+            Canada's Legalized Growing Community
+          .icon
+            = material_icon.expand_more
+      .li.col.m4
+        %form
+          .input-field
+            %input#nav-search{type: 'search', required: true, placeholder: 'Search Forums' }
+            %label.label-icon{for: 'nav-search'}
+              = material_icon.search
+            = material_icon.close
 
+      - if user_signed_in?
 
-%ul#user-navbar-dropdown.dropdown-content
-  %li
-    %a{href: '#'}
-      My Profile
-  %li
-    %a{href: '#', class: 'flow-text'}
-      Account Settings
-  %li
-    %a{href: '#'}
-      Log Out
+      - else
+        .li.col.m3.offset-m2.nav-btns
+          - if user_signed_in?
+            = image_tag user_avatar(current_user)
+          - else
+            = link_to 'Log In', new_user_session_path, class: 'btn red darken-1'
+            = link_to 'Grow With Us', new_user_registration_path, class: 'btn green darken-1'
