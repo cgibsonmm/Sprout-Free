@@ -51,6 +51,64 @@
       margin-right: 5px !important;
     }
   }
+
+  .logo-links{
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+
+    &.first{
+      border-left: 1px solid #8b8b8b;
+    }
+      a{
+        height: inherit;
+        display: flex;
+        justify-content: center;
+
+        svg, i{
+          color: #5d5d5d;
+          height: inherit;
+        }
+      }
+    }
+
+  .user-nav-links{
+    color: black;
+    a{
+      display: flex;
+      align-items: center;
+      color: inherit;
+      float: right;
+
+      .username{
+        padding-left: 5px;
+      }
+    }
+
+    #user-navbar-dropdown{
+      border-top: 2px solid #4caf50;
+      #horizontal-user-links{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-grow: 2;
+        li{
+          text-align: center;
+          a{
+            display: flex;
+            justify-content: center;
+            i{
+              margin: 0;
+            }
+          }
+        }
+      }
+      li, a{
+      float: left;
+      width: 100%;
+      }
+    }
+  }
 }
 
 #main_nav_dropdown{

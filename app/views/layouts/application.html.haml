@@ -20,19 +20,19 @@
     = render 'navbar/main_nav'
     .container
       = render 'parts/flash'
-      .dynamic-content.mx-3
-        .current-controller-area
-          - if forum_area?
-            = render 'parts/forum_parts/topbar'
-          - if devise_controller?
-            .container#devise-area.mt-3
-              .card
-                = yield
-          - else
-            = yield
-        - unless root_controller?
-          - if user_signed_in?
-            .side-bar.mt-3
-              - if user_admin?
-                = render 'parts/admin_links'
-              = render 'user/info'
+      -# .dynamic-content.mx-3
+      -#   .current-controller-area
+      -#     - if forum_area?
+      -#       = render 'parts/forum_parts/topbar'
+      -#     - if devise_controller?
+      -#       .container#devise-area.mt-3
+      -#         .card
+      -#           = yield
+      -#     - else
+      -#       = yield
+      -#   - unless root_controller?
+      -#     - if user_signed_in?
+      -#       .side-bar.mt-3
+      -#         - if user_admin?
+      -#           = render 'parts/admin_links'
+      -#         = render 'user/info'
