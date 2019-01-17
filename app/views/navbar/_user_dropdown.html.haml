@@ -1,3 +1,14 @@
-%ul#user-navbar-dropdown-links.dropdown-content
+%ul#user-navbar-dropdown.dropdown-content
   %li
-    = link_to 'Sign out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure you want to sign out?'}
+    %ul#horizontal-user-links
+      %li
+        = link_to material_icon.bookmarks, '#'
+      %li
+        = link_to material_icon.person, '#'
+      %li
+        = link_to material_icon.build, '#'
+      %li
+        = link_to material_icon.exit_to_app, destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure you want to sign out?'}
+  %li.divider{'tab-index': -1}
+  %li
+    = link_to 'Something else', '#'

@@ -1,4 +1,7 @@
 #main-site-navbar{
+  #logo-area{
+    padding-left: 0;
+  }
   .search{
     height:100%;
   }
@@ -12,6 +15,7 @@
   #nav-logo{
     display: flex;
     width: 100%;
+    padding-left: 5px;
 
     .icon {
       color: black;
@@ -26,7 +30,6 @@
     }
 
     .tag-line{
-      font-family: 'Robot', sans-serif;
       font-variant-caps: all-petite-caps;
       font-weight: 600;
       color: black;
@@ -74,6 +77,7 @@
 
   .user-nav-links{
     color: black;
+    padding-right: 0;
     a{
       display: flex;
       align-items: center;
@@ -87,6 +91,7 @@
 
     #user-navbar-dropdown{
       border-top: 2px solid #4caf50;
+      width: auto !important;
       #horizontal-user-links{
         display: flex;
         align-items: center;
@@ -113,4 +118,10 @@
 
 #main_nav_dropdown{
   border-top: 2px solid red;
+}
+
+@media only screen and(max-width: 992px){
+  .user-nav-links{
+    float: right !important;
+  }
 }
