@@ -3,7 +3,7 @@
     %ul.left.col.l3.s12.landing-left-add-space
       - arr = %w[blue green red]
       - arr.each do |color|
-        %li{class: color}
+        %li.hoverable{class: color}
           test
     .right.col.l9.s12
       .carousel
@@ -11,9 +11,9 @@
           .main-box.carousel-item{style: "background-image: url(#{asset_path('g3')})"}
 
   %ul.row#forum-info
-    %li.col.m6.s12.green
+    %li.col.m6.s12.green.hoverable
       top forum post
-    %li.col.m6.s12.blue
+    %li.col.m6.s12.blue.hoverable
       newest Forum Post
 
   .row
