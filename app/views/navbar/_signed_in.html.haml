@@ -1,3 +1,5 @@
+= render 'navbar/user_dropdown'
+
 %li.col.l1.hide-on-med-and-down.logo-links.first
   = link_to '#' do
     = fa_icon('discord', type: 'fab', size: '2x')
@@ -10,6 +12,3 @@
     .username
       = current_user.username
     = material_icon.expand_more
-
-
-= render 'navbar/user_dropdown'

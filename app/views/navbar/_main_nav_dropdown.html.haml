@@ -1,7 +1,17 @@
 %ul#main_nav_dropdown.dropdown-content
   %li
+    = link_to 'Home', root_path, class: 'green-text'
+  %li
     = link_to 'Forum', forums_path, class: 'red-text'
   %li
     = link_to 'News', '#', class: 'grey-text'
   %li
     = link_to 'Merch', '#', class: 'grey-text'
+
+  %li.divider
+  %li.show-only-on-small
+    = link_to 'My Profile', '#', class: 'grey-text'
+  %li.show-only-on-small
+    = link_to 'Account Settings', '#', class: 'grey-text'
+  %li.show-only-on-small
+    = link_to 'Sign Out', '#', class: 'red-text'
