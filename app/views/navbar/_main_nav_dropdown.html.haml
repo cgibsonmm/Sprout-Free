@@ -8,10 +8,17 @@
   %li
     = link_to 'Merch', '#', class: 'grey-text'
 
-  %li.divider
-  %li.show-only-on-small
-    = link_to 'My Profile', '#', class: 'grey-text'
-  %li.show-only-on-small
-    = link_to 'Account Settings', '#', class: 'grey-text'
-  %li.show-only-on-small
-    = link_to 'Sign Out', '#', class: 'red-text'
+  %li.divider.hide-on-med-and-up
+  - if user_signed_in?
+    %li.hide-on-med-and-up
+      = link_to 'My Profile', '#', class: 'grey-text'
+    %li.hide-on-med-and-up
+      = link_to 'Account Settings', '#', class: 'grey-text'
+    %li.hide-on-med-and-up
+      = link_to 'Sign Out', '#', class: 'red-text'
+
+  - else
+    %li.hide-on-med-and-up
+      = link_to 'Grow with us', '#', class: 'green-text'
+    %li.hide-on-med-and-up
+      = link_to 'Sign in', '#', class: 'red-text'
