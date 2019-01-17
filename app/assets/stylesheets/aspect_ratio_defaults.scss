@@ -1,0 +1,36 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.sixteen-nine {
+  @include aspect-ratio(16, 9);
+}
+
+.sixteen-three{
+  @include aspect-ratio(16, 6)
+}
+
+.thirtytwo-27{
+  @include aspect-ratio(32, 27);
+}
+
+.sixteen-27{
+  @include aspect-ratio(16, 27)
+}
+
+.square{
+  @include aspect-ratio(1,1);
+}

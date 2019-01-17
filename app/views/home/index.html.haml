@@ -1,30 +1,30 @@
+#landing-page
+  .top-row.row
+    %ul.left.col.l3.s12.landing-left-add-space
+      - arr = %w[blue green red]
+      - arr.each do |color|
+        %li{class: color}
+          test
+    .right.col.l9.s12
+      .carousel
+        - 3.times do
+          .main-box.carousel-item{style: "background-image: url(#{asset_path('g3')})"}
 
-#main-landing-page
-  .pic-area{style: "background-image: url(#{asset_path('g3.jpg')});"}
-    .left-area.pr-3
-      .heading
-        %h2
-          Welcome to Canada's Community of Growers
-        %h1
-          Sprout Free Canada
-      .info
-        %h2
-          Our First 100
-          %br
-          %strong
-            "Forum Posters"
-          %br
-          will be entered into
-          %p.underline
-            The FREE Seed Pack GIVEAWAY
-    .right-area
-      %h2.user-count
-        = total_users
-        = fa_icon('user', class: 'user-icon')
-        %br
-        Current users
-      .grow-links
-        %h3 GROW WITH US
-        = link_to 'Sign Up Now', new_user_registration_path, class: 'btn btn-danger pulse'
-        %br
-        = link_to '* Read Details Here', 'https://www.sproutfreecanada.ca/forum_threads/17', class: 'details'
+  %ul.row#forum-info
+    %li.col.m6.s12.green
+      top forum post
+    %li.col.m6.s12.blue
+      newest Forum Post
+
+  .row
+    .col.l4.m6.s12
+      %h4.center-align
+        About Us
+      %p.flow-text
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .col.s12.divider.hide-on-med-and-up
+    .col.l8.m6.s12
+      %h4.center-align
+        Welcome
+      %p.flow-text
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
