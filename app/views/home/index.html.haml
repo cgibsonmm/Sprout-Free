@@ -1,22 +1,20 @@
 
 #main-landing-page
-  .pic-area{style: "background-image: url(#{asset_path('g3.jpg')});"}
+  .pic-area{style: "background-image: url(#{asset_path('new-bg')});"}
     .left-area.pr-3
       .heading
         %h2
-          Welcome to Canada's Community of Growers
+          Join us and celebrate your legal rights to
+          %br
+          Grow Your Own!
         %h1
-          Sprout Free Canada
+
       .info
-        %h2
-          Our First 100
-          %br
-          %strong
-            "Forum Posters"
-          %br
-          will be entered into
-          %p.underline
-            The FREE Seed Pack GIVEAWAY
+        = link_to 'https://www.sproutfreecanada.com/forum_threads/159' do
+          %h2.underline
+            See Forum For Details
+            %p.underline
+              The Grow Tent Giveaway!
     .right-area
       %h2.user-count
         = total_users

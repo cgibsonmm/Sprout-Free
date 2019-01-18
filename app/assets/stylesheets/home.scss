@@ -2,6 +2,16 @@
 
 #main-landing-page {
 
+  font-variant-caps: all-petite-caps;
+
+  h2{
+    font-size: 2em;
+  }
+
+  h2.underline{
+    padding-top: 20px;
+  }
+
   .btn{
     color: rgb(255, 255, 255) !important;
     padding: 20px 70px;
@@ -17,6 +27,8 @@
     text-shadow: 1px 1px 5px rgb(0, 0, 0);
   }
   .underline{
+
+    font-size: 1.8em !important;
     text-decoration: underline !important;
   }
 
@@ -51,7 +63,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
       width:40%;
       padding-bottom: 50px;
     }

@@ -33,7 +33,7 @@ RSpec.feature 'User creates new forum thread' do
     before do
       visit '/'
       expect(page).to have_content('Log In')
-      click_link 'Forum'
+      first(:link, 'Forum').click
       click_link @topic.title
     end
     scenario 'User must be signed in to create a forum thread' do
