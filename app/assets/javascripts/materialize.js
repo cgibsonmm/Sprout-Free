@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(){
   })
   $('.carousel').carousel({
     fullWidth: true,
-    duration: 500,
+    duration: 1000,
   });
 
   setInterval(function() {
