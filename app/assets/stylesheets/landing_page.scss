@@ -10,8 +10,10 @@
     background-repeat: no-repeat;
   }
 
-  #forum-info li{
+  #forum-info li, a{
     height: 200px;
+    color: white;
+    text-shadow: 1px 1px 3px rgb(147, 147, 147);
   }
   .top-row{
     margin-top: 20px;

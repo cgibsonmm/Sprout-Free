@@ -13,8 +13,18 @@
   %ul.row#forum-info
     %li.col.m6.s12.green.hoverable
       top forum post
-    %li.col.m6.s12.blue.hoverable
-      newest Forum Post
+    = link_to @latest_forum_thread, {class: 'col m6 s12 blue-grey lighten-4 hoverable'} do
+      .row
+        .col.s3
+          Latest Thread
+        .col.s2.offset-s7
+          = local_time_ago(@latest_forum_thread.created_at)
+
+      .row
+        .col.s12.center-align
+          %h5
+            = @latest_forum_thread.subject
+          = sanitize(@latest_forum_thread.forum_posts.first.body.truncate(120))
 
   .row
     .col.l4.m6.s12
