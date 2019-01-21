@@ -1,1 +1,11 @@
-
+#landing-page
+  .top-row.row
+    %ul.left.col.l3.s12.landing-left-add-space
+      - arr = %w[blue green red]
+      - arr.each do |color|
+        %li.hoverable{class: color}
+          test
+    .right.col.l9.s12
+      .carousel
+        - 3.times do
+          .main-box.carousel-item{style: "background-image: url(#{asset_path('g3')})"}

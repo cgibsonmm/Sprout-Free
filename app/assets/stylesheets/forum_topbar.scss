@@ -1,0 +1,22 @@
+#forum-nav-bar{
+  ul{
+    display: flex;
+    align-items: center;
+    li{
+      padding: 3px 10px;
+      &:nth-child(3){
+        padding-left: 30px;
+      }
+      a{
+        display: flex;
+        &:not(.btn){
+          color: rgb(121, 121, 121);
+          font-size: 1.15em;
+        }
+        i{
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ RSpec.feature 'Viewing forum posts(fourm_threads/show)' do
     @user = create(:user)
     # @cat = create(:forum_category)
     # @forum_topic = create(:forum_topic)
-    @forum_post = create(:forum_post)
+    @forum_post = create(:forum_post_in_thread)
   end
 
   context 'when user signed in' do

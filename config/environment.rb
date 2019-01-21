@@ -7,7 +7,7 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
   :user_name => 'apikey',
   :password => Rails.application.credentials.dig(:send_grid, :api_key),
-  :domain => 'sprout-free-canada.herokuapp.com',
+  :domain => 'www.sproutfreecanada.ca',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,

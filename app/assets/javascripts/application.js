@@ -12,8 +12,6 @@
 //
 
 //= require jquery3
-//= require popper
-//= require bootstrap-sprockets
 //= require jquery-ui/widget
 //= require jquery-ui/widgets/sortable
 //= require font_awesome5
@@ -23,4 +21,5 @@
 //= require trix
 //= require tribute
 //= require social-share-button
+//= require materialize-sprockets
 //= require_tree .

@@ -1,5 +1,4 @@
 class NotificationsMailer < ApplicationMailer
-
   def notify_mailer(reciver, actor, action, post)
     @reciver = reciver
     @actor = actor.username

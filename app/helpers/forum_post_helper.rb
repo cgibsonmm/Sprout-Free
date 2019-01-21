@@ -1,4 +1,5 @@
 module ForumPostHelper
+  
   def user_city(user)
     unless user.city.nil?
       user.city.capitalize

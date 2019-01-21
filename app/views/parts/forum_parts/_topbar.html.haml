@@ -1,17 +1,22 @@
-/ Forums Topbar
-%ul#forums-nav.nav.justify-content-center.shadow-sm
-  %li.nav-item
-    %h3.mt-2
-      =link_to 'Forum', forums_path, class: 'nav-link'
-  -# %li.nav-item.nav-link.ml-auto
-  -#   = link_to 'Top Threads', "#", class: 'nav-link'
-  -# %li.nav-item.nav-link
-  -#   = link_to 'Trending Threads', '#', class: 'nav-link'
-  %li.nav-item.nav-link.mx-auto
-    = link_to 'Newest Threads', forum_threads_path, class: 'nav-link btn-sm temp-alert'
-  %li.nav-item.nav-link.mx-auto
-    = link_to 'Newest Comments', forum_threads_path(sort: :last_forum_post_time), class: 'nav-link btn-sm temp-alert'
-  %li.nav-item.nav-link
-    = link_to "#", class: 'nav-link' do
-      = fa_icon('search', text: 'Search')
-= render_breadcrumbs
+-# TODO: Build Categories
+= render 'parts/forum_parts/all_categories'
+= render 'parts/forum_parts/tabs'
+
+#forum-nav-bar
+  %ul.row
+    %li
+      = link_to '#', {class: 'btn red dropdown-trigger', 'data-target': 'categories-dropdown' } do
+        All Categories
+        = material_icon.keyboard_arrow_down
+    %li
+      = link_to '#', {class: 'btn green dropdown-trigger', 'data-target': 'tabs-dropdown' } do
+        Tags
+        = material_icon.keyboard_arrow_down
+    %li
+      = link_to 'Latest', '#'
+    %li
+      = link_to 'Most Comments', '#'
+    %li
+      = link_to 'Rising', '#'
+    %li
+      = link_to 'Most Likes', '#'

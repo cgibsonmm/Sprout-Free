@@ -5,7 +5,10 @@ ruby '2.4.1'
 
 
 # styling
-gem 'bootstrap', '~> 4.1.3'
+
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons'
+
 gem 'font_awesome5_rails'
 gem 'gravtastic'
 gem 'trix-rails', require: 'trix'
@@ -73,6 +76,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -87,7 +91,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper' # <- New!
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'database_cleaner'
   gem 'simplecov', require: false
 end

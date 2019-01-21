@@ -4,6 +4,7 @@
 #
 #  id              :bigint(8)        not null, primary key
 #  body            :text
+#  likes_count     :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  forum_thread_id :integer
@@ -35,5 +36,9 @@ class ForumPost < ApplicationRecord
 
   def mentioned_users
     @mentioned_users ||= User.where(username: mentions)
+  end
+
+  def total_likes
+    self.likes.size
   end
 end

@@ -6,7 +6,7 @@ RSpec.feature 'Adding Post to a forum thread' do
     @category = create(:forum_category, user_id: @user.id)
     @forum_topic = create(:forum_topic, user_id: @user.id, forum_category_id: @category.id)
     @forum_thread1 = create(:forum_thread, user_id: @user.id)
-    @forum_post1 = create(:forum_post)
+    @forum_post1 = create(:forum_post_in_thread)
   end
 
   context "when user is signed in" do

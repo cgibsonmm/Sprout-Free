@@ -1,0 +1,14 @@
+= render 'navbar/user_dropdown'
+
+%li.col.l1.hide-on-med-and-down.logo-links.first
+  = link_to '#' do
+    = fa_icon('discord', type: 'fab', size: '2x')
+%li.col.l1.hide-on-med-and-down.logo-links
+  = link_to '#' do
+    = material_icon.wb_incandescent
+%li.col.m3.hide-on-small-only.user-nav-links
+  = link_to '#', {class: 'dropdown-right-trigger', 'data-target': 'user-navbar-dropdown' }  do
+    = image_tag user_avatar(current_user, 30), class: 'circle'
+    .username
+      = current_user.username
+    = material_icon.expand_more

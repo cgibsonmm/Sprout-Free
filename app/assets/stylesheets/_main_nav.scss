@@ -1,0 +1,127 @@
+#main-site-navbar{
+  #logo-area{
+    padding-left: 0;
+  }
+  .search{
+    height:100%;
+  }
+
+  .input-field label.active i {
+    color: #d8d8d8;
+  }
+  #nav-logo, #main-logo{
+    height: 100% !important;
+  }
+  #nav-logo{
+    display: flex;
+    width: 100%;
+    padding-left: 5px;
+
+    .icon {
+      color: black;
+    }
+
+    #main-logo{
+      padding: 2px 5px 2px 0px;
+    }
+
+    #nav-search{
+      color: black;
+    }
+
+    .tag-line{
+      font-variant-caps: all-petite-caps;
+      font-weight: 600;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      line-height: 14px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 10px 10px 0px;
+      text-align: center;
+    }
+  }
+  .out-nav-btns{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .btn{
+      margin: auto ;
+    }
+    .sign-in{
+      margin-right: 5px !important;
+    }
+  }
+
+  .logo-links{
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+
+    &.first{
+      border-left: 1px solid #8b8b8b;
+    }
+      a{
+        height: inherit;
+        display: flex;
+        justify-content: center;
+
+        svg, i{
+          color: #5d5d5d;
+          height: inherit;
+        }
+      }
+    }
+
+  .user-nav-links{
+    color: black;
+    padding-right: 0;
+    a{
+      display: flex;
+      align-items: center;
+      color: inherit;
+      float: right;
+
+      .username{
+        padding-left: 5px;
+      }
+    }
+
+    #user-navbar-dropdown{
+      border-top: 2px solid #4caf50;
+      width: auto !important;
+      #horizontal-user-links{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-grow: 2;
+        li{
+          text-align: center;
+          a{
+            display: flex;
+            justify-content: center;
+            i{
+              margin: 0;
+            }
+          }
+        }
+      }
+      li, a{
+      float: left;
+      width: 100%;
+      }
+    }
+  }
+}
+
+#main_nav_dropdown{
+  border-top: 2px solid red;
+}
+
+@media only screen and(max-width: 992px){
+  .user-nav-links{
+    float: right !important;
+  }
+}

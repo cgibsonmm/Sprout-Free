@@ -1,15 +1,21 @@
-$white-bg: rgb(246, 246, 246);
-$shadow-white: rgb(224, 224, 224);
-$red-bg: rgb(185, 5, 5);
-$dark-blue: rgb(5, 47, 92);
-$light-blue: rgb(16, 102, 173);
-$canada-red: rgb(221, 11, 11);
-
+// $white-bg: rgb(246, 246, 246);
+// $shadow-white: rgb(224, 224, 224);
+// $red-bg: rgb(185, 5, 5);
+// $dark-blue: rgb(5, 47, 92);
+// $light-blue: rgb(16, 102, 173);
+// $canada-red: rgb(221, 11, 11);
+//
 
 // font
 @import "trix";
 @import url('https://fonts.googleapis.com/css?family=Raleway|Arimo:700|Roboto|Roboto+Condensed|Roboto+Mono|Open+Sans:400,800');
-@import "bootstrap";
+@import "materialize/components/color-variables";
+@import "material_icons";
+
+// How to override colors
+// $primary-color: color("blue", "lighten-2") !default;
+// $secondary-color: color("yellow", "base") !default;
+@import "materialize";
 @import 'font_awesome5_webfont';
 @import "tribute";
 @import "social-share-button";

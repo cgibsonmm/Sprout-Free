@@ -1,0 +1,16 @@
+#devise-form{
+  .card-head{
+    text-align: center;
+    font-variant-caps: all-petite-caps;
+  }
+}
+
+
+@media only screen and(max-width: 992px){
+  #devise-form{
+    .form-group
+      input{
+        font-size: 3em;
+      }
+  }
+}

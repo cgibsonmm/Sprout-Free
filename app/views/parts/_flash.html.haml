@@ -1,7 +1,8 @@
-- if flash.any?
-  - flash.each do |type, msg|
-    %div#flash-bar{:class => "alert #{parse_flash(type)} alert-dismissible fade show", :role => "alert"}
-      %strong= msg
-      %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
-        %span{"aria-hidden" => "true"}
-          &times;
+- flash.each do |key, value|
+  - toastr_key = key
+  - toastr_key = 'info' if key == 'notice'
+  - toastr_key = 'warning' if key == 'alert'
+  :javascript
+    $(function() {
+      toastr["#{toastr_key}"]("#{flash[key]}");
+    });
