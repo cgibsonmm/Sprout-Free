@@ -1,6 +1,7 @@
 class NewsStoriesController < ApplicationController
-
   def index
+    @news_stories = NewsStory.all
+    #@news_stories = NewsStory.select { |story| !story.published_on.nil? }.sort_by(&:published_on)
   end
 
   def new
@@ -38,9 +39,9 @@ class NewsStoriesController < ApplicationController
 
   def publish_params
     hash = {
-            published: true,
-            published_on: DateTime.current
-          }
+      published: true,
+      published_on: DateTime.current
+    }
     hash
   end
 end

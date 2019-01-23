@@ -10,7 +10,9 @@
         ga('create', 'UA-129179722-1', 'auto');
 
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title SproutFree
+    %title
+      - if @title
+        = "SPROUT FREE | #{@title.upcase}"
     = favicon_link_tag asset_path('favicon.png')
     = csrf_meta_tags
     = csp_meta_tag

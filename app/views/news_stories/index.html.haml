@@ -1,0 +1,22 @@
+- @title = 'news'
+#news_stories_index
+  .row
+    .col.s12
+      %h3#news-heading.center-align Sprout Free News
+
+  - @news_stories.each do |story|
+    .row.news_story
+      .col.s12
+        .card-panel.grey.lighten-4
+          .card-content
+            .row
+              .col.offset-s9.s3
+                %span.grey-text.darken-4
+                  Published:
+                = local_time(story.published_on)
+            .card-title
+              %h5
+                = story.heading
+              .card-action
+                %p
+                  = (sanitize story.body).truncate(1000)

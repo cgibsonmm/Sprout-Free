@@ -13,7 +13,8 @@ RSpec.feature 'Admin adds new story' do
 
     scenario 'user can create a news story' do
       visit root_path
-      click_link 'Cannabis News'
+      find('#nav-logo').click
+      click_link 'News'
       click_link 'Add News Story'
 
       fill_in 'Heading', with: @story[:heading]

@@ -13,12 +13,14 @@
   %ul.row#forum-info
     %li.col.m6.s12.green.hoverable
       top forum post
-    = link_to @latest_forum_thread, {class: 'col m6 s12 blue-grey lighten-4 hoverable'} do
-      .row
-        .col.s3
-          Latest Thread
-        .col.s2.offset-s7
-          = local_time_ago(@latest_forum_thread.created_at)
+      -# TODO: for production remove conditionional
+    - unless @latest_forum_thread.nil?
+      = link_to @latest_forum_thread, {class: 'col m6 s12 blue-grey lighten-4 hoverable'} do
+        .row
+          .col.s3
+            Latest Thread
+          .col.s2.offset-s7
+            = local_time_ago(@latest_forum_thread.created_at)
 
       .row
         .col.s12.center-align
