@@ -1,5 +1,9 @@
 {
   "result": {
+<<<<<<< HEAD
+    "covered_percent": 15.67
+=======
     "covered_percent": 50.65
+>>>>>>> layouts_2
   }
 }

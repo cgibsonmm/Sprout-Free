@@ -67,6 +67,8 @@ class User < ApplicationRecord
   has_many :follows
   has_many :site_notifications
 
+  has_many :news_stories
+
 
 
   def assign_default_role
