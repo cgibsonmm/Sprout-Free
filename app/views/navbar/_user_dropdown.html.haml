@@ -1,4 +1,6 @@
 %ul#user-navbar-dropdown.dropdown-content
+  - if user_admin?
+    = render 'navbar/admin_links'
   %li
     %ul#horizontal-user-links
       %li

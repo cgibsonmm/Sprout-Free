@@ -1,0 +1,14 @@
+admin Links
+%li.divider
+%ul#admin-links.ml-2
+  %li
+    = link_to 'Add News Story', new_news_story_path
+  %li
+    = link_to 'Categories Index', forum_categories_path
+  %li
+    = link_to 'New Site Notification', new_site_notification_path
+  %li
+    = link_to 'Admin Area', admin_root_path
+  %li
+    = link_to 'Send Confirm Reminder', confirm_reminder_path, method: :post
+%li.divider
