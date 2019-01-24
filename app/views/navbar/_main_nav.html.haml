@@ -1,26 +1,26 @@
--# = render 'navbar/main_nav_dropdown'
--# .navbar-fixed
--#   %nav#main-site-navbar.white
--#     .nav-wrapper.container
--#       %ul.row
--#         %li#logo-area.col.s12.m5.l3
--#           = link_to '#', {id: 'nav-logo', class: 'dropdown-trigger', 'data-target': 'main_nav_dropdown' } do
--#             = image_tag 'main_logo', id: 'main-logo'
--#             .tag-line
--#               Canada's Legalized Growing Community
--#             .icon
--#               = material_icon.expand_more
--#
--#
--#         %li.col.l4.hide-on-med-and-down.search
--#           %form
--#             .input-field
--#               %input#nav-search{type: 'search', required: true, placeholder: 'Search Forums' }
--#               %label.label-icon{for: 'nav-search'}
--#                 = material_icon.search
--#               = material_icon.close
--#         -# nav-right
--#         - if user_signed_in?
--#           = render 'navbar/signed_in'
--#         - else
--#           = render 'navbar/signed_out'
+= render 'navbar/main_nav_dropdown'
+.navbar-fixed
+  %nav#main-site-navbar.white
+    .nav-wrapper.container
+      %ul.row
+        %li#logo-area.col.s12.m5.l3
+          = link_to '#', {id: 'nav-logo', class: 'dropdown-trigger', 'data-target': 'main_nav_dropdown' } do
+            = image_tag 'main_logo', id: 'main-logo'
+            .tag-line
+              Canada's Legalized Growing Community
+            .icon
+              = material_icon.expand_more
+
+
+        %li.col.l4.hide-on-med-and-down.search
+          %form
+            .input-field
+              %input#nav-search{type: 'search', required: true, placeholder: 'Search Forums' }
+              %label.label-icon{for: 'nav-search'}
+                = material_icon.search
+              = material_icon.close
+        -# nav-right
+        - if user_signed_in?
+          = render 'navbar/signed_in'
+        - else
+          = render 'navbar/signed_out'

@@ -1,5 +1,23 @@
-= @story.heading
-%br
-%h5
-  Published
-  = local_time(@story.published_on)
+#news-show
+  .row
+    .col.s12
+      %ul
+        %li
+          = link_to news_stories_path, {class: 'link-with-icon'} do
+            = material_icon.arrow_back_icon
+            Back
+  .row
+    .col.s12
+      .card
+        .card-title
+          %h4.center-align
+            = @story.heading
+        .row
+          .col.s6.offset-s6.m4.offset-m8.l3.offset-l9
+            %span.grey-text.darken-2
+              Published:
+            = local_date(@story.published_on)
+        .card-content
+          .row
+            .col.s12
+              = sanitize @story.body

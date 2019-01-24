@@ -1,6 +1,13 @@
 #news_stories_index{
-  #news-heading{
-    margin-bottom: 5px;
+  #news-stories-heading{
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px rgb(143, 143, 143);
+  }
+
+  .news-heading{
+    text-decoration: underline;
+    line-height: inherit;
   }
   .row{
     margin-bottom: 0;

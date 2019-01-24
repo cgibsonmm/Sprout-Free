@@ -33,8 +33,9 @@ example_id                                                                      
 ./spec/features/forum_topics/admin_creates_forum_topic.rb[1:2:1]                             | passed  | 0.07014 seconds |
 ./spec/features/forum_topics/admin_deletes_a_topic_spec.rb[1:1:1]                            | passed  | 1.58 seconds    |
 ./spec/features/forum_topics/admin_deletes_a_topic_spec.rb[1:2:1]                            | passed  | 1.42 seconds    |
-./spec/features/news/admin_adds_news_spec.rb[1:1:1]                                          | passed  | 6.61 seconds    |
-./spec/features/news/viewing_new_index_spec.rb[1:1]                                          | passed  | 0.34699 seconds |
+./spec/features/news/admin_adds_news_spec.rb[1:1:1]                                          | passed  | 3.22 seconds    |
+./spec/features/news/viewing_new_index_spec.rb[1:1]                                          | passed  | 13.84 seconds   |
+./spec/features/news/viewing_news_story_spec.rb[1:1]                                         | passed  | 0.46262 seconds |
 ./spec/features/user_profiles/user_can_update_their_profile_spec.rb[1:1:1]                   | passed  | 4.39 seconds    |
 ./spec/features/user_profiles/user_can_update_their_profile_spec.rb[1:1:2]                   | passed  | 1.25 seconds    |
 ./spec/features/user_sign_up_spec.rb[1:1]                                                    | passed  | 1.3 seconds     |
