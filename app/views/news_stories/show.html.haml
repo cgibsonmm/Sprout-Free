@@ -21,3 +21,6 @@
           .row
             .col.s12
               = sanitize @story.body
+        .card-action
+          - if user_admin?
+            = link_to 'Edit', edit_news_story_path(@story)

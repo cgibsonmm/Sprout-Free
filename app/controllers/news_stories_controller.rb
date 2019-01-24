@@ -1,4 +1,5 @@
 class NewsStoriesController < ApplicationController
+  before_action :check_admin, except: [:show, :index]
   def index
     @news_stories = NewsStory.all
     #@news_stories = NewsStory.select { |story| !story.published_on.nil? }.sort_by(&:published_on)
@@ -14,6 +15,17 @@ class NewsStoriesController < ApplicationController
       flash[:alert] = "Previewing - #{@story.heading}"
       redirect_to preview_news_story_path(@story)
     end
+  end
+
+  def edit
+    @story = NewsStory.find(params[:id])
+  end
+
+  def update
+    @story = NewsStory.find(params[:id])
+    @story.update(update_params)
+    flash[:succes] = "Successfully updated #{@story.heading}"
+    redirect_to preview_news_story_path(@story)
   end
 
   def preview
@@ -33,7 +45,17 @@ class NewsStoriesController < ApplicationController
 
   private
 
+  def check_admin
+    unless current_user.has_role?(:admin)
+      redirect_to news_stories_path
+    end
+  end
+
   def create_params
+    params.require(:news_story).permit(:body, :heading)
+  end
+
+  def update_params
     params.require(:news_story).permit(:body, :heading)
   end
 
