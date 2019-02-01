@@ -23,4 +23,5 @@ class ForumThread < ApplicationRecord
 
   validates :subject, presence: true, length: { minimum: 3 }
   validates_associated :forum_posts
+
 end

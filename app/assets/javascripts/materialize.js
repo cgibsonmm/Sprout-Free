@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+  $('.collapsible').collapsible();
   $('.materialboxed').materialbox();
   $('.dropdown-trigger').dropdown({coverTrigger: false,});
   $('.dropdown-right-trigger').dropdown({

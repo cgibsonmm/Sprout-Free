@@ -14,6 +14,7 @@ Shrine.storages = {
 }
 
 Shrine.plugin :activerecord
+Shrine.plugin :default_url_options, cache: { public: true }, store: { public: true }
 # Shrine.plugin :presign_endpoint, presign_options: -> (request) {
 #   filename = request.params["filename"]
 #   type     = request.params["type"]

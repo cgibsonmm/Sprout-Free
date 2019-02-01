@@ -3,14 +3,19 @@
     .col.s12.m4.blue.lighten-5
       %h5
         Categories
-      %ul
-      - @categories.each do |category|
-        %li
-          = category.title
-          %ul
-          - category.forum_topics.each do |topic|
-            %li
-              = topic.title
+      %hr
+      %ul.categories-list
+        - @categories.each do |category|
+          %li.cat-title
+            = category.title
+          %ul.topic-list
+            - category.forum_topics.each do |topic|
+              %li.topic
+                = topic.title
+
+
+
+
     .col.s12.m4.green.lighten-3
       %h5 Latest Threads
       %ul

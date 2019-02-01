@@ -1,11 +1,19 @@
 #forums_page{
-  ul{
-    list-style: none;
-    li{
+  ul.categories-list{
+    list-style-type: none;
+    li.cat-title{
       list-style: none;
-      display: flex;
       align-items:center;
       padding-bottom: 7px;
+      font-weight: bold;
+      text-decoration: underline;
+
+      ul.topic-list{
+        list-style-type: none !important;
+        li.topic{
+          text-decoration: none !important;
+        }
+      }
     }
   }
 }

@@ -11,14 +11,14 @@
             .icon
               = material_icon.expand_more
 
-
-        %li.col.l4.hide-on-med-and-down.search
-          %form
-            .input-field
-              %input#nav-search{type: 'search', required: true, placeholder: 'Search Forums' }
-              %label.label-icon{for: 'nav-search'}
-                = material_icon.search
-              = material_icon.close
+        -# Search area not ready
+        -# %li.col.l4.hide-on-med-and-down.search
+        -#   %form
+        -#     .input-field
+        -#       %input#nav-search{type: 'search', required: true, placeholder: 'Search Forums' }
+        -#       %label.label-icon{for: 'nav-search'}
+        -#         = material_icon.search
+        -#       = material_icon.close
         -# nav-right
         - if user_signed_in?
           = render 'navbar/signed_in'

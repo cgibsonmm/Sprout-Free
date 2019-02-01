@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   get 'user_profiles/show'
   get 'user_profiles/edit'
   get 'forums/index'
+  get 'forums/most_comments'
+
+  get 'forums/latest'
 
   resources :users, only: [:index]
 
