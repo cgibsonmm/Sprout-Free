@@ -1,8 +1,27 @@
 #forum-nav-bar {
   #main.row{
+    display: flex;
+    margin-bottom: 0;
     > ul{
       display: flex;
       justify-content: space-around;
+      align-items: center;
+    }
+    .right-links{
+      justify-content: flex-start;
+      li{
+        font-size: 1.2rem;
+        margin-right: 45px;
+      }
+    }
+    .left-links{
+      justify-content: flex-start;
+      li{
+        margin-right: 15px;
+        a{
+          display: flex;
+        }
+      }
     }
   }
 

@@ -1,6 +1,6 @@
 %ul
-  - @threads. do |thread|
+  - @threads.each do |thread|
     %li
       = thread.subject
-      %br
+    %br
       = thread.forum_posts.all.count

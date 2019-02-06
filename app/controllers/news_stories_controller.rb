@@ -1,8 +1,7 @@
 class NewsStoriesController < ApplicationController
   before_action :check_admin, except: [:show, :index]
   def index
-    @news_stories = NewsStory.all
-    #@news_stories = NewsStory.select { |story| !story.published_on.nil? }.sort_by(&:published_on)
+    @news_stories = NewsStory.select { |story| !story.published_on.nil? }.sort_by(&:published_on)
   end
 
   def new

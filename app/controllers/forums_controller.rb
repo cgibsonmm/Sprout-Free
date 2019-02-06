@@ -1,7 +1,8 @@
 class ForumsController < ApplicationController
   def index
-    @categories = ForumCategory.includes(:forum_topics).order(:position)
+    @pagy, @categories = pagy(ForumCategory.includes(:forum_topics).order(:position), items: 8)
     @threads = ForumThread.includes(:user).all
+    @latest_threads = @threads.order('created_at DESC')
   end
 
   def latest
@@ -10,7 +11,7 @@ class ForumsController < ApplicationController
 
   def most_comments
     # @threads = ForumThread.includes(:forum_posts).all
-    @threads = ForumThread.all
+    @threads = ForumThread.includes(:forum_posts).order(forum_posts.count)
   end
 
 end

@@ -8,17 +8,17 @@
       %ul.categories-list
         - @categories.each do |category|
           %li.cat-title
-            = category.title
+            = link_to category.title, forum_categories_path(category)
           %ul.topic-list
             - category.forum_topics.each do |topic|
               %li.topic
-                = topic.title
-
+                = link_to topic.title, forum_topic_path(topic)
+      = raw pagy_bootstrap_nav(@pagy).html_safe
 
     .col.s12.m4.green.lighten-3
       %h5 Latest Threads
       %ul
-        - @threads.each do |thread|
+        - @latest_threads.each do |thread|
           %li
             = image_tag user_avatar(thread.user), class: 'circle'
             = thread.subject
