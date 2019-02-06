@@ -1,1 +1,6 @@
 %ul#categories-dropdown.dropdown-content
+  - categories.each_with_index do |category, index|
+    %li.categories-link
+      = link_to category.title, forum_category_path(category)
+  %li.categories-link
+    = link_to 'See More...', '#'

@@ -1,22 +1,41 @@
 -# TODO: Build Categories
-= render 'parts/forum_parts/all_categories'
+= render partial: 'parts/forum_parts/all_categories', locals: { categories: @categories }
 = render 'parts/forum_parts/tabs'
 
 #forum-nav-bar
-  %ul.row
-    %li
-      = link_to '#', {class: 'btn red dropdown-trigger', 'data-target': 'categories-dropdown' } do
-        All Categories
-        = material_icon.keyboard_arrow_down
-    %li
-      = link_to '#', {class: 'btn green dropdown-trigger', 'data-target': 'tabs-dropdown' } do
-        Tags
-        = material_icon.keyboard_arrow_down
-    %li
-      = link_to 'Latest', forums_latest_path
-    %li
-      = link_to 'Most Comments', forums_most_comments_path
-    %li
-      = link_to 'Rising', '#'
-    %li
-      = link_to 'Most Likes', '#'
+  #main.row
+    %ul.left-links.col.s12.m4
+      %li
+        = link_to '#', {class: 'btn red categories-dropdown-trigger', 'data-target': 'categories-dropdown' } do
+          All Categories
+          = material_icon.keyboard_arrow_down
+      %li
+        = link_to '#', {class: 'btn green dropdown-trigger', 'data-target': 'tabs-dropdown' } do
+          Tags
+          = material_icon.keyboard_arrow_down
+    %ul.right-links.col.s12.m8
+      %li
+        = link_to 'Latest', forums_latest_path
+      %li
+        = link_to 'Most Comments', forums_most_comments_path
+      %li
+        = link_to 'Rising', '#'
+      %li
+        = link_to 'Most Likes', '#'
+  -# %ul#main.row
+  -#   %li
+  -#     = link_to '#', {class: 'btn red categories-dropdown-trigger', 'data-target': 'categories-dropdown' } do
+  -#       All Categories
+  -#       = material_icon.keyboard_arrow_down
+  -#   %li
+  -#     = link_to '#', {class: 'btn green dropdown-trigger', 'data-target': 'tabs-dropdown' } do
+  -#       Tags
+  -#       = material_icon.keyboard_arrow_down
+  -#   %li
+  -#     = link_to 'Latest', forums_latest_path
+  -#   %li
+  -#     = link_to 'Most Comments', forums_most_comments_path
+  -#   %li
+  -#     = link_to 'Rising', '#'
+  -#   %li
+  -#     = link_to 'Most Likes', '#'

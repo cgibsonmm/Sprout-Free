@@ -1,6 +1,7 @@
+= render partial: 'parts/forum_parts/topbar', locals: { categories: @categories }
 #forums_page
   .row
-    .col.s12.m4.blue.lighten-5
+    .col.m4.blue.lighten-5.hide-on-small-only
       %h5
         Categories
       %hr
@@ -12,8 +13,6 @@
             - category.forum_topics.each do |topic|
               %li.topic
                 = topic.title
-
-
 
 
     .col.s12.m4.green.lighten-3
