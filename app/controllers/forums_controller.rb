@@ -11,7 +11,6 @@ class ForumsController < ApplicationController
 
   def most_comments
     # @threads = ForumThread.includes(:forum_posts).all
-    @threads = ForumThread.includes(:forum_posts).order(forum_posts.count)
   end
 
 end
