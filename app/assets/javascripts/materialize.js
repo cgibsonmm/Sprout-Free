@@ -12,10 +12,10 @@ $(document).on('turbolinks:load', function(){
   })
   $('.carousel').carousel({
     fullWidth: true,
-    duration: 1000,
+    duration: 300,
   });
 
   setInterval(function() {
       $('.carousel').carousel('next');
-    }, 5000);
+    }, 6000);
 })

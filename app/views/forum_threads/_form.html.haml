@@ -4,6 +4,6 @@
       = f.text_field :subject, label: false, placeholder: 'Title', class: 'form-control string required'
       = f.fields_for :forum_posts do |p|
         .field.mt-3
-          = p.trix_editor :body, id: 'trix-body'
+          = f.text_field :body, id: 'trix-body'
           .form-actions.mt-2
             = f.submit "Post New Thread", class: 'btn btn-success ml-auto'
