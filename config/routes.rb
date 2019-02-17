@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'activities/index'
   get 'user_profiles/show'
   get 'user_profiles/edit'
   get 'forums/index'

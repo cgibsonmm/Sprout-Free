@@ -32,6 +32,8 @@ gem "administrate"
 gem 'cancancan'
 gem 'rolify'
 
+gem 'public_activity'
+
 # Added for checking memory leaks
 # gem 'derailed'
 

@@ -22,6 +22,10 @@ class ForumThread < ApplicationRecord
 
   accepts_nested_attributes_for :forum_posts
 
+  # Activity feed
+  include PublicActivity::Model
+  tracked
+
   validates :subject, presence: true, length: { minimum: 3 }
   validates_associated :forum_posts
 

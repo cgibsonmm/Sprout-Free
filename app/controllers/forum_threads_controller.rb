@@ -7,8 +7,6 @@ class ForumThreadsController < ApplicationController
   before_action :set_forum_thread, except: [:index, :new, :create, :destroy]
   # before_action :set_forum_topic
 
-
-
   def index
     # @local = locals
     if params[:sort]
