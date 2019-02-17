@@ -172,9 +172,9 @@ ActiveRecord::Schema.define(version: 2019_02_11_133553) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "email_me", default: false
+    t.boolean "email_me"
     t.string "email_subject"
-    t.boolean "to_notify", default: false
+    t.boolean "to_notify"
     t.index ["user_id"], name: "index_site_notifications_on_user_id"
   end
 
@@ -205,7 +205,6 @@ ActiveRecord::Schema.define(version: 2019_02_11_133553) do
     t.text "about_me"
     t.string "city"
     t.string "province"
-    t.boolean "terms_of_service", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

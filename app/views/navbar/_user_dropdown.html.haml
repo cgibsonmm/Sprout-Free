@@ -4,9 +4,9 @@
   %li
     %ul#horizontal-user-links
       %li
-        = link_to material_icon.bookmarks, '#'
+        = link_to material_icon.bookmarks,  activities_index_path
       %li
-        = link_to material_icon.person, '#'
+        = link_to material_icon.person, user_profile_path(current_user)
       %li
         = link_to material_icon.build, '#'
       %li
