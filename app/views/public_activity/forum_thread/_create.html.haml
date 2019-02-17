@@ -1,6 +1,6 @@
 %div{id: dom_id(activity)}
   = image_tag user_avatar(activity.owner), class: 'circle'
   = link_to activity.owner.username, user_profile_path(activity.owner)
-  posted on thread:
-  = link_to activity.trackable.forum_thread.subject, forum_thread_path(activity.trackable.forum_thread)
+  created a new thread:
+  = link_to activity.trackable.subject, forum_thread_path(activity.trackable)
   = local_time_ago(activity.created_at)

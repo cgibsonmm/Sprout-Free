@@ -22,4 +22,6 @@
 class Like < ApplicationRecord
   belongs_to :user
   belongs_to :forum_post, counter_cache: true
+
+  include PublicActivity::Common
 end

@@ -36,6 +36,7 @@ class ForumThreadsController < ApplicationController
     @forum_thread.last_forum_post_time = Time.now - 10000000000
 
     if @forum_thread.save
+      @forum_thread.create_activity(:create, owner: current_user)
       redirect_to @forum_thread
       flash[:success] = "Successfully created a new thread"
     else

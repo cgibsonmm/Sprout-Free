@@ -12,6 +12,8 @@ class ForumThreads::ForumPosts::LikesController < ApplicationController
       Notification.create(recipient: @forum_post.user, actor: current_user, action: 'liked', notifiable: @forum_post)
     end
 
+    @forum_post.create_activity( :liked, owner: current_user)
+
     respond_to do |format|
       format.js { render 'forum_posts/likes/create.js.erb' }
       format.html { redirect_to @forum_thread}

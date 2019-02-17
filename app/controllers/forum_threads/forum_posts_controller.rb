@@ -8,6 +8,7 @@ class ForumThreads::ForumPostsController < ApplicationController
     @forum_post.user = current_user
 
     if @forum_post.save
+      @forum_post.create_activity(:create, owner: current_user)
       # Update last comment time
       @forum_thread.update(last_forum_post_time: Time.now)
       flash[:success] = "Post Saved"

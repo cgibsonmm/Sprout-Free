@@ -20,8 +20,7 @@ class ForumPost < ApplicationRecord
   validates :body, presence: true, length: { minimum: 16, message: 'minimum 5 chars' }
 
   # Activity feed
-  include PublicActivity::Model
-  tracked
+  include PublicActivity::Common
 
   # def notifiy_users
   #   puts mentioned_users
