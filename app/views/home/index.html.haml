@@ -11,15 +11,25 @@
           .main-box.carousel-item{style: "background-image: url(#{asset_path('g3')})"}
 
   %ul.row#forum-info
-    %li.col.m6.s12.green.hoverable
-      top forum post
-      -# TODO: for production remove conditionional
+    = link_to @top_thread, class: 'col m6 s12 green hoverable' do
+      .row
+        .col.s6
+          Top Thread
+        .col.s6.right-align
+          = local_time_ago(@top_thread.created_at)
+      .row
+        .col.s12.center-align
+          %h5
+            = @top_thread.subject
+          = sanitize(@latest_forum_thread.forum_posts.first.body.truncate(120))
+
+    -# Thread with lastest post
     - unless @latest_forum_thread.nil?
       = link_to @latest_forum_thread, {class: 'col m6 s12 blue-grey lighten-4 hoverable'} do
         .row
-          .col.s3
+          .col.s6
             Latest Thread
-          .col.s2.offset-s7
+          .col.s6.right-align
             = local_time_ago(@latest_forum_thread.created_at)
         .row
           .col.s12.center-align
