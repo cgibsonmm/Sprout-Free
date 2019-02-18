@@ -2,5 +2,8 @@
   = image_tag user_avatar(activity.owner), class: 'circle'
   = link_to activity.owner.username, user_profile_path(activity.owner)
   posted on thread:
-  = link_to activity.trackable.forum_thread.subject, forum_thread_path(activity.trackable.forum_thread)
-  = local_time_ago(activity.created_at)
+  - if activity.trackable
+    = link_to activity.trackable.forum_thread.subject, forum_thread_path(activity.trackable.forum_thread)
+    = local_time_ago(activity.created_at)
+  - else
+    But has been since been deleted

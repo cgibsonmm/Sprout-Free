@@ -1,0 +1,16 @@
+.row
+  .col.s12
+    .card.blue-grey.lighten-5.posts_card
+      .row.card-top-row
+        .col.s2.m1
+          = image_tag user_avatar(post.user), class: 'circle'
+        .col.s5.username
+          = post.user.username
+        .col.s6
+          .time-ago
+            = material_icon.alarm
+            = local_time_ago post.created_at
+      .row
+        .col.s1
+        .col.s11
+          = sanitize post.body

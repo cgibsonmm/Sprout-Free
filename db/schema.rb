@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_11_133553) do
+ActiveRecord::Schema.define(version: 2019_02_18_012850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 2019_02_11_133553) do
     t.integer "forum_topic_id"
     t.datetime "last_forum_post_time"
     t.integer "post_count", default: 1
+    t.boolean "editted", default: false
   end
 
   create_table "forum_topics", force: :cascade do |t|

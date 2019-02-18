@@ -2,5 +2,8 @@
   = image_tag user_avatar(activity.owner), class: 'circle'
   = link_to activity.owner.username, user_profile_path(activity.owner)
   created a new thread:
-  = link_to activity.trackable.subject, forum_thread_path(activity.trackable)
-  = local_time_ago(activity.created_at)
+  - if activity.trackable
+    = link_to activity.trackable.subject, forum_thread_path(activity.trackable)
+    = local_time_ago(activity.created_at)
+  - else
+    But has since been removed

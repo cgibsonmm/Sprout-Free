@@ -3,6 +3,7 @@
 # Table name: forum_threads
 #
 #  id                   :bigint(8)        not null, primary key
+#  editted              :boolean          default(FALSE)
 #  last_forum_post_time :datetime
 #  post_count           :integer          default(1)
 #  subject              :string

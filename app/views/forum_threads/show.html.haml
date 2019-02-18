@@ -1,35 +1,10 @@
--# OLD
-
--# .thread.mt-3.ml-3
--#   .heading
--#     .left
--#       %h3
--#         = @forum_thread.subject
--#       %p.text-muted.created-at
--#         Created
--#         = local_time @forum_thread.created_at
--#         by
--#         = link_to  @forum_thread.user.username, user_profile_path(@forum_thread.user_id)
--#     .right
--#       .follow-link
--#         = render partial: 'follow_links', locals: { forum_thread: @forum_thread}
--#
--#   .posts-container
--#     - @forum_thread.forum_posts.order('created_at ASC').each do |post|
--#       = render post
--#
--#
--#     - if user_signed_in?
--#       .new-post-form
--#         = render partial: "forum_posts/form"
-
 .row
   .col.s12
-    %h4
+    %h5
       = @forum_thread.subject
 .row
-  .col.s6
-    = @forum_thread.user.username
-  .col.s6.right-align
-    Created:
-    = local_time_ago @forum_thread.created_at
+  .col.s12
+    Some Tag and category info
+
+- @forum_thread.forum_posts.each do |post|
+  = render partial: 'forum_posts/posts_card', locals: { post: post }
