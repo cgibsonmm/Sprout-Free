@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include PublicActivity::StoreController
-  
+
   protect_from_forgery with: :exception
 
   add_flash_types :success, :info, :warning, :error
@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   before_action :set_notifications, if: :user_signed_in?
+  before_action :set_categories
+  before_action :top_thread
 
   def set_notifications
     @notifications = Notification.where(recipient: current_user).recent
@@ -31,6 +33,14 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_categories
+    @all_categories = ForumCategory.all
+  end
+
+  def top_thread
+    @top_thread = ForumThread.all.max_by {|thread| thread.forum_posts.count }
+  end
 
  def detect_device_variant
    request.variant = :phone if browser.device.mobile?

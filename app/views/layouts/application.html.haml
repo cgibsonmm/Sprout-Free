@@ -27,7 +27,7 @@
       = render 'parts/flash'
       .current-controller-area
         - if forum_area?
-          -# = render 'parts/forum_parts/topbar', locals: {categories: @categories}
+          = render partial: 'parts/forum_parts/topbar', locals: { categories: @all_categories }
 
         - if devise_controller?
           = yield

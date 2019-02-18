@@ -75,7 +75,6 @@ class ForumThreadsController < ApplicationController
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
-
   def set_forum_thread
     @forum_thread = ForumThread.includes(forum_posts: [:user, likes: [:user]]).find(params[:id])
   end
