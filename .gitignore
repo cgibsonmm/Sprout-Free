@@ -32,6 +32,7 @@ Guardfile
 
 # Ignore Reddis dump
 *.rdb
+./dump.rbd
 
 # Ignore local tests examples
 !/spec/examples.txt
