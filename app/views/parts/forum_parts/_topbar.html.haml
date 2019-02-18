@@ -1,41 +1,21 @@
--# TODO: Build Categories
 = render partial: 'parts/forum_parts/all_categories', locals: { categories: @categories }
 = render 'parts/forum_parts/tabs'
 
 #forum-nav-bar
   #main.row
-    %ul.left-links.col.s12.m4
+    %ul.left-links.col.m4
       %li
         = link_to '#', {class: 'btn red categories-dropdown-trigger', 'data-target': 'categories-dropdown' } do
-          All Categories
+          Categories
           = material_icon.keyboard_arrow_down
       %li
-        = link_to '#', {class: 'btn green dropdown-trigger', 'data-target': 'tabs-dropdown' } do
+        = link_to '#', {class: 'btn green disabled dropdown-trigger', 'data-target': 'tabs-dropdown' } do
           Tags
           = material_icon.keyboard_arrow_down
-    %ul.right-links.col.s12.m8
+    %ul.right-links.col.l8.hide-on-med-and-down
       %li
         = link_to 'Latest', forums_latest_path
       %li
         = link_to 'Most Comments', forum_thread_path(@top_thread)
       %li
-        = link_to 'Rising', '#'
-      %li
         = link_to 'Most Likes', '#'
-  -# %ul#main.row
-  -#   %li
-  -#     = link_to '#', {class: 'btn red categories-dropdown-trigger', 'data-target': 'categories-dropdown' } do
-  -#       All Categories
-  -#       = material_icon.keyboard_arrow_down
-  -#   %li
-  -#     = link_to '#', {class: 'btn green dropdown-trigger', 'data-target': 'tabs-dropdown' } do
-  -#       Tags
-  -#       = material_icon.keyboard_arrow_down
-  -#   %li
-  -#     = link_to 'Latest', forums_latest_path
-  -#   %li
-  -#     = link_to 'Most Comments', forums_most_comments_path
-  -#   %li
-  -#     = link_to 'Rising', '#'
-  -#   %li
-  -#     = link_to 'Most Likes', '#'

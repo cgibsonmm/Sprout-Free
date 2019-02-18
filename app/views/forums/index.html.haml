@@ -1,7 +1,7 @@
 = render partial: 'parts/forum_parts/topbar', locals: { categories: @categories }
 #forums_page
   .row
-    .col.m4.blue.lighten-5.hide-on-small-only
+    .col.m4.hide-on-small-only
       %h5
         Categories
       %hr
@@ -15,29 +15,22 @@
                 = link_to topic.title, forum_topic_path(topic)
       = raw pagy_bootstrap_nav(@pagy).html_safe
 
-    .col.s12.m4.green.lighten-3
-      %h5 Latest Threads
+    .col.s12.m4
+      %h5.center-align Latest Threads
+      %hr
       %ul
         - @latest_threads.each do |thread|
-          %li
+          = link_to forum_thread_path(thread), class: 'thread-link' do
             = image_tag user_avatar(thread.user), class: 'circle'
             = thread.subject
-    .col.s12.m4.red.lighten-3
-      %h5 Top Threads
+    .col.s12.m4
+      %h5.center-align Top Threads
+      %hr
       %ul
         - @threads.each do |thread|
-          %li
+          = link_to forum_thread_path(thread), class: ' thread-link' do
             = image_tag user_avatar(thread.user), class: 'circle'
             = thread.subject
 
     .col.s12.m8
       %h5.center-align some heading
-
-    .col.s12.m4.green{style: 'min-height:300px;'}
-      %h5 Promoted
-    .col.s12.m4.red{style: 'min-height:300px;'}
-      %h5 more
-    .col.s12.m4.green{style: 'min-height:300px;'}
-      %h5 Promoted
-    .col.s12.m4.red{style: 'min-height:300px;'}
-      %h5 more
