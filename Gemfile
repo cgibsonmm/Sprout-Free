@@ -22,8 +22,7 @@ gem 'tribute'
 gem 'social-share-button'
 
 # auth
-
-gem 'devise'
+gem "devise", ">= 4.6.0"
 gem 'the_big_username_blacklist'
 gem "administrate"
 gem 'cancancan'
